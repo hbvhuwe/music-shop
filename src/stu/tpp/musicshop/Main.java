@@ -9,6 +9,7 @@ import javafx.scene.layout.BorderPane;
 import javafx.stage.Stage;
 import stu.tpp.musicshop.controller.Controller;
 import stu.tpp.musicshop.util.DbController;
+import stu.tpp.musicshop.util.QueryUtil;
 
 import java.io.IOException;
 import java.sql.SQLException;
@@ -16,7 +17,6 @@ import java.sql.SQLException;
 public class Main extends Application {
     private Stage primaryStage;
     private BorderPane rootLayout;
-    private DbController database = null;
 
     @Override
     public void start(Stage primaryStage) {
@@ -27,17 +27,51 @@ public class Main extends Application {
                         "images/ic_library_music_white_48dp_1x.png").toString()));
         initRootLayout();
         showGroupView();
-        database = DbController.getInstance();
+        QueryUtil.database = DbController.getInstance();
     }
 
     @Override
     public void stop() {
         try {
-            database.close();
+            QueryUtil.database.close();
         } catch (SQLException e) {
             e.printStackTrace();
         }
         primaryStage.close();
+    }
+
+    public void showDiskView() {
+        FXMLLoader loader = new FXMLLoader();
+        loader.setLocation(getClass().getResource("view/disk_view.fxml"));
+
+        AnchorPane groupView = null;
+        try {
+            groupView = loader.load();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+
+        rootLayout.setCenter(groupView);
+
+        Controller controller = loader.getController();
+        controller.setMainApp(this);
+    }
+
+    public void showCompositionView() {
+        FXMLLoader loader = new FXMLLoader();
+        loader.setLocation(getClass().getResource("view/composition_view.fxml"));
+
+        AnchorPane groupView = null;
+        try {
+            groupView = loader.load();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+
+        rootLayout.setCenter(groupView);
+
+        Controller controller = loader.getController();
+        controller.setMainApp(this);
     }
 
     public void showGroupView() {

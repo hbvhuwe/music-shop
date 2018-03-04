@@ -1,0 +1,158 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.SplitPane?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8.0.121" xmlns:fx="http://javafx.com/fxml/1" fx:controller="stu.tpp.musicshop.controller.CompositionViewController">
+    <SplitPane dividerPositions="0.4" layoutY="14.0" prefHeight="160.0" prefWidth="200.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+        <GridPane>
+            <columnConstraints>
+                <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+            </columnConstraints>
+            <rowConstraints>
+                <RowConstraints maxHeight="-Infinity" minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                <RowConstraints maxHeight="-Infinity" minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                <RowConstraints maxHeight="-Infinity" minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                <RowConstraints maxHeight="-Infinity" minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                <RowConstraints maxHeight="-Infinity" minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                <RowConstraints maxHeight="-Infinity" minHeight="10.0" prefHeight="50.0" vgrow="SOMETIMES" />
+                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+            </rowConstraints>
+            <Label alignment="CENTER_RIGHT" maxWidth="1.7976931348623157E308" text="DiskID" GridPane.halignment="RIGHT" GridPane.valignment="CENTER">
+                <GridPane.margin>
+                    <Insets left="4.0" right="4.0" />
+                </GridPane.margin>
+            </Label>
+            <Label alignment="CENTER_RIGHT" maxWidth="1.7976931348623157E308" text="Name" GridPane.halignment="RIGHT" GridPane.rowIndex="1" GridPane.valignment="CENTER">
+                <GridPane.margin>
+                    <Insets left="4.0" right="4.0" />
+                </GridPane.margin>
+            </Label>
+            <Label alignment="CENTER_RIGHT" layoutX="10.0" layoutY="47.0" maxWidth="1.7976931348623157E308" text="Present date" GridPane.halignment="RIGHT" GridPane.rowIndex="2" GridPane.valignment="CENTER">
+                <GridPane.margin>
+                    <Insets left="4.0" right="4.0" />
+                </GridPane.margin>
+            </Label>
+            <Label alignment="CENTER_RIGHT" layoutX="14.0" layoutY="77.0" maxWidth="1.7976931348623157E308" text="Duration" GridPane.rowIndex="3">
+                <GridPane.margin>
+                    <Insets left="4.0" right="4.0" />
+                </GridPane.margin>
+            </Label>
+            <TextField fx:id="diskIdField" maxWidth="1.7976931348623157E308" promptText="Disk ID" GridPane.columnIndex="1">
+                <GridPane.margin>
+                    <Insets left="4.0" right="4.0" />
+                </GridPane.margin>
+            </TextField>
+            <TextField fx:id="nameField" maxWidth="1.7976931348623157E308" promptText="Name" GridPane.columnIndex="1" GridPane.rowIndex="1">
+                <GridPane.margin>
+                    <Insets left="4.0" right="4.0" />
+                </GridPane.margin>
+            </TextField>
+            <TextField fx:id="presentDateField" maxWidth="1.7976931348623157E308" promptText="YYYY-MM-DD" GridPane.columnIndex="1" GridPane.rowIndex="2">
+                <GridPane.margin>
+                    <Insets left="4.0" right="4.0" />
+                </GridPane.margin>
+            </TextField>
+            <TextField fx:id="durationField" layoutX="134.0" layoutY="72.0" maxWidth="1.7976931348623157E308" promptText="HH:MM:SS" GridPane.columnIndex="1" GridPane.rowIndex="3">
+                <GridPane.margin>
+                    <Insets left="4.0" right="4.0" />
+                </GridPane.margin>
+            </TextField>
+            <Button maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#onAddComposition" text="Add composition" GridPane.columnSpan="2" GridPane.halignment="RIGHT" GridPane.rowIndex="4" GridPane.valignment="CENTER">
+                <GridPane.margin>
+                    <Insets left="4.0" right="4.0" />
+                </GridPane.margin>
+            </Button>
+            <Label maxWidth="1.7976931348623157E308" text="Result console" GridPane.columnSpan="2" GridPane.halignment="LEFT" GridPane.rowIndex="5" GridPane.valignment="BOTTOM">
+                <GridPane.margin>
+                    <Insets left="4.0" right="4.0" />
+                </GridPane.margin>
+                <font>
+                    <Font name="System Bold" size="13.0" />
+                </font>
+            </Label>
+            <TextArea fx:id="resultArea" prefHeight="200.0" prefWidth="200.0" GridPane.columnSpan="2" GridPane.rowIndex="6">
+                <GridPane.margin>
+                    <Insets bottom="4.0" left="4.0" right="4.0" top="4.0" />
+                </GridPane.margin>
+            </TextArea>
+        </GridPane>
+        <GridPane>
+            <columnConstraints>
+                <ColumnConstraints hgrow="ALWAYS" minWidth="10.0" />
+                <ColumnConstraints hgrow="ALWAYS" minWidth="10.0" />
+                <ColumnConstraints hgrow="ALWAYS" minWidth="10.0" />
+            </columnConstraints>
+            <rowConstraints>
+                <RowConstraints maxHeight="-Infinity" minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                <RowConstraints maxHeight="-Infinity" minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                <RowConstraints maxHeight="-Infinity" minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+            </rowConstraints>
+            <Label maxWidth="1.7976931348623157E308" text="Composition ID" GridPane.halignment="CENTER">
+                <GridPane.margin>
+                    <Insets left="4.0" right="4.0" />
+                </GridPane.margin>
+            </Label>
+            <Label maxWidth="1.7976931348623157E308" text="New name" GridPane.columnIndex="1" GridPane.halignment="CENTER">
+                <GridPane.margin>
+                    <Insets left="4.0" right="4.0" />
+                </GridPane.margin>
+            </Label>
+            <Label layoutX="101.0" layoutY="17.0" maxWidth="1.7976931348623157E308" text="New duration" GridPane.columnIndex="2" GridPane.halignment="CENTER">
+                <GridPane.margin>
+                    <Insets left="4.0" right="4.0" />
+                </GridPane.margin></Label>
+            <TextField fx:id="compositionIdField" GridPane.halignment="CENTER" GridPane.rowIndex="1">
+                <GridPane.margin>
+                    <Insets left="4.0" right="4.0" />
+                </GridPane.margin>
+            </TextField>
+            <TextField fx:id="newNameField" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="1">
+                <GridPane.margin>
+                    <Insets left="4.0" right="4.0" />
+                </GridPane.margin>
+            </TextField>
+            <TextField fx:id="newDurationField" layoutX="164.0" layoutY="42.0" GridPane.columnIndex="2" GridPane.halignment="CENTER" GridPane.rowIndex="1">
+                <GridPane.margin>
+                    <Insets left="4.0" right="4.0" />
+                </GridPane.margin></TextField>
+            <Button maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#onSelectComposition" text="Search" GridPane.halignment="CENTER" GridPane.rowIndex="2">
+                <GridPane.margin>
+                    <Insets left="4.0" right="4.0" />
+                </GridPane.margin>
+            </Button>
+            <Button maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#onChangeInfo" text="Update" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="2">
+                <GridPane.margin>
+                    <Insets left="4.0" right="4.0" />
+                </GridPane.margin>
+            </Button>
+            <Button maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#onSelectAllCompositions" text="All" GridPane.columnIndex="2" GridPane.halignment="CENTER" GridPane.rowIndex="2">
+                <GridPane.margin>
+                    <Insets left="4.0" right="4.0" />
+                </GridPane.margin>
+            </Button>
+            <TableView fx:id="compositionTable" prefHeight="200.0" prefWidth="200.0" GridPane.columnSpan="3" GridPane.rowIndex="3">
+                <columns>
+                    <TableColumn fx:id="compositionIdColumn" maxWidth="1.7976931348623157E308" prefWidth="57.0" text="CompositionID" />
+                    <TableColumn fx:id="diskIdColumn" maxWidth="1.7976931348623157E308" prefWidth="68.0" text="DiskID" />
+                    <TableColumn fx:id="nameColumn" maxWidth="1.7976931348623157E308" prefWidth="118.0" text="Name" />
+                    <TableColumn fx:id="presentDateColumn" maxWidth="1.7976931348623157E308" prefWidth="118.0" text="Present date" />
+                    <TableColumn fx:id="durationColumn" maxWidth="1.7976931348623157E308" prefWidth="67.0" text="Duration" />
+                </columns>
+            </TableView>
+        </GridPane>
+    </SplitPane>
+</AnchorPane>

@@ -5,7 +5,7 @@ import javafx.scene.control.Alert;
 
 public class RootLayoutController extends Controller{
     @FXML
-    private void handleExit() {
+    private void onExit() {
         try {
             mainApp.stop();
         } catch (Exception e) {
@@ -14,12 +14,22 @@ public class RootLayoutController extends Controller{
     }
 
     @FXML
-    private void handleGroupView() {
+    private void onGroupView() {
         mainApp.showGroupView();
     }
 
     @FXML
-    private void handleAbout() {
+    private void onDiskView() {
+        mainApp.showDiskView();
+    }
+
+    @FXML
+    private void onCompositionView() {
+        mainApp.showCompositionView();
+    }
+
+    @FXML
+    private void onAbout() {
         Alert about = new Alert(Alert.AlertType.INFORMATION);
         about.setTitle("About");
         about.setHeaderText("Music shop");

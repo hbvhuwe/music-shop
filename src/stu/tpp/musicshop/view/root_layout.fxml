@@ -7,21 +7,20 @@
 
 
 <BorderPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8.0.121" xmlns:fx="http://javafx.com/fxml/1" fx:controller="stu.tpp.musicshop.controller.RootLayoutController">
-   <top>
-      <MenuBar BorderPane.alignment="CENTER">
-        <menus>
-          <Menu mnemonicParsing="false" text="File">
-            <items>
-              <MenuItem mnemonicParsing="false" onAction="#handleGroupView" text="Show groups page" />
-                  <MenuItem mnemonicParsing="false" onAction="#handleExit" text="Exit" />
-            </items>
-          </Menu>
-          <Menu mnemonicParsing="false" text="Help">
-            <items>
-              <MenuItem mnemonicParsing="false" onAction="#handleAbout" text="About" />
-            </items>
-          </Menu>
-        </menus>
-      </MenuBar>
-   </top>
+    <top>
+        <MenuBar BorderPane.alignment="CENTER">
+            <Menu mnemonicParsing="false" text="File">
+                <MenuItem mnemonicParsing="false" onAction="#onGroupView"
+                          text="Show groups page"/>
+                <MenuItem mnemonicParsing="false" onAction="#onDiskView"
+                          text="Show disks page"/>
+                <MenuItem mnemonicParsing="false" onAction="#onCompositionView"
+                          text="Show compositions page"/>
+                <MenuItem mnemonicParsing="false" onAction="#onExit" text="Exit"/>
+            </Menu>
+            <Menu mnemonicParsing="false" text="Help">
+                <MenuItem mnemonicParsing="false" onAction="#onAbout" text="About"/>
+            </Menu>
+        </MenuBar>
+    </top>
 </BorderPane>
