@@ -9,6 +9,7 @@ import javafx.scene.layout.BorderPane;
 import javafx.stage.Stage;
 import stu.tpp.musicshop.controller.Controller;
 import stu.tpp.musicshop.util.DbController;
+import stu.tpp.musicshop.util.DbQuery;
 import stu.tpp.musicshop.util.QueryUtil;
 
 import java.io.IOException;
@@ -28,12 +29,13 @@ public class Main extends Application {
         initRootLayout();
         showGroupView();
         QueryUtil.database = DbController.getInstance();
+        DbQuery.database = DbController.getInstance();
     }
 
     @Override
     public void stop() {
         try {
-            QueryUtil.database.close();
+            DbQuery.database.close();
         } catch (SQLException e) {
             e.printStackTrace();
         }

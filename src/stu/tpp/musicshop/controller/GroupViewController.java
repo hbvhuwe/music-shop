@@ -8,6 +8,7 @@ import javafx.scene.control.TableView;
 import javafx.scene.control.TextArea;
 import javafx.scene.control.TextField;
 import stu.tpp.musicshop.model.Group;
+import stu.tpp.musicshop.util.DbQuery;
 import stu.tpp.musicshop.util.QueryUtil;
 
 import java.sql.SQLException;
@@ -38,6 +39,8 @@ public class GroupViewController extends Controller {
     @FXML
     private TableColumn<Group, String> styleColumn;
 
+    private DbQuery<Group> query = new DbQuery<>(Group.class);
+
     @FXML
     private void initialize() {
         groupIdColumn.setCellValueFactory(cellData -> cellData.getValue().groupIdProperty().asObject());
@@ -49,9 +52,9 @@ public class GroupViewController extends Controller {
     @FXML
     private void onSelectAllGroups() {
         try {
-            ObservableList<Group> groups = QueryUtil.selectGroups();
+            ObservableList<Group> groups = query.selectAll();
             populateGroups(groups);
-        } catch (SQLException e) {
+        } catch (Exception e) {
             resultArea.setText("Error while getting information about groups:\n" + e.getMessage());
         }
     }
@@ -63,9 +66,9 @@ public class GroupViewController extends Controller {
     @FXML
     private void onSelectGroup() {
         try {
-            Group group = QueryUtil.selectGroup(Integer.valueOf(groupIdField.getText()));
+            Group group = query.selectSingle(Integer.valueOf(groupIdField.getText()));
             populateAndShowGroup(group);
-        } catch (SQLException e) {
+        } catch (Exception e) {
             resultArea.setText("Error while getting info about group:\n" + e.getMessage());
         }
     }

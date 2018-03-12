@@ -3,7 +3,7 @@ package stu.tpp.musicshop.controller;
 import javafx.fxml.FXML;
 import javafx.scene.control.Alert;
 
-public class RootLayoutController extends Controller{
+public class RootLayoutController extends Controller {
     @FXML
     private void onExit() {
         try {

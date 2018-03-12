@@ -2,7 +2,7 @@ package stu.tpp.musicshop.model;
 
 import javafx.beans.property.*;
 
-public class Disk {
+public class Disk implements Model {
     private IntegerProperty diskId;
     private IntegerProperty groupId;
     private StringProperty name;
@@ -89,5 +89,15 @@ public class Disk {
 
     public void setPrice(double price) {
         this.price.set(price);
+    }
+
+    @Override
+    public int getId() {
+        return getDiskId();
+    }
+
+    @Override
+    public void setId(int id) {
+        setDiskId(id);
     }
 }

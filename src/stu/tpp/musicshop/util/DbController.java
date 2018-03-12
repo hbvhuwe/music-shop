@@ -49,8 +49,8 @@ public class DbController {
     }
 
     public void close() throws SQLException {
-        statement.close();
-        connection.close();
+        instance.statement.close();
+        instance.connection.close();
         instance = null;
     }
 }

@@ -5,7 +5,7 @@ import javafx.beans.property.SimpleIntegerProperty;
 import javafx.beans.property.SimpleStringProperty;
 import javafx.beans.property.StringProperty;
 
-public class Group {
+public class Group implements Model {
     private IntegerProperty groupId;
     private StringProperty name;
     private StringProperty musician;
@@ -64,5 +64,15 @@ public class Group {
 
     public void setStyle(String style) {
         this.style.set(style);
+    }
+
+    @Override
+    public int getId() {
+        return getGroupId();
+    }
+
+    @Override
+    public void setId(int id) {
+        setGroupId(id);
     }
 }
