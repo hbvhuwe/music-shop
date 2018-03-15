@@ -5,7 +5,7 @@ import javafx.beans.property.SimpleIntegerProperty;
 import javafx.beans.property.SimpleStringProperty;
 import javafx.beans.property.StringProperty;
 
-public class Composition {
+public class Composition implements Model {
     private IntegerProperty compositionId;
     private IntegerProperty diskId;
     private StringProperty name;
@@ -78,5 +78,15 @@ public class Composition {
 
     public void setDuration(String duration) {
         this.duration.set(duration);
+    }
+
+    @Override
+    public int getId() {
+        return getCompositionId();
+    }
+
+    @Override
+    public void setId(int id) {
+        setCompositionId(id);
     }
 }

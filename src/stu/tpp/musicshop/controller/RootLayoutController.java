@@ -38,4 +38,24 @@ public class RootLayoutController extends Controller {
                 "Author: Vladimir Chernonog");
         about.showAndWait();
     }
+
+    @Override
+    void selectSingle() {
+
+    }
+
+    @Override
+    void selectAll() {
+
+    }
+
+    @Override
+    void add() {
+
+    }
+
+    @Override
+    void delete() {
+
+    }
 }

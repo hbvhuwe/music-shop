@@ -10,12 +10,12 @@ import javafx.stage.Stage;
 import stu.tpp.musicshop.controller.Controller;
 import stu.tpp.musicshop.util.DbController;
 import stu.tpp.musicshop.util.DbQuery;
-import stu.tpp.musicshop.util.QueryUtil;
+import stu.tpp.musicshop.util.UpdateUtil;
 
 import java.io.IOException;
 import java.sql.SQLException;
 
-public class Main extends Application {
+public final class Main extends Application {
     private Stage primaryStage;
     private BorderPane rootLayout;
 
@@ -28,7 +28,7 @@ public class Main extends Application {
                         "images/ic_library_music_white_48dp_1x.png").toString()));
         initRootLayout();
         showGroupView();
-        QueryUtil.database = DbController.getInstance();
+        UpdateUtil.database = DbController.getInstance();
         DbQuery.database = DbController.getInstance();
     }
 

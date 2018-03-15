@@ -9,7 +9,7 @@ import javafx.scene.control.TextArea;
 import javafx.scene.control.TextField;
 import stu.tpp.musicshop.model.Group;
 import stu.tpp.musicshop.util.DbQuery;
-import stu.tpp.musicshop.util.QueryUtil;
+import stu.tpp.musicshop.util.UpdateUtil;
 
 import java.sql.SQLException;
 
@@ -50,7 +50,8 @@ public class GroupViewController extends Controller {
     }
 
     @FXML
-    private void onSelectAllGroups() {
+    @Override
+    void selectAll() {
         try {
             ObservableList<Group> groups = query.selectAll();
             populateGroups(groups);
@@ -64,7 +65,8 @@ public class GroupViewController extends Controller {
     }
 
     @FXML
-    private void onSelectGroup() {
+    @Override
+    void selectSingle() {
         try {
             Group group = query.selectSingle(Integer.valueOf(groupIdField.getText()));
             populateAndShowGroup(group);
@@ -87,11 +89,12 @@ public class GroupViewController extends Controller {
     }
 
     @FXML
-    private void onAddGroup() {
+    @Override
+    void add() {
         try {
-            QueryUtil.addGroup(nameField.getText(), musicianField.getText(), styleField.getText());
+            query.add(nameField.getText(), musicianField.getText(), styleField.getText());
             resultArea.setText("Successfully add a new group");
-        } catch (SQLException e) {
+        } catch (Exception e) {
             resultArea.setText("Error while adding: " + e.getMessage());
         }
     }
@@ -99,7 +102,7 @@ public class GroupViewController extends Controller {
     @FXML
     private void onChangeMusician() {
         try {
-            QueryUtil.updateGroup(Integer.valueOf(groupIdField.getText()), newMusicianField.getText());
+            UpdateUtil.updateGroup(Integer.valueOf(groupIdField.getText()), newMusicianField.getText());
             resultArea.setText("Information successfully updated for: " + groupIdField.getText());
         } catch (SQLException e) {
             resultArea.setText("Error while updating information: " + e.getMessage());
@@ -107,11 +110,12 @@ public class GroupViewController extends Controller {
     }
 
     @FXML
-    private void onDelete() {
+    @Override
+    void delete() {
         try {
-            QueryUtil.deleteGroup(Integer.valueOf(groupIdField.getText()));
+            query.deleteSingle(Integer.valueOf(groupIdField.getText()));
             resultArea.setText("Successfully delete group with group id: " + groupIdField.getText());
-        } catch (SQLException e) {
+        } catch (Exception e) {
             resultArea.setText("Error while deleting group: " + e.getMessage());
         }
     }

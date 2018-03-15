@@ -8,7 +8,8 @@ import javafx.scene.control.TableView;
 import javafx.scene.control.TextArea;
 import javafx.scene.control.TextField;
 import stu.tpp.musicshop.model.Disk;
-import stu.tpp.musicshop.util.QueryUtil;
+import stu.tpp.musicshop.util.DbQuery;
+import stu.tpp.musicshop.util.UpdateUtil;
 
 import java.sql.SQLException;
 
@@ -48,6 +49,8 @@ public class DiskViewController extends Controller {
     @FXML
     private TableColumn<Disk, Double> priceColumn;
 
+    private DbQuery<Disk> query = new DbQuery<>(Disk.class);
+
     @FXML
     private void initialize() {
         diskIdColumn.setCellValueFactory(cellData -> cellData.getValue().diskIdProperty().asObject());
@@ -59,11 +62,12 @@ public class DiskViewController extends Controller {
     }
 
     @FXML
-    private void onSelectAllDisks() {
+    @Override
+    void selectAll() {
         try {
-            ObservableList<Disk> disks = QueryUtil.selectDisks();
+            ObservableList<Disk> disks = query.selectAll();
             populateDisks(disks);
-        } catch (SQLException e) {
+        } catch (Exception e) {
             resultArea.setText("Error while getting information about disks:\n" + e.getMessage());
         }
     }
@@ -73,11 +77,12 @@ public class DiskViewController extends Controller {
     }
 
     @FXML
-    private void onSelectDisk() {
+    @Override
+    void selectSingle() {
         try {
-            Disk disk = QueryUtil.selectDisk(Integer.valueOf(diskIdField.getText()));
+            Disk disk = query.selectSingle(Integer.valueOf(diskIdField.getText()));
             populateAndShowDisk(disk);
-        } catch (SQLException e) {
+        } catch (Exception e) {
             resultArea.setText("Error while getting info about disk:\n" + e.getMessage());
         }
     }
@@ -97,13 +102,14 @@ public class DiskViewController extends Controller {
     }
 
     @FXML
-    private void onAddDisk() {
+    @Override
+    void add() {
         try {
-            QueryUtil.addDisk(Integer.valueOf(groupIdField.getText()), nameField.getText(),
+            query.add(Integer.valueOf(groupIdField.getText()), nameField.getText(),
                     presentDateField.getText(), Integer.valueOf(amountField.getText()),
                     Double.valueOf(priceField.getText()));
             resultArea.setText("Successfully add a new disk");
-        } catch (SQLException e) {
+        } catch (Exception e) {
             resultArea.setText("Error while adding: " + e.getMessage());
         }
     }
@@ -112,9 +118,9 @@ public class DiskViewController extends Controller {
     private void onChangeInfo() {
         try {
             if (!newAmountField.getText().isEmpty() && !newPriceField.getText().isEmpty()) {
-                QueryUtil.updateDisk(Integer.valueOf(diskIdField.getText()), Integer.valueOf(newAmountField.getText()), Double.valueOf(newPriceField.getText()));
+                UpdateUtil.updateDisk(Integer.valueOf(diskIdField.getText()), Integer.valueOf(newAmountField.getText()), Double.valueOf(newPriceField.getText()));
             } else {
-                QueryUtil.updateDisk(Integer.valueOf(diskIdField.getText()), Integer.valueOf(newAmountField.getText()));
+                UpdateUtil.updateDisk(Integer.valueOf(diskIdField.getText()), Integer.valueOf(newAmountField.getText()));
             }
             resultArea.setText("Information successfully updated for: " + diskIdField.getText());
         } catch (SQLException e) {
@@ -123,11 +129,12 @@ public class DiskViewController extends Controller {
     }
 
     @FXML
-    private void onDelete() {
+    @Override
+    void delete() {
         try {
-            QueryUtil.deleteDisk(Integer.valueOf(diskIdField.getText()));
-            resultArea.setText("Successfully delete group with disk id: " + diskIdField.getText());
-        } catch (SQLException e) {
+            query.deleteSingle(Integer.valueOf(diskIdField.getText()));
+            resultArea.setText("Successfully delete disk with disk id: " + diskIdField.getText());
+        } catch (Exception e) {
             resultArea.setText("Error while deleting disk: " + e.getMessage());
         }
     }

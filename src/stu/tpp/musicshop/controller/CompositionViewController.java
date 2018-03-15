@@ -8,7 +8,8 @@ import javafx.scene.control.TableView;
 import javafx.scene.control.TextArea;
 import javafx.scene.control.TextField;
 import stu.tpp.musicshop.model.Composition;
-import stu.tpp.musicshop.util.QueryUtil;
+import stu.tpp.musicshop.util.DbQuery;
+import stu.tpp.musicshop.util.UpdateUtil;
 
 import java.sql.SQLException;
 
@@ -43,7 +44,9 @@ public class CompositionViewController extends Controller {
     private TableColumn<Composition, String> presentDateColumn;
     @FXML
     private TableColumn<Composition, String> durationColumn;
-    
+
+    private DbQuery<Composition> query = new DbQuery<>(Composition.class);
+
     @FXML
     private void initialize() {
         diskIdColumn.setCellValueFactory(cellData -> cellData.getValue().diskIdProperty().asObject());
@@ -55,11 +58,12 @@ public class CompositionViewController extends Controller {
 
 
     @FXML
-    private void onSelectAllCompositions() {
+    @Override
+    void selectAll() {
         try {
-            ObservableList<Composition> compositions = QueryUtil.selectCompositions();
+            ObservableList<Composition> compositions = query.selectAll();
             populateCompositions(compositions);
-        } catch (SQLException e) {
+        } catch (Exception e) {
             resultArea.setText("Error while getting information about compositions:\n" + e.getMessage());
         }
     }
@@ -69,11 +73,12 @@ public class CompositionViewController extends Controller {
     }
 
     @FXML
-    private void onSelectComposition() {
+    @Override
+    void selectSingle() {
         try {
-            Composition composition = QueryUtil.selectComposition(Integer.valueOf(compositionIdField.getText()));
+            Composition composition = query.selectSingle(Integer.valueOf(compositionIdField.getText()));
             populateAndShowComposition(composition);
-        } catch (SQLException e) {
+        } catch (Exception e) {
             resultArea.setText("Error while getting info about composition:\n" + e.getMessage());
         }
     }
@@ -92,12 +97,13 @@ public class CompositionViewController extends Controller {
     }
 
     @FXML
-    private void onAddComposition() {
+    @Override
+    void add() {
         try {
-            QueryUtil.addComposition(Integer.valueOf(diskIdField.getText()), nameField.getText(),
+            query.add(Integer.valueOf(diskIdField.getText()), nameField.getText(),
                     presentDateField.getText(), durationField.getText());
             resultArea.setText("Successfully add a new composition");
-        } catch (SQLException e) {
+        } catch (Exception e) {
             resultArea.setText("Error while adding: " + e.getMessage());
         }
     }
@@ -106,9 +112,9 @@ public class CompositionViewController extends Controller {
     private void onChangeInfo() {
         try {
             if (!newNameField.getText().isEmpty() && !newDurationField.getText().isEmpty()) {
-                QueryUtil.updateComposition(Integer.valueOf(compositionIdField.getText()), newNameField.getText(), newDurationField.getText());
+                UpdateUtil.updateComposition(Integer.valueOf(compositionIdField.getText()), newNameField.getText(), newDurationField.getText());
             } else {
-                QueryUtil.updateComposition(Integer.valueOf(compositionIdField.getText()), newDurationField.getText());
+                UpdateUtil.updateComposition(Integer.valueOf(compositionIdField.getText()), newDurationField.getText());
             }
             resultArea.setText("Information successfully updated for: " + compositionIdField.getText());
         } catch (SQLException e) {
@@ -117,11 +123,12 @@ public class CompositionViewController extends Controller {
     }
 
     @FXML
-    private void onDelete() {
+    @Override
+    void delete() {
         try {
-            QueryUtil.deleteComposition(Integer.valueOf(compositionIdField.getText()));
-            resultArea.setText("Successfully delete group with composition id: " + compositionIdField.getText());
-        } catch (SQLException e) {
+            query.deleteSingle(Integer.valueOf(compositionIdField.getText()));
+            resultArea.setText("Successfully delete composition with composition id: " + compositionIdField.getText());
+        } catch (Exception e) {
             resultArea.setText("Error while deleting composition: " + e.getMessage());
         }
     }
