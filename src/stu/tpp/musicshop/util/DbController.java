@@ -6,7 +6,6 @@ import java.sql.*;
 import java.util.Optional;
 
 public class DbController {
-    private final String dbUrl = "jdbc:mysql://localhost:3306/music_shop_db";
     private Connection connection = null;
     private Statement statement = null;
 
@@ -21,7 +20,8 @@ public class DbController {
 
     private DbController() {
         try {
-            connection = DriverManager.getConnection(dbUrl, "vova", "1029");
+            DbSettings settings = DbSettings.getSettingsFromFile();
+            connection = DriverManager.getConnection(settings.getUrl(), settings.getUser(), settings.getPassword());
             statement = connection.createStatement();
         } catch (SQLException e) {
             e.printStackTrace();
