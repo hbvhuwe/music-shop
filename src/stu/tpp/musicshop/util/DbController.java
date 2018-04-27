@@ -23,6 +23,7 @@ public class DbController {
             DbSettings settings = DbSettings.getSettingsFromFile();
             connection = DriverManager.getConnection(settings.getUrl(), settings.getUser(), settings.getPassword());
             statement = connection.createStatement();
+            System.out.println("Connection created successfully");
         } catch (SQLException e) {
             e.printStackTrace();
             System.exit(1);
