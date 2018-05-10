@@ -1,5 +1,8 @@
 package stu.tpp.musicshop.controller;
 
+import com.google.gson.JsonArray;
+import com.google.gson.JsonObject;
+import com.google.gson.JsonParser;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
@@ -8,6 +11,7 @@ import javafx.scene.control.TableView;
 import javafx.scene.control.TextArea;
 import javafx.scene.control.TextField;
 import stu.tpp.musicshop.model.Composition;
+import stu.tpp.musicshop.network.MusicShopService;
 import stu.tpp.musicshop.util.DbQuery;
 import stu.tpp.musicshop.util.UpdateUtil;
 
@@ -45,7 +49,7 @@ public class CompositionViewController extends Controller {
     @FXML
     private TableColumn<Composition, String> durationColumn;
 
-    private DbQuery<Composition> query = new DbQuery<>(Composition.class);
+//    private DbQuery<Composition> query = new DbQuery<>(Composition.class);
 
     @FXML
     private void initialize() {
@@ -61,7 +65,7 @@ public class CompositionViewController extends Controller {
     @Override
     void selectAll() {
         try {
-            ObservableList<Composition> compositions = query.selectAll();
+            ObservableList<Composition> compositions = getListFromJson(MusicShopService.getApi().getCompositions().execute().body().string());
             populateCompositions(compositions);
         } catch (Exception e) {
             resultArea.setText("Error while getting information about compositions:\n" + e.getMessage());
@@ -76,7 +80,7 @@ public class CompositionViewController extends Controller {
     @Override
     void selectSingle() {
         try {
-            Composition composition = query.selectSingle(Integer.valueOf(compositionIdField.getText()));
+            Composition composition = getFromJson(MusicShopService.getApi().getComposition(Integer.valueOf(compositionIdField.getText())).execute().body().string());
             populateAndShowComposition(composition);
         } catch (Exception e) {
             resultArea.setText("Error while getting info about composition:\n" + e.getMessage());
@@ -100,8 +104,10 @@ public class CompositionViewController extends Controller {
     @Override
     void add() {
         try {
-            query.add(Integer.valueOf(diskIdField.getText()), nameField.getText(),
-                    presentDateField.getText(), durationField.getText());
+            MusicShopService.getApi().addComposition(nameField.getText(),
+                    durationField.getText(),
+                    presentDateField.getText(),
+                    Integer.valueOf(diskIdField.getText()));
             resultArea.setText("Successfully add a new composition");
         } catch (Exception e) {
             resultArea.setText("Error while adding: " + e.getMessage());
@@ -126,10 +132,41 @@ public class CompositionViewController extends Controller {
     @Override
     void delete() {
         try {
-            query.deleteSingle(Integer.valueOf(compositionIdField.getText()));
+            MusicShopService.getApi().deleteComposition(Integer.valueOf(compositionIdField.getText()));
             resultArea.setText("Successfully delete composition with composition id: " + compositionIdField.getText());
         } catch (Exception e) {
             resultArea.setText("Error while deleting composition: " + e.getMessage());
         }
+    }
+
+    private ObservableList<Composition> getListFromJson(String json) {
+        JsonParser parser = new JsonParser();
+        JsonArray list = parser.parse(json).getAsJsonArray();
+        ObservableList<Composition> compositions = FXCollections.observableArrayList();
+        list.forEach((it) -> compositions.add(getFromJson(it.getAsJsonObject())));
+        return compositions;
+    }
+
+    private Composition getFromJson(JsonObject object) {
+        Composition composition = new Composition();
+        composition.setCompositionId(object.get("CompositionID").getAsInt());
+        composition.setName(object.get("Name").getAsString());
+        composition.setDuration(object.get("Duration").getAsString());
+        composition.setPresentDate(object.get("PresentDate").getAsString());
+        composition.setDiskId(object.get("DiskID").getAsInt());
+        return composition;
+    }
+
+    private Composition getFromJson(String json) {
+        JsonParser parser = new JsonParser();
+        JsonObject object = parser.parse(json).getAsJsonObject();
+
+        Composition composition = new Composition();
+        composition.setCompositionId(object.get("CompositionID").getAsInt());
+        composition.setName(object.get("Name").getAsString());
+        composition.setDuration(object.get("Duration").getAsString());
+        composition.setPresentDate(object.get("PresentDate").getAsString());
+        composition.setDiskId(object.get("DiskID").getAsInt());
+        return composition;
     }
 }

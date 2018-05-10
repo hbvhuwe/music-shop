@@ -1,5 +1,8 @@
 package stu.tpp.musicshop.controller;
 
+import com.google.gson.JsonArray;
+import com.google.gson.JsonObject;
+import com.google.gson.JsonParser;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
@@ -7,11 +10,18 @@ import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.TextArea;
 import javafx.scene.control.TextField;
+import okhttp3.ResponseBody;
+import retrofit2.Call;
+import retrofit2.Callback;
+import retrofit2.Response;
 import stu.tpp.musicshop.model.Group;
+import stu.tpp.musicshop.network.MusicShopService;
 import stu.tpp.musicshop.util.DbQuery;
 import stu.tpp.musicshop.util.UpdateUtil;
 
+import java.io.IOException;
 import java.sql.SQLException;
+import java.util.Objects;
 
 public class GroupViewController extends Controller {
     @FXML
@@ -39,7 +49,7 @@ public class GroupViewController extends Controller {
     @FXML
     private TableColumn<Group, String> styleColumn;
 
-    private DbQuery<Group> query = new DbQuery<>(Group.class);
+//    private DbQuery<Group> query = new DbQuery<>(Group.class);
 
     @FXML
     private void initialize() {
@@ -53,7 +63,7 @@ public class GroupViewController extends Controller {
     @Override
     void selectAll() {
         try {
-            ObservableList<Group> groups = query.selectAll();
+            ObservableList<Group> groups = getListFromJson(MusicShopService.getApi().getGroups().execute().body().string());
             populateGroups(groups);
         } catch (Exception e) {
             resultArea.setText("Error while getting information about groups:\n" + e.getMessage());
@@ -68,10 +78,10 @@ public class GroupViewController extends Controller {
     @Override
     void selectSingle() {
         try {
-            Group group = query.selectSingle(Integer.valueOf(groupIdField.getText()));
+            Group group = getFromJson(MusicShopService.getApi().getGroup(Integer.valueOf(groupIdField.getText())).execute().body().string());
             populateAndShowGroup(group);
         } catch (Exception e) {
-            resultArea.setText("Error while getting info about group:\n" + e.getMessage());
+            resultArea.setText("Error while getting info about group:\n" + e.getMessage() + e.getClass().getName());
         }
     }
 
@@ -92,7 +102,7 @@ public class GroupViewController extends Controller {
     @Override
     void add() {
         try {
-            query.add(nameField.getText(), musicianField.getText(), styleField.getText());
+            System.out.println(MusicShopService.getApi().addGroup(nameField.getText(), musicianField.getText(), styleField.getText()).execute().raw().toString());
             resultArea.setText("Successfully add a new group");
         } catch (Exception e) {
             resultArea.setText("Error while adding: " + e.getMessage());
@@ -113,10 +123,39 @@ public class GroupViewController extends Controller {
     @Override
     void delete() {
         try {
-            query.deleteSingle(Integer.valueOf(groupIdField.getText()));
+            MusicShopService.getApi().deleteGroup(Integer.valueOf(groupIdField.getText())).execute();
             resultArea.setText("Successfully delete group with group id: " + groupIdField.getText());
         } catch (Exception e) {
             resultArea.setText("Error while deleting group: " + e.getMessage());
         }
+    }
+
+    private ObservableList<Group> getListFromJson(String json) {
+        JsonParser parser = new JsonParser();
+        JsonArray list = parser.parse(json).getAsJsonArray();
+        ObservableList<Group> groups = FXCollections.observableArrayList();
+        list.forEach((it) -> groups.add(getFromJson(it.getAsJsonObject())));
+        return groups;
+    }
+
+    private Group getFromJson(JsonObject object) {
+        Group group = new Group();
+        group.setGroupId(object.get("GroupID").getAsInt());
+        group.setName(object.get("Name").getAsString());
+        group.setMusician(object.get("Musician").getAsString());
+        group.setStyle(object.get("Style").getAsString());
+        return group;
+    }
+
+    private Group getFromJson(String json) {
+        JsonParser parser = new JsonParser();
+        JsonObject object = parser.parse(json).getAsJsonObject();
+
+        Group group = new Group();
+        group.setGroupId(object.get("GroupID").getAsInt());
+        group.setName(object.get("Name").getAsString());
+        group.setMusician(object.get("Musician").getAsString());
+        group.setStyle(object.get("Style").getAsString());
+        return group;
     }
 }

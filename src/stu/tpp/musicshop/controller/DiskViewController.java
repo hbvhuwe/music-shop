@@ -1,5 +1,8 @@
 package stu.tpp.musicshop.controller;
 
+import com.google.gson.JsonArray;
+import com.google.gson.JsonObject;
+import com.google.gson.JsonParser;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
@@ -8,6 +11,7 @@ import javafx.scene.control.TableView;
 import javafx.scene.control.TextArea;
 import javafx.scene.control.TextField;
 import stu.tpp.musicshop.model.Disk;
+import stu.tpp.musicshop.network.MusicShopService;
 import stu.tpp.musicshop.util.DbQuery;
 import stu.tpp.musicshop.util.UpdateUtil;
 
@@ -49,7 +53,7 @@ public class DiskViewController extends Controller {
     @FXML
     private TableColumn<Disk, Double> priceColumn;
 
-    private DbQuery<Disk> query = new DbQuery<>(Disk.class);
+//    private DbQuery<Disk> query = new DbQuery<>(Disk.class);
 
     @FXML
     private void initialize() {
@@ -65,7 +69,7 @@ public class DiskViewController extends Controller {
     @Override
     void selectAll() {
         try {
-            ObservableList<Disk> disks = query.selectAll();
+            ObservableList<Disk> disks = getListFromJson(MusicShopService.getApi().getDisks().execute().body().string());
             populateDisks(disks);
         } catch (Exception e) {
             resultArea.setText("Error while getting information about disks:\n" + e.getMessage());
@@ -80,7 +84,7 @@ public class DiskViewController extends Controller {
     @Override
     void selectSingle() {
         try {
-            Disk disk = query.selectSingle(Integer.valueOf(diskIdField.getText()));
+            Disk disk = getFromJson(MusicShopService.getApi().getDisk(Integer.valueOf(diskIdField.getText())).execute().body().string());
             populateAndShowDisk(disk);
         } catch (Exception e) {
             resultArea.setText("Error while getting info about disk:\n" + e.getMessage());
@@ -105,9 +109,11 @@ public class DiskViewController extends Controller {
     @Override
     void add() {
         try {
-            query.add(Integer.valueOf(groupIdField.getText()), nameField.getText(),
-                    presentDateField.getText(), Integer.valueOf(amountField.getText()),
-                    Double.valueOf(priceField.getText()));
+            MusicShopService.getApi().addDisk(nameField.getText(),
+                    Integer.valueOf(amountField.getText()),
+                    presentDateField.getText(),
+                    Double.valueOf(priceField.getText()),
+                    Integer.valueOf(groupIdField.getText()));
             resultArea.setText("Successfully add a new disk");
         } catch (Exception e) {
             resultArea.setText("Error while adding: " + e.getMessage());
@@ -132,10 +138,43 @@ public class DiskViewController extends Controller {
     @Override
     void delete() {
         try {
-            query.deleteSingle(Integer.valueOf(diskIdField.getText()));
+            MusicShopService.getApi().deleteDisk(Integer.valueOf(diskIdField.getText()));
             resultArea.setText("Successfully delete disk with disk id: " + diskIdField.getText());
         } catch (Exception e) {
             resultArea.setText("Error while deleting disk: " + e.getMessage());
         }
+    }
+
+    private ObservableList<Disk> getListFromJson(String json) {
+        JsonParser parser = new JsonParser();
+        JsonArray list = parser.parse(json).getAsJsonArray();
+        ObservableList<Disk> disks = FXCollections.observableArrayList();
+        list.forEach((it) -> disks.add(getFromJson(it.getAsJsonObject())));
+        return disks;
+    }
+
+    private Disk getFromJson(JsonObject object) {
+        Disk disk = new Disk();
+        disk.setDiskId(object.get("DiskID").getAsInt());
+        disk.setName(object.get("Name").getAsString());
+        disk.setAmount(object.get("Amount").getAsInt());
+        disk.setPresentDate(object.get("PresentDate").getAsString());
+        disk.setPrice(object.get("Price").getAsDouble());
+        disk.setGroupId(object.get("GroupID").getAsInt());
+        return disk;
+    }
+
+    private Disk getFromJson(String json) {
+        JsonParser parser = new JsonParser();
+        JsonObject object = parser.parse(json).getAsJsonObject();
+
+        Disk disk = new Disk();
+        disk.setDiskId(object.get("DiskID").getAsInt());
+        disk.setName(object.get("Name").getAsString());
+        disk.setAmount(object.get("Amount").getAsInt());
+        disk.setPresentDate(object.get("PresentDate").getAsString());
+        disk.setPrice(object.get("Price").getAsDouble());
+        disk.setGroupId(object.get("GroupID").getAsInt());
+        return disk;
     }
 }

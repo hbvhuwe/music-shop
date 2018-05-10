@@ -8,9 +8,9 @@ import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.BorderPane;
 import javafx.stage.Stage;
 import stu.tpp.musicshop.controller.Controller;
-import stu.tpp.musicshop.util.DbController;
+//import stu.tpp.musicshop.util.DbController;
 import stu.tpp.musicshop.util.DbQuery;
-import stu.tpp.musicshop.util.UpdateUtil;
+//import stu.tpp.musicshop.util.UpdateUtil;
 
 import java.io.IOException;
 import java.sql.SQLException;
@@ -28,11 +28,11 @@ public final class Main extends Application {
                         "images/ic_library_music_white_48dp_1x.png").toString()));
         initRootLayout();
         showGroupView();
-        UpdateUtil.database = DbController.getInstance();
-        DbQuery.database = DbController.getInstance();
+//        UpdateUtil.database = DbController.getInstance();
+//        DbQuery.database = DbController.getInstance();
     }
 
-    @Override
+/*    @Override
     public void stop() {
         try {
             DbQuery.database.close();
@@ -40,7 +40,7 @@ public final class Main extends Application {
             e.printStackTrace();
         }
         primaryStage.close();
-    }
+    }*/
 
     public void showDiskView() {
         FXMLLoader loader = new FXMLLoader();
