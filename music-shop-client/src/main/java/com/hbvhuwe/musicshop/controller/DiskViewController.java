@@ -66,7 +66,7 @@ public class DiskViewController extends Controller {
     void selectAll() {
         try {
             ObservableList<Disk> disks = FXCollections.observableArrayList(provider.selectAll());
-            populateDisks(disks);
+           populateDisks(disks);
         } catch (Exception e) {
             resultArea.setText("Error while getting information about disks:\n" + e.getMessage());
         }

@@ -13,8 +13,6 @@ import com.hbvhuwe.musicshop.model.Composition;
 import com.hbvhuwe.musicshop.network.MusicShopService;
 import javafx.scene.control.cell.PropertyValueFactory;
 
-import java.sql.SQLException;
-
 public class CompositionViewController extends Controller {
     @FXML
     private TextField diskIdField;
@@ -78,8 +76,8 @@ public class CompositionViewController extends Controller {
     @Override
     void selectSingle() {
         try {
-            Composition composition = provider.select(Integer.parseInt(compositionIdField.getText()));
-            populateAndShowComposition(composition);
+           Composition composition = provider.select(Integer.parseInt(compositionIdField.getText()));
+           populateAndShowComposition(composition);
         } catch (Exception e) {
             resultArea.setText("Error while getting info about composition:\n" + e.getMessage());
         }
@@ -128,8 +126,8 @@ public class CompositionViewController extends Controller {
     @Override
     void delete() {
         try {
-            provider.delete(Integer.parseInt(compositionIdField.getText()));
-            resultArea.setText("Successfully delete composition with composition id: " + compositionIdField.getText());
+           provider.delete(Integer.parseInt(compositionIdField.getText()));
+           resultArea.setText("Successfully delete composition with composition id: " + compositionIdField.getText());
         } catch (Exception e) {
             resultArea.setText("Error while deleting composition: " + e.getMessage());
         }

@@ -10,8 +10,6 @@ import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.BorderPane;
 import javafx.stage.Stage;
 import com.hbvhuwe.musicshop.controller.Controller;
-//import DbController;
-//import UpdateUtil;
 
 import java.io.IOException;
 

@@ -2,135 +2,13 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="bb23319f-53a8-4160-a499-8fa2b8ebba19" name="Default" comment="">
-      <change afterPath="$PROJECT_DIR$/.gradle/4.5.1/fileChanges/last-build.bin" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.gradle/4.5.1/fileContent/annotation-processors.bin" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.gradle/4.5.1/fileContent/fileContent.lock" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.gradle/4.5.1/fileHashes/fileHashes.bin" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.gradle/4.5.1/fileHashes/fileHashes.lock" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.gradle/4.5.1/fileHashes/resourceHashesCache.bin" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.gradle/4.5.1/taskHistory/taskHistory.bin" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.gradle/4.5.1/taskHistory/taskHistory.lock" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.gradle/buildOutputCleanup/cache.properties" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.gradle/buildOutputCleanup/outputFiles.bin" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.gradle/vcsWorkingDirs/gc.properties" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/gradle.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/build.gradle" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/build/distributions/music-shop-client.tar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/build/resources/main/hibernate.cfg.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/build/scripts/music-shop-client" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/build/scripts/music-shop-client.bat" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/build/tmp/jar/MANIFEST.MF" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/gradle/wrapper/gradle-wrapper.properties" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/gradlew" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/gradlew.bat" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/music-shop.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/settings.gradle" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/hbvhuwe/musicshop/model/Composition.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/hbvhuwe/musicshop/model/Disk.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/hbvhuwe/musicshop/model/Group.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/hbvhuwe/musicshop/network/MusicShopApi.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/hbvhuwe/musicshop/network/MusicShopService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/hbvhuwe/musicshop/providers/DataProvider.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/hbvhuwe/musicshop/providers/JdbcProvider.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/hbvhuwe/musicshop/providers/JpaProvider.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/hbvhuwe/musicshop/providers/NetProvider.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/db_settings.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/hibernate.cfg.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/images/ic_album_black_18dp_1x.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/images/ic_group_black_18dp_1x.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/images/ic_library_music_white_48dp_1x.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/images/ic_music_note_black_18dp_1x.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/view/composition_view.fxml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/view/disk_view.fxml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/view/group_view.fxml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/view/root_layout.fxml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../music-shop-server/.classpath" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../music-shop-server/.project" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../music-shop-server/.settings/.jsdtscope" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../music-shop-server/.settings/org.eclipse.jdt.core.prefs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../music-shop-server/.settings/org.eclipse.wst.common.component" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../music-shop-server/.settings/org.eclipse.wst.common.project.facet.core.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../music-shop-server/.settings/org.eclipse.wst.jsdt.ui.superType.container" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../music-shop-server/.settings/org.eclipse.wst.jsdt.ui.superType.name" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../music-shop-server/WebContent/META-INF/MANIFEST.MF" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../music-shop-server/WebContent/WEB-INF/web.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../music-shop-server/build/classes/META-INF/persistence.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../music-shop-server/src/META-INF/persistence.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../music-shop-server/src/com/hbvhuwe/musicshop/api/CompositionService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../music-shop-server/src/com/hbvhuwe/musicshop/api/DiskService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../music-shop-server/src/com/hbvhuwe/musicshop/api/GroupService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../music-shop-server/src/controller/IController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../music-shop-server/src/controller/IModel.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../music-shop-server/src/controller/JpaController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../music-shop-server/src/model/Check.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../music-shop-server/src/model/Client.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../music-shop-server/src/model/Composition.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../music-shop-server/src/model/Disk.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../music-shop-server/src/model/Group.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../music-shop-web/.classpath" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../music-shop-web/.project" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../music-shop-web/.settings/.jsdtscope" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../music-shop-web/.settings/org.eclipse.jdt.core.prefs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../music-shop-web/.settings/org.eclipse.wst.common.component" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../music-shop-web/.settings/org.eclipse.wst.common.project.facet.core.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../music-shop-web/.settings/org.eclipse.wst.jsdt.ui.superType.container" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../music-shop-web/.settings/org.eclipse.wst.jsdt.ui.superType.name" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../music-shop-web/WebContent/META-INF/MANIFEST.MF" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../music-shop-web/WebContent/WEB-INF/web.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../music-shop-web/WebContent/addComposition.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../music-shop-web/WebContent/addDisk.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../music-shop-web/WebContent/addGroup.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../music-shop-web/WebContent/editComposition.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../music-shop-web/WebContent/editDisk.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../music-shop-web/WebContent/editGroup.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../music-shop-web/WebContent/index.jsp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../music-shop-web/WebContent/menuOperation.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../music-shop-web/WebContent/menuTable.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../music-shop-web/WebContent/showTable.jsp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../music-shop-web/build/classes/META-INF/persistence.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../music-shop-web/src/META-INF/persistence.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../music-shop-web/src/controller/IController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../music-shop-web/src/controller/IModel.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../music-shop-web/src/controller/JpaController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../music-shop-web/src/model/Check.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../music-shop-web/src/model/Client.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../music-shop-web/src/model/Composition.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../music-shop-web/src/model/Disk.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../music-shop-web/src/model/Group.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../music-shop-web/src/servlets/ExecuteOperation.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../music-shop-web/src/servlets/SelectOperation.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../music-shop-web/src/servlets/SelectQuery.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../music-shop-web/src/servlets/SelectTable.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../music-shop-web/src/test/TestServlet.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../db_creation.sql" beforeDir="false" afterPath="$PROJECT_DIR$/db_creation.sql" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../music-shop.iml" beforeDir="false" afterPath="$PROJECT_DIR$/music-shop-client.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../src/stu/tpp/musicshop/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/hbvhuwe/musicshop/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../src/stu/tpp/musicshop/controller/CompositionViewController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/hbvhuwe/musicshop/controller/CompositionViewController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../src/stu/tpp/musicshop/controller/Controller.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/hbvhuwe/musicshop/controller/Controller.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../src/stu/tpp/musicshop/controller/DiskViewController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/hbvhuwe/musicshop/controller/DiskViewController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../src/stu/tpp/musicshop/controller/GroupViewController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/hbvhuwe/musicshop/controller/GroupViewController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../src/stu/tpp/musicshop/controller/RootLayoutController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/hbvhuwe/musicshop/controller/RootLayoutController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../src/stu/tpp/musicshop/images/ic_album_black_18dp_1x.png" beforeDir="false" afterPath="$PROJECT_DIR$/build/resources/main/images/ic_album_black_18dp_1x.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../src/stu/tpp/musicshop/images/ic_group_black_18dp_1x.png" beforeDir="false" afterPath="$PROJECT_DIR$/build/resources/main/images/ic_group_black_18dp_1x.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../src/stu/tpp/musicshop/images/ic_library_music_white_48dp_1x.png" beforeDir="false" afterPath="$PROJECT_DIR$/build/resources/main/images/ic_library_music_white_48dp_1x.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../src/stu/tpp/musicshop/images/ic_music_note_black_18dp_1x.png" beforeDir="false" afterPath="$PROJECT_DIR$/build/resources/main/images/ic_music_note_black_18dp_1x.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../src/stu/tpp/musicshop/model/Composition.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../src/stu/tpp/musicshop/model/Disk.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../src/stu/tpp/musicshop/model/Group.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../src/stu/tpp/musicshop/model/Model.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/hbvhuwe/musicshop/model/Model.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../src/stu/tpp/musicshop/util/DbController.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../src/stu/tpp/musicshop/util/DbQuery.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../src/stu/tpp/musicshop/util/DbSettings.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../src/stu/tpp/musicshop/util/UpdateUtil.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../src/stu/tpp/musicshop/util/db_settings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/build/resources/main/db_settings.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../src/stu/tpp/musicshop/view/composition_view.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/build/resources/main/view/composition_view.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../src/stu/tpp/musicshop/view/disk_view.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/build/resources/main/view/disk_view.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../src/stu/tpp/musicshop/view/group_view.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/build/resources/main/view/group_view.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../src/stu/tpp/musicshop/view/root_layout.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/build/resources/main/view/root_layout.fxml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../src/stu/tpp/musicshop/network/MusicShopApi.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../src/stu/tpp/musicshop/network/MusicShopService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/music-shop-client.iml" beforeDir="false" afterPath="$PROJECT_DIR$/music-shop-client.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/hbvhuwe/musicshop/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/hbvhuwe/musicshop/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/hbvhuwe/musicshop/controller/CompositionViewController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/hbvhuwe/musicshop/controller/CompositionViewController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/hbvhuwe/musicshop/controller/DiskViewController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/hbvhuwe/musicshop/controller/DiskViewController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/hbvhuwe/musicshop/controller/GroupViewController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/hbvhuwe/musicshop/controller/GroupViewController.java" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/.gradle/" />
@@ -225,8 +103,8 @@
       <file leaf-file-name="Main.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/java/com/hbvhuwe/musicshop/Main.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="252">
-              <caret line="27" column="20" lean-forward="true" selection-start-line="27" selection-start-column="20" selection-end-line="27" selection-end-column="20" />
+            <state relative-caret-position="450">
+              <caret line="34" column="20" lean-forward="true" selection-start-line="34" selection-start-column="20" selection-end-line="34" selection-end-column="20" />
             </state>
           </provider>
         </entry>
@@ -883,7 +761,6 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="43" y="27" width="1323" height="741" extended-state="6" />
-    <editor active="true" />
     <layout>
       <window_info anchor="right" id="Palette" />
       <window_info anchor="bottom" id="TODO" order="6" />
@@ -1096,8 +973,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/hbvhuwe/musicshop/Main.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="252">
-          <caret line="27" column="20" lean-forward="true" selection-start-line="27" selection-start-column="20" selection-end-line="27" selection-end-column="20" />
+        <state relative-caret-position="450">
+          <caret line="34" column="20" lean-forward="true" selection-start-line="34" selection-start-column="20" selection-end-line="34" selection-end-column="20" />
         </state>
       </provider>
     </entry>
