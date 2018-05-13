@@ -2,13 +2,14 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="bb23319f-53a8-4160-a499-8fa2b8ebba19" name="Default" comment="">
-      <change afterPath="$PROJECT_DIR$/../src/stu/tpp/musicshop/network/MusicShopApi.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../src/stu/tpp/musicshop/network/MusicShopService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/music-shop-client.iml" beforeDir="false" afterPath="$PROJECT_DIR$/music-shop-client.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/hbvhuwe/musicshop/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/hbvhuwe/musicshop/Main.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/com/hbvhuwe/musicshop/providers/TestJdbc.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/com/hbvhuwe/musicshop/providers/TestJpa.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/hbvhuwe/musicshop/controller/CompositionViewController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/hbvhuwe/musicshop/controller/CompositionViewController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/hbvhuwe/musicshop/controller/DiskViewController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/hbvhuwe/musicshop/controller/DiskViewController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/hbvhuwe/musicshop/controller/GroupViewController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/hbvhuwe/musicshop/controller/GroupViewController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/hbvhuwe/musicshop/providers/JdbcProvider.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/hbvhuwe/musicshop/providers/JdbcProvider.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/hbvhuwe/musicshop/providers/JpaProvider.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/hbvhuwe/musicshop/providers/JpaProvider.java" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/.gradle/" />
@@ -63,67 +64,59 @@
     </system>
   </component>
   <component name="FileEditorManager">
-    <leaf>
-      <file leaf-file-name="Composition.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/hbvhuwe/musicshop/model/Composition.java">
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
+      <file leaf-file-name="Main.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/hbvhuwe/musicshop/Main.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="288">
-              <caret line="16" column="29" selection-start-line="16" selection-start-column="29" selection-end-line="16" selection-end-column="29" />
+            <state relative-caret-position="-342">
+              <caret line="25" column="20" selection-start-line="25" selection-start-column="20" selection-end-line="25" selection-end-column="20" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="TestJdbc.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/test/java/com/hbvhuwe/musicshop/providers/TestJdbc.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="401">
+              <caret line="49" column="26" lean-forward="true" selection-start-line="49" selection-start-column="26" selection-end-line="49" selection-end-column="26" />
               <folding>
                 <element signature="imports" expanded="true" />
-                <element signature="e#1100#1101#0" expanded="true" />
-                <element signature="e#1141#1142#0" expanded="true" />
-                <element signature="e#1196#1197#0" expanded="true" />
-                <element signature="e#1246#1247#0" expanded="true" />
-                <element signature="e#1279#1280#0" expanded="true" />
-                <element signature="e#1315#1316#0" expanded="true" />
-                <element signature="e#1361#1362#0" expanded="true" />
-                <element signature="e#1401#1402#0" expanded="true" />
-                <element signature="e#1432#1433#0" expanded="true" />
-                <element signature="e#1464#1465#0" expanded="true" />
-                <element signature="e#1504#1505#0" expanded="true" />
-                <element signature="e#1536#1537#0" expanded="true" />
-                <element signature="e#1572#1573#0" expanded="true" />
-                <element signature="e#1611#1612#0" expanded="true" />
-                <element signature="e#1663#1664#0" expanded="true" />
-                <element signature="e#1709#1710#0" expanded="true" />
-                <element signature="e#1753#1754#0" expanded="true" />
-                <element signature="e#1789#1790#0" expanded="true" />
-                <element signature="e#1836#1837#0" expanded="true" />
-                <element signature="e#1875#1876#0" expanded="true" />
-                <element signature="e#1689#1690#0" expanded="true" />
-                <element signature="e#1718#1719#0" expanded="true" />
-                <element signature="e#1759#1760#0" expanded="true" />
-                <element signature="e#1795#1796#0" expanded="true" />
+                <element signature="e#495#496#0" expanded="true" />
+                <element signature="e#554#555#0" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Main.java" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/hbvhuwe/musicshop/Main.java">
+      <file leaf-file-name="JpaProvider.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/hbvhuwe/musicshop/providers/JpaProvider.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="450">
-              <caret line="34" column="20" lean-forward="true" selection-start-line="34" selection-start-column="20" selection-end-line="34" selection-end-column="20" />
+            <state relative-caret-position="126">
+              <caret line="17" column="4" selection-start-line="17" selection-start-column="4" selection-end-line="17" selection-end-column="4" />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="root_layout.fxml" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/resources/view/root_layout.fxml">
-          <provider editor-type-id="JavaFX-Scene-Builder" />
+      <file leaf-file-name="TestJpa.java" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/test/java/com/hbvhuwe/musicshop/providers/TestJpa.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="234">
-              <caret line="13" column="110" selection-start-line="13" selection-start-column="110" selection-end-line="13" selection-end-column="110" />
+            <state relative-caret-position="545">
+              <caret line="46" column="26" selection-start-line="46" selection-start-column="26" selection-end-line="46" selection-end-column="26" />
+              <folding>
+                <element signature="e#193#194#0" expanded="true" />
+                <element signature="e#214#215#0" expanded="true" />
+                <element signature="e#791#792#0" expanded="true" />
+                <element signature="e#817#818#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="RootLayoutController.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/hbvhuwe/musicshop/controller/RootLayoutController.java">
+      <file leaf-file-name="JdbcProvider.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/hbvhuwe/musicshop/providers/JdbcProvider.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="72">
-              <caret line="5" column="13" selection-start-line="5" selection-start-column="13" selection-end-line="5" selection-end-column="13" />
+            <state relative-caret-position="126">
+              <caret line="14" column="4" selection-start-line="14" selection-start-column="4" selection-end-line="14" selection-end-column="4" />
             </state>
           </provider>
         </entry>
@@ -131,38 +124,12 @@
       <file leaf-file-name="Disk.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/com/hbvhuwe/musicshop/model/Disk.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-850">
+            <state relative-caret-position="558">
               <caret line="37" column="19" selection-start-line="37" selection-start-column="19" selection-end-line="37" selection-end-column="19" />
               <folding>
                 <element signature="imports" expanded="true" />
-                <element signature="e#1162#1163#0" expanded="true" />
-                <element signature="e#1196#1197#0" expanded="true" />
-                <element signature="e#1237#1238#0" expanded="true" />
-                <element signature="e#1273#1274#0" expanded="true" />
-                <element signature="e#1303#1304#0" expanded="true" />
-                <element signature="e#1337#1338#0" expanded="true" />
-                <element signature="e#1378#1379#0" expanded="true" />
-                <element signature="e#1414#1415#0" expanded="true" />
-                <element signature="e#1445#1446#0" expanded="true" />
-                <element signature="e#1477#1478#0" expanded="true" />
-                <element signature="e#1517#1518#0" expanded="true" />
-                <element signature="e#1549#1550#0" expanded="true" />
-                <element signature="e#1585#1586#0" expanded="true" />
-                <element signature="e#1624#1625#0" expanded="true" />
-                <element signature="e#1676#1677#0" expanded="true" />
                 <element signature="e#1722#1723#0" expanded="true" />
                 <element signature="e#1754#1755#0" expanded="true" />
-                <element signature="e#1787#1788#0" expanded="true" />
-                <element signature="e#1829#1830#0" expanded="true" />
-                <element signature="e#1863#1864#0" expanded="true" />
-                <element signature="e#3044#3045#0" expanded="true" />
-                <element signature="e#3073#3074#0" expanded="true" />
-                <element signature="e#3120#3121#0" expanded="true" />
-                <element signature="e#3152#3153#0" expanded="true" />
-                <element signature="e#1789#1790#0" expanded="true" />
-                <element signature="e#1819#1820#0" expanded="true" />
-                <element signature="e#1862#1863#0" expanded="true" />
-                <element signature="e#1900#1901#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -178,6 +145,14 @@
         </entry>
       </file>
     </leaf>
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Class" />
+        <option value="JUnit4 Test Class" />
+      </list>
+    </option>
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
@@ -398,7 +373,7 @@
     </option>
     <option name="modificationStamps">
       <map>
-        <entry key="$PROJECT_DIR$" value="6104905506000" />
+        <entry key="$PROJECT_DIR$" value="6104911130000" />
         <entry key="$PROJECT_DIR$/.gradle" value="0" />
         <entry key="$PROJECT_DIR$/build.gradle" value="2760111709" />
         <entry key="$PROJECT_DIR$/gradle/wrapper/gradle-wrapper.properties" value="2881256037" />
@@ -522,12 +497,16 @@
         <option value="$PROJECT_DIR$/src/main/java/com/hbvhuwe/musicshop/Main.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/hbvhuwe/musicshop/providers/NetProvider.java" />
         <option value="$PROJECT_DIR$/src/main/resources/hibernate.cfg.xml" />
-        <option value="$PROJECT_DIR$/src/main/java/com/hbvhuwe/musicshop/controller/CompositionViewController.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/hbvhuwe/musicshop/controller/DiskViewController.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/hbvhuwe/musicshop/model/Disk.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/hbvhuwe/musicshop/model/Composition.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/hbvhuwe/musicshop/providers/JpaProvider.java" />
         <option value="$PROJECT_DIR$/src/main/resources/view/root_layout.fxml" />
+        <option value="$PROJECT_DIR$/src/main/java/com/hbvhuwe/musicshop/controller/DiskViewController.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/hbvhuwe/musicshop/controller/CompositionViewController.java" />
+        <option value="$PROJECT_DIR$/src/test/java/com/hbvhuwe/musicshop/TestJdbc.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/hbvhuwe/musicshop/providers/JpaProvider.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/hbvhuwe/musicshop/providers/JdbcProvider.java" />
+        <option value="$PROJECT_DIR$/src/test/java/com/hbvhuwe/musicshop/providers/TestJdbc.java" />
+        <option value="$PROJECT_DIR$/src/test/java/com/hbvhuwe/musicshop/providers/TestJpa.java" />
       </list>
     </option>
   </component>
@@ -542,6 +521,7 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -606,16 +586,14 @@
               <item name="music-shop-client" type="b2602c69:ProjectViewProjectNode" />
               <item name="music-shop-client" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
-              <item name="resources" type="462c0819:PsiDirectoryNode" />
+              <item name="test" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
             </path>
             <path>
               <item name="music-shop-client" type="b2602c69:ProjectViewProjectNode" />
               <item name="music-shop-client" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
-              <item name="resources" type="462c0819:PsiDirectoryNode" />
-              <item name="view" type="462c0819:PsiDirectoryNode" />
+              <item name="test" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -623,13 +601,20 @@
       </pane>
       <pane id="PackagesPane" />
       <pane id="AndroidView" />
-      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
+    <property name="com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary" value="JUnit4" />
+    <property name="com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit4" value="" />
     <property name="settings.editor.selected.configurable" value="gradle.compiler" />
   </component>
   <component name="RecentsManager">
+    <key name="CreateTestDialog.RecentsKey">
+      <recent name="com.hbvhuwe.musicshop.providers" />
+    </key>
+    <key name="CreateTestDialog.Recents.Supers">
+      <recent name="" />
+    </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/src/main/resources" />
     </key>
@@ -646,7 +631,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Gradle.music-shop-client [run]">
+  <component name="RunManager" selected="Gradle.music-shop-client [build]">
     <configuration default="true" type="Applet" factoryName="Applet">
       <option name="POLICY_FILE" value="$APPLICATION_HOME_DIR$/bin/appletviewer.policy" />
     </configuration>
@@ -686,6 +671,52 @@
         </option>
         <option name="vmOptions" />
       </ExternalSystemSettings>
+    </configuration>
+    <configuration name="TestJdbc" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="music-shop-client_test" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.hbvhuwe.musicshop.providers.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="PACKAGE_NAME" value="com.hbvhuwe.musicshop.providers" />
+      <option name="MAIN_CLASS_NAME" value="com.hbvhuwe.musicshop.providers.TestJdbc" />
+      <option name="METHOD_NAME" />
+      <option name="TEST_OBJECT" value="class" />
+      <option name="VM_PARAMETERS" value="-ea" />
+      <option name="PARAMETERS" />
+      <option name="WORKING_DIRECTORY" value="%MODULE_WORKING_DIR%" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <option name="TEST_SEARCH_SCOPE">
+        <value defaultName="singleModule" />
+      </option>
+      <patterns />
+    </configuration>
+    <configuration name="TestJdbc.testClose" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="music-shop-client_test" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.hbvhuwe.musicshop.providers.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="PACKAGE_NAME" value="com.hbvhuwe.musicshop.providers" />
+      <option name="MAIN_CLASS_NAME" value="com.hbvhuwe.musicshop.providers.TestJdbc" />
+      <option name="METHOD_NAME" value="testClose" />
+      <option name="TEST_OBJECT" value="method" />
+      <option name="VM_PARAMETERS" value="-ea" />
+      <option name="PARAMETERS" />
+      <option name="WORKING_DIRECTORY" value="%MODULE_WORKING_DIR%" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <option name="TEST_SEARCH_SCOPE">
+        <value defaultName="singleModule" />
+      </option>
+      <patterns />
     </configuration>
     <configuration default="true" type="JUnit" factoryName="JUnit">
       <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
@@ -738,11 +769,15 @@
     <list>
       <item itemvalue="Gradle.music-shop-client [build]" />
       <item itemvalue="Gradle.music-shop-client [run]" />
+      <item itemvalue="JUnit.TestJdbc" />
+      <item itemvalue="JUnit.TestJdbc.testClose" />
     </list>
     <recent_temporary>
       <list>
-        <item itemvalue="Gradle.music-shop-client [run]" />
         <item itemvalue="Gradle.music-shop-client [build]" />
+        <item itemvalue="JUnit.TestJdbc" />
+        <item itemvalue="JUnit.TestJdbc.testClose" />
+        <item itemvalue="Gradle.music-shop-client [run]" />
       </list>
     </recent_temporary>
   </component>
@@ -759,70 +794,124 @@
     </task>
     <servers />
   </component>
+  <component name="TestHistory">
+    <history-entry file="TestJdbc - 2018.05.13 at 23h 21m 18s.xml">
+      <configuration name="TestJdbc" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="TestJdbc - 2018.05.13 at 23h 22m 29s.xml">
+      <configuration name="TestJdbc" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="TestJdbc - 2018.05.13 at 23h 23m 00s.xml">
+      <configuration name="TestJdbc" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="TestJdbc - 2018.05.13 at 23h 23m 28s.xml">
+      <configuration name="TestJdbc" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="TestJdbc - 2018.05.13 at 23h 23m 54s.xml">
+      <configuration name="TestJdbc" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="TestJdbc - 2018.05.13 at 23h 24m 29s.xml">
+      <configuration name="TestJdbc" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="TestJdbc - 2018.05.13 at 23h 25m 20s.xml">
+      <configuration name="TestJdbc" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="TestJdbc_testClose - 2018.05.13 at 23h 25m 36s.xml">
+      <configuration name="TestJdbc.testClose" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="TestJdbc - 2018.05.13 at 23h 29m 03s.xml">
+      <configuration name="TestJdbc" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="TestJdbc - 2018.05.13 at 23h 29m 26s.xml">
+      <configuration name="TestJdbc" configurationId="JUnit" />
+    </history-entry>
+  </component>
   <component name="ToolWindowManager">
     <frame x="43" y="27" width="1323" height="741" extended-state="6" />
+    <editor active="true" />
     <layout>
-      <window_info anchor="right" id="Palette" />
+      <window_info anchor="right" id="Palette" order="3" />
       <window_info anchor="bottom" id="TODO" order="6" />
-      <window_info anchor="right" id="Palette&#9;" />
-      <window_info id="Image Layers" />
-      <window_info anchor="right" id="Capture Analysis" />
-      <window_info anchor="bottom" id="Event Log" sideWeight="0.50037795" side_tool="true" weight="0.328594" />
-      <window_info anchor="right" id="Maven Projects" />
-      <window_info anchor="bottom" id="Version Control" />
+      <window_info anchor="bottom" id="Messages" />
+      <window_info anchor="right" id="Palette&#9;" order="3" />
+      <window_info id="Image Layers" order="2" />
+      <window_info anchor="right" id="Capture Analysis" order="3" />
+      <window_info anchor="bottom" id="Event Log" order="7" sideWeight="0.50037795" side_tool="true" weight="0.328594" />
+      <window_info anchor="right" id="Maven Projects" order="3" />
       <window_info anchor="bottom" id="Run" order="2" sideWeight="0.49962208" weight="0.328594" />
-      <window_info anchor="bottom" id="Terminal" />
-      <window_info id="Capture Tool" />
-      <window_info id="Designer" />
+      <window_info anchor="bottom" id="Version Control" order="7" />
+      <window_info anchor="bottom" id="Terminal" order="7" />
+      <window_info id="Capture Tool" order="2" />
+      <window_info id="Designer" order="2" />
       <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.2494331" />
-      <window_info anchor="bottom" id="Build" weight="0.32913387" />
-      <window_info anchor="right" id="Gradle" weight="0.32955405" />
+      <window_info anchor="right" id="Gradle" order="3" weight="0.32955405" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
-      <window_info id="UI Designer" />
-      <window_info anchor="right" id="Theme Preview" />
-      <window_info id="Favorites" side_tool="true" />
+      <window_info id="UI Designer" order="2" />
+      <window_info anchor="right" id="Theme Preview" order="3" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
-      <window_info anchor="bottom" id="Find" order="1" />
-      <window_info anchor="right" id="Commander" order="0" weight="0.4" />
-      <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
+      <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
+      <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
+      <window_info anchor="right" id="Commander" order="0" weight="0.4" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
+      <window_info anchor="bottom" id="Build" order="7" weight="0.32913387" />
+      <window_info anchor="bottom" id="Find" order="1" />
     </layout>
   </component>
   <component name="VcsContentAnnotationSettings">
     <option name="myLimit" value="2678400000" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/hbvhuwe/musicshop/util/DbSettings.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/hbvhuwe/musicshop/model/Composition.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="180">
+          <caret line="16" column="29" selection-start-line="16" selection-start-column="29" selection-end-line="16" selection-end-column="29" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#1141#1142#0" expanded="true" />
+            <element signature="e#1181#1182#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/hbvhuwe/musicshop/controller/RootLayoutController.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="90">
-          <caret line="9" column="13" selection-start-line="9" selection-start-column="13" selection-end-line="9" selection-end-column="13" />
+          <caret line="5" column="13" selection-start-line="5" selection-start-column="13" selection-end-line="5" selection-end-column="13" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/hbvhuwe/musicshop/util/DbController.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/hbvhuwe/musicshop/model/Disk.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-439">
-          <caret line="7" column="13" selection-start-line="7" selection-start-column="13" selection-end-line="7" selection-end-column="13" />
+        <state relative-caret-position="558">
+          <caret line="37" column="19" selection-start-line="37" selection-start-column="19" selection-end-line="37" selection-end-column="19" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#1722#1723#0" expanded="true" />
+            <element signature="e#1754#1755#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/hbvhuwe/musicshop/util/DbQuery.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/hbvhuwe/musicshop/model/Group.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="72">
-          <caret line="12" column="13" selection-start-line="12" selection-start-column="13" selection-end-line="12" selection-end-column="13" />
+        <state relative-caret-position="144">
+          <caret line="11" column="7" selection-start-line="11" selection-start-column="7" selection-end-line="11" selection-end-column="7" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/hbvhuwe/musicshop/providers/JdbcProvider.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/hbvhuwe/musicshop/Main.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="72">
-          <caret line="11" column="13" selection-start-line="11" selection-start-column="13" selection-end-line="11" selection-end-column="13" />
+        <state relative-caret-position="612">
+          <caret line="34" column="20" lean-forward="true" selection-start-line="34" selection-start-column="20" selection-end-line="34" selection-end-column="20" />
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/hbvhuwe/musicshop/util/DbSettings.java" />
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/hbvhuwe/musicshop/util/DbController.java" />
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/hbvhuwe/musicshop/util/DbQuery.java" />
     <entry file="file://$PROJECT_DIR$/src/main/resources/hibernate.cfg.xml">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="414">
@@ -837,13 +926,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/hbvhuwe/musicshop/controller/GroupViewController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1530">
-          <caret line="98" selection-start-line="98" selection-end-line="98" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/hbvhuwe/musicshop/model/Group.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="144">
@@ -853,114 +935,13 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/hbvhuwe/musicshop/model/Disk.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-850">
+        <state relative-caret-position="558">
           <caret line="37" column="19" selection-start-line="37" selection-start-column="19" selection-end-line="37" selection-end-column="19" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#1162#1163#0" expanded="true" />
-            <element signature="e#1196#1197#0" expanded="true" />
-            <element signature="e#1237#1238#0" expanded="true" />
-            <element signature="e#1273#1274#0" expanded="true" />
-            <element signature="e#1303#1304#0" expanded="true" />
-            <element signature="e#1337#1338#0" expanded="true" />
-            <element signature="e#1378#1379#0" expanded="true" />
-            <element signature="e#1414#1415#0" expanded="true" />
-            <element signature="e#1445#1446#0" expanded="true" />
-            <element signature="e#1477#1478#0" expanded="true" />
-            <element signature="e#1517#1518#0" expanded="true" />
-            <element signature="e#1549#1550#0" expanded="true" />
-            <element signature="e#1585#1586#0" expanded="true" />
-            <element signature="e#1624#1625#0" expanded="true" />
-            <element signature="e#1676#1677#0" expanded="true" />
             <element signature="e#1722#1723#0" expanded="true" />
             <element signature="e#1754#1755#0" expanded="true" />
-            <element signature="e#1787#1788#0" expanded="true" />
-            <element signature="e#1829#1830#0" expanded="true" />
-            <element signature="e#1863#1864#0" expanded="true" />
-            <element signature="e#3044#3045#0" expanded="true" />
-            <element signature="e#3073#3074#0" expanded="true" />
-            <element signature="e#3120#3121#0" expanded="true" />
-            <element signature="e#3152#3153#0" expanded="true" />
-            <element signature="e#1789#1790#0" expanded="true" />
-            <element signature="e#1819#1820#0" expanded="true" />
-            <element signature="e#1862#1863#0" expanded="true" />
-            <element signature="e#1900#1901#0" expanded="true" />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/hbvhuwe/musicshop/controller/CompositionViewController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="479">
-          <caret line="57" column="79" selection-start-line="57" selection-start-column="79" selection-end-line="57" selection-end-column="79" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/hbvhuwe/musicshop/model/Composition.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="288">
-          <caret line="16" column="29" selection-start-line="16" selection-start-column="29" selection-end-line="16" selection-end-column="29" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#1100#1101#0" expanded="true" />
-            <element signature="e#1141#1142#0" expanded="true" />
-            <element signature="e#1196#1197#0" expanded="true" />
-            <element signature="e#1246#1247#0" expanded="true" />
-            <element signature="e#1279#1280#0" expanded="true" />
-            <element signature="e#1315#1316#0" expanded="true" />
-            <element signature="e#1361#1362#0" expanded="true" />
-            <element signature="e#1401#1402#0" expanded="true" />
-            <element signature="e#1432#1433#0" expanded="true" />
-            <element signature="e#1464#1465#0" expanded="true" />
-            <element signature="e#1504#1505#0" expanded="true" />
-            <element signature="e#1536#1537#0" expanded="true" />
-            <element signature="e#1572#1573#0" expanded="true" />
-            <element signature="e#1611#1612#0" expanded="true" />
-            <element signature="e#1663#1664#0" expanded="true" />
-            <element signature="e#1709#1710#0" expanded="true" />
-            <element signature="e#1753#1754#0" expanded="true" />
-            <element signature="e#1789#1790#0" expanded="true" />
-            <element signature="e#1836#1837#0" expanded="true" />
-            <element signature="e#1875#1876#0" expanded="true" />
-            <element signature="e#1689#1690#0" expanded="true" />
-            <element signature="e#1718#1719#0" expanded="true" />
-            <element signature="e#1759#1760#0" expanded="true" />
-            <element signature="e#1795#1796#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/hbvhuwe/musicshop/providers/JpaProvider.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="425">
-          <caret line="36" column="51" lean-forward="true" selection-start-line="36" selection-start-column="51" selection-end-line="36" selection-end-column="51" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/hbvhuwe/musicshop/controller/DiskViewController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="727">
-          <caret line="60" column="75" selection-start-line="60" selection-start-column="75" selection-end-line="60" selection-end-column="75" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/view/composition_view.fxml">
-      <provider editor-type-id="JavaFX-Scene-Builder" />
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-123" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/view/root_layout.fxml">
-      <provider editor-type-id="JavaFX-Scene-Builder" />
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="234">
-          <caret line="13" column="110" selection-start-line="13" selection-start-column="110" selection-end-line="13" selection-end-column="110" />
         </state>
       </provider>
     </entry>
@@ -971,10 +952,85 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/hbvhuwe/musicshop/controller/GroupViewController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="138">
+          <caret line="98" selection-start-line="98" selection-end-line="98" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/hbvhuwe/musicshop/controller/DiskViewController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="2394">
+          <caret line="135" column="13" selection-start-line="135" selection-start-column="13" selection-end-line="135" selection-end-column="13" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/hbvhuwe/musicshop/controller/CompositionViewController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="198">
+          <caret line="11" column="47" selection-start-line="11" selection-start-column="47" selection-end-line="11" selection-end-column="47" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/hbvhuwe/musicshop/model/Composition.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="18">
+          <caret line="16" column="29" selection-start-line="16" selection-start-column="29" selection-end-line="16" selection-end-column="29" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#1141#1142#0" expanded="true" />
+            <element signature="e#1181#1182#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/hbvhuwe/musicshop/Main.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="450">
-          <caret line="34" column="20" lean-forward="true" selection-start-line="34" selection-start-column="20" selection-end-line="34" selection-end-column="20" />
+        <state relative-caret-position="-342">
+          <caret line="25" column="20" selection-start-line="25" selection-start-column="20" selection-end-line="25" selection-end-column="20" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/hbvhuwe/musicshop/providers/JpaProvider.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="126">
+          <caret line="17" column="4" selection-start-line="17" selection-start-column="4" selection-end-line="17" selection-end-column="4" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/hbvhuwe/musicshop/providers/JdbcProvider.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="126">
+          <caret line="14" column="4" selection-start-line="14" selection-start-column="4" selection-end-line="14" selection-end-column="4" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/java/com/hbvhuwe/musicshop/providers/TestJdbc.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="401">
+          <caret line="49" column="26" lean-forward="true" selection-start-line="49" selection-start-column="26" selection-end-line="49" selection-end-column="26" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#495#496#0" expanded="true" />
+            <element signature="e#554#555#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/java/com/hbvhuwe/musicshop/providers/TestJpa.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="545">
+          <caret line="46" column="26" selection-start-line="46" selection-start-column="26" selection-end-line="46" selection-end-column="26" />
+          <folding>
+            <element signature="e#193#194#0" expanded="true" />
+            <element signature="e#214#215#0" expanded="true" />
+            <element signature="e#791#792#0" expanded="true" />
+            <element signature="e#817#818#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>

@@ -10,7 +10,6 @@ import javafx.scene.control.TableView;
 import javafx.scene.control.TextArea;
 import javafx.scene.control.TextField;
 import com.hbvhuwe.musicshop.model.Disk;
-import com.hbvhuwe.musicshop.network.MusicShopService;
 import javafx.scene.control.cell.PropertyValueFactory;
 
 public class DiskViewController extends Controller {
@@ -66,7 +65,7 @@ public class DiskViewController extends Controller {
     void selectAll() {
         try {
             ObservableList<Disk> disks = FXCollections.observableArrayList(provider.selectAll());
-           populateDisks(disks);
+            populateDisks(disks);
         } catch (Exception e) {
             resultArea.setText("Error while getting information about disks:\n" + e.getMessage());
         }
@@ -105,11 +104,13 @@ public class DiskViewController extends Controller {
     @Override
     void add() {
         try {
-            MusicShopService.getApi().addDisk(nameField.getText(),
-                    Integer.valueOf(amountField.getText()),
-                    presentDateField.getText(),
-                    Double.valueOf(priceField.getText()),
-                    Integer.valueOf(groupIdField.getText()));
+            Disk disk = new Disk();
+            disk.setName(nameField.getText());
+            disk.setAmount(Integer.valueOf(amountField.getText()));
+            disk.setPresentDate(presentDateField.getText());
+            disk.setPrice(Double.valueOf(priceField.getText()));
+            disk.setGroupId(Integer.valueOf(groupIdField.getText()));
+            provider.add(disk);
             resultArea.setText("Successfully add a new disk");
         } catch (Exception e) {
             resultArea.setText("Error while adding: " + e.getMessage());
@@ -122,6 +123,7 @@ public class DiskViewController extends Controller {
             Disk mask = new Disk();
             mask.setAmount(Integer.parseInt(newAmountField.getText()));
             mask.setPrice(Double.parseDouble(newPriceField.getText()));
+            provider.updateWith(mask);
             resultArea.setText("Information successfully updated for: " + diskIdField.getText());
         } catch (Exception e) {
             resultArea.setText("Error while updating information: " + e.getMessage());

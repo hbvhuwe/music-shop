@@ -10,7 +10,6 @@ import javafx.scene.control.TableView;
 import javafx.scene.control.TextArea;
 import javafx.scene.control.TextField;
 import com.hbvhuwe.musicshop.model.Composition;
-import com.hbvhuwe.musicshop.network.MusicShopService;
 import javafx.scene.control.cell.PropertyValueFactory;
 
 public class CompositionViewController extends Controller {
@@ -100,10 +99,12 @@ public class CompositionViewController extends Controller {
     @Override
     void add() {
         try {
-            MusicShopService.getApi().addComposition(nameField.getText(),
-                    durationField.getText(),
-                    presentDateField.getText(),
-                    Integer.valueOf(diskIdField.getText()));
+            Composition composition = new Composition();
+            composition.setName(nameField.getText());
+            composition.setDuration(durationField.getText());
+            composition.setPresentDate(presentDateField.getText());
+            composition.setDiskId(Integer.valueOf(diskIdField.getText()));
+            provider.add(composition);
             resultArea.setText("Successfully add a new composition");
         } catch (Exception e) {
             resultArea.setText("Error while adding: " + e.getMessage());
@@ -116,6 +117,7 @@ public class CompositionViewController extends Controller {
             Composition composition = new Composition();
             composition.setDuration(newDurationField.getText());
             composition.setName(newNameField.getText());
+            provider.updateWith(composition);
             resultArea.setText("Information successfully updated for: " + compositionIdField.getText());
         } catch (Exception e) {
             resultArea.setText("Error while updating information: " + e.getMessage());

@@ -14,8 +14,8 @@ import java.util.List;
 
 public class JpaProvider<T> implements DataProvider<T> {
     private Class<T> tClass;
-    private static SessionFactory sessionFactory = null;
-    private static Session session = null;
+    static SessionFactory sessionFactory = null;
+    static Session session = null;
 
     public JpaProvider(Class<T> tClass) {
         this.tClass = tClass;

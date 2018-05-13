@@ -12,7 +12,7 @@ import java.util.List;
 public class JdbcProvider<T extends Model> implements DataProvider<T> {
     private static Connection connection;
     private static Statement statement;
-    private static boolean isConnected = false;
+    static boolean isConnected = false;
     private Class<T> tClass;
 
     public JdbcProvider(Class<T> tClass) {
