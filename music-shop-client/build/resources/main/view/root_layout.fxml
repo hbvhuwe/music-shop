@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Menu?>
+<?import javafx.scene.control.MenuBar?>
+<?import javafx.scene.control.MenuItem?>
+<?import javafx.scene.layout.BorderPane?>
+
+<BorderPane prefHeight="400.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/8.0.121" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.hbvhuwe.musicshop.controller.RootLayoutController">
+    <top>
+        <MenuBar BorderPane.alignment="CENTER">
+            <Menu mnemonicParsing="false" text="File">
+                <MenuItem mnemonicParsing="false" onAction="#onGroupView" style="-fx-graphic: url(&quot;images/ic_group_black_18dp_1x.png&quot;);" text="Groups page" />
+                <MenuItem mnemonicParsing="false" onAction="#onDiskView" style="-fx-graphic: url(&quot;images/ic_album_black_18dp_1x.png&quot;);" text="Disks page" />
+                <MenuItem mnemonicParsing="false" onAction="#onCompositionView" style="-fx-graphic: url(&quot;images/ic_music_note_black_18dp_1x.png&quot;);" text="Compositions page" />
+                <MenuItem mnemonicParsing="false" onAction="#onExit" text="Exit" />
+            </Menu>
+            <Menu mnemonicParsing="false" text="Help">
+                <MenuItem mnemonicParsing="false" onAction="#onAbout" text="About" />
+            </Menu>
+        </MenuBar>
+    </top>
+</BorderPane>

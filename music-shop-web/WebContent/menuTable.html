@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>menuTable</title>
+</head>
+<body>
+	<form action="SelectTable" target="forTable" name="selectTable"
+		method="POST">
+		<b>Виберіть таблицю</b>
+		<table>
+			<tr>
+				<td align="left"><input type="radio" name="tableName"
+					value="Group"> Group</td>
+			</tr>
+			<tr>
+				<td align="left"><input type="radio" name="tableName"
+					value="Disk"> Disk</td>
+			<tr>
+				<td align="left"><input type="radio" name="tableName"
+					value="Composition"> Composition</td>
+			</tr>
+		</table>
+		<input type="submit" value="Завантажити">
+		<p></p>
+	</form>
+
+	<form action="SelectQuery" target="forTable" name="selectQuery"
+		method="POST">
+		<b>Вибір запиту до бази</b> <select size="1" name="query">
+			<option value="name">Всі альбоми групи Imagine Dragons
+			<option value="songs">Всі пісні з альбому AM
+		</select>
+		<p>
+			<input type="submit" value="Виконати запит">
+		<p>
+	</form>
+</body>
+</html>
