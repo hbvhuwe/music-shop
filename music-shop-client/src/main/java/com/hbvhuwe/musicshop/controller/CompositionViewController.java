@@ -1,7 +1,7 @@
 package com.hbvhuwe.musicshop.controller;
 
 import com.hbvhuwe.musicshop.providers.DataProvider;
-import com.hbvhuwe.musicshop.providers.JpaProvider;
+import com.hbvhuwe.musicshop.providers.Providers;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
@@ -44,7 +44,7 @@ public class CompositionViewController extends Controller {
     @FXML
     private TableColumn<Composition, String> durationColumn;
 
-    private DataProvider<Composition> provider = new JpaProvider<>(Composition.class);
+    private DataProvider<Composition> provider = DataProvider.of(Providers.JPA, Composition.class);
 
     @FXML
     private void initialize() {

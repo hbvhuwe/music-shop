@@ -1,7 +1,7 @@
 package com.hbvhuwe.musicshop.controller;
 
 import com.hbvhuwe.musicshop.providers.DataProvider;
-import com.hbvhuwe.musicshop.providers.JpaProvider;
+import com.hbvhuwe.musicshop.providers.Providers;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
@@ -48,7 +48,7 @@ public class DiskViewController extends Controller {
     @FXML
     private TableColumn<Disk, Double> priceColumn;
 
-    private DataProvider<Disk> provider = new JpaProvider<>(Disk.class);
+    private DataProvider<Disk> provider = DataProvider.of(Providers.JDBC, Disk.class);
 
     @FXML
     private void initialize() {

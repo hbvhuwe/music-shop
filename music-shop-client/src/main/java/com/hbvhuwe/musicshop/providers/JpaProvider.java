@@ -12,12 +12,12 @@ import org.hibernate.query.Query;
 
 import java.util.List;
 
-public class JpaProvider<T> implements DataProvider<T> {
-    private Class<T> tClass;
+public class JpaProvider<T extends Model> implements DataProvider<T> {
+    private final Class<T> tClass;
     static SessionFactory sessionFactory = null;
-    static Session session = null;
+    private static Session session = null;
 
-    public JpaProvider(Class<T> tClass) {
+    JpaProvider(Class<T> tClass) {
         this.tClass = tClass;
         getSessionFactory();
     }
@@ -91,7 +91,7 @@ public class JpaProvider<T> implements DataProvider<T> {
         throw new Exception("Not implemented");
     }
 
-    public static void close() {
+    static void close() {
         if (sessionFactory != null && session != null) {
             if (session.isOpen()) {
                 session.close();

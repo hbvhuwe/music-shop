@@ -1,8 +1,7 @@
 package com.hbvhuwe.musicshop.controller;
 import com.hbvhuwe.musicshop.model.Group;
 import com.hbvhuwe.musicshop.providers.DataProvider;
-import com.hbvhuwe.musicshop.providers.JdbcProvider;
-import com.hbvhuwe.musicshop.providers.JpaProvider;
+import com.hbvhuwe.musicshop.providers.Providers;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
@@ -11,9 +10,6 @@ import javafx.scene.control.TableView;
 import javafx.scene.control.TextArea;
 import javafx.scene.control.TextField;
 import javafx.scene.control.cell.PropertyValueFactory;
-import java.io.IOException;
-import java.sql.SQLException;
-import java.util.Objects;
 
 public class GroupViewController extends Controller {
     @FXML
@@ -41,7 +37,7 @@ public class GroupViewController extends Controller {
     @FXML
     private TableColumn<Group, String> styleColumn;
 
-    private DataProvider<Group> provider = new JpaProvider<>(Group.class);
+    private DataProvider<Group> provider = DataProvider.of(Providers.JDBC, Group.class);
 
     @FXML
     private void initialize() {

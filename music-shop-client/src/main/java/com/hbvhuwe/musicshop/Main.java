@@ -1,7 +1,6 @@
 package com.hbvhuwe.musicshop;
 
-import com.hbvhuwe.musicshop.providers.JdbcProvider;
-import com.hbvhuwe.musicshop.providers.JpaProvider;
+import com.hbvhuwe.musicshop.providers.DataProvider;
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
@@ -29,12 +28,7 @@ public final class Main extends Application {
 
     @Override
     public void stop() {
-        try {
-            JdbcProvider.close();
-            JpaProvider.close();
-        } catch (Exception e) {
-            e.printStackTrace();
-        }
+        DataProvider.closeAllOpened();
         primaryStage.close();
     }
 

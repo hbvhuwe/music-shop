@@ -13,9 +13,9 @@ public class JdbcProvider<T extends Model> implements DataProvider<T> {
     private static Connection connection;
     private static Statement statement;
     static boolean isConnected = false;
-    private Class<T> tClass;
+    private final Class<T> tClass;
 
-    public JdbcProvider(Class<T> tClass) {
+    JdbcProvider(Class<T> tClass) {
         this.tClass = tClass;
         if (!isConnected) {
             try {
@@ -105,10 +105,14 @@ public class JdbcProvider<T extends Model> implements DataProvider<T> {
     }
 
 
-    public static void close() throws Exception {
+    static void close() {
         if (isConnected) {
-            connection.close();
-            statement.close();
+            try {
+                connection.close();
+                statement.close();
+            } catch (SQLException e) {
+                e.printStackTrace();
+            }
             System.out.println("Closing jdbc connection");
         }
     }

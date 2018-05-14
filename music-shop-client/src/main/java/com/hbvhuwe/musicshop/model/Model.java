@@ -1,6 +1,6 @@
 package com.hbvhuwe.musicshop.model;
 
 public interface Model {
-    public int getId();
-    public void setId(int id);
+    int getId();
+    void setId(int id);
 }
