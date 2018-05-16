@@ -4,17 +4,19 @@ import okhttp3.OkHttpClient;
 import retrofit2.Retrofit;
 import retrofit2.converter.gson.GsonConverterFactory;
 
+
 public class MusicShopService {
     private static final OkHttpClient.Builder httpClientBuilder = new OkHttpClient.Builder();
     private static MusicShopApi api = null;
 
     private static void createClient() {
         Retrofit retrofit = new Retrofit.Builder()
-                .baseUrl("http://localhost:8080/")
+                .baseUrl("http://localhost:8080/music-shop-api/rest/")
                 .addConverterFactory(GsonConverterFactory.create())
                 .client(httpClientBuilder.build())
                 .build();
         api = retrofit.create(MusicShopApi.class);
+        System.out.println("Created network client");
     }
 
     public static MusicShopApi getApi() {

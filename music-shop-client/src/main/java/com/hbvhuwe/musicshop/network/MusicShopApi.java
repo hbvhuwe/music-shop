@@ -1,52 +1,60 @@
 package com.hbvhuwe.musicshop.network;
 
-import okhttp3.ResponseBody;
+import com.hbvhuwe.musicshop.model.Composition;
+import com.hbvhuwe.musicshop.model.Disk;
+import com.hbvhuwe.musicshop.model.Group;
 import retrofit2.Call;
 import retrofit2.http.*;
 
+import java.util.List;
+
+/**
+ * REST music shop api interface<br>
+ * used in NetProvider implementation of DataProvider
+ */
 public interface MusicShopApi {
-    @GET("/music-shop-api/rest/groups/all")
-    Call<ResponseBody> getGroups();
+    @GET("groups/all")
+    Call<List<Group>> getGroups();
 
-    @GET("/music-shop-api/rest/groups/{id}")
-    Call<ResponseBody> getGroup(@Path("id") int id);
+    @GET("groups/{id}")
+    Call<Group> getGroup(@Path("id") int id);
 
-    @GET("/music-shop-api/rest/disks/all")
-    Call<ResponseBody> getDisks();
+    @GET("disks/all")
+    Call<List<Disk>> getDisks();
 
-    @GET("/music-shop-api/rest/disks/{id}")
-    Call<ResponseBody> getDisk(@Path("id") int id);
+    @GET("disks/{id}")
+    Call<Disk> getDisk(@Path("id") int id);
 
-    @GET("/music-shop-api/rest/compositions/all")
-    Call<ResponseBody> getCompositions();
+    @GET("compositions/all")
+    Call<List<Composition>> getCompositions();
 
-    @GET("/music-shop-api/rest/compositions/{id}")
-    Call<ResponseBody> getComposition(@Path("id") int id);
+    @GET("compositions/{id}")
+    Call<Composition> getComposition(@Path("id") int id);
 
-    @PUT("/music-shop-api/rest/groups/add")
+    @PUT("groups/add")
     Call<Void> addGroup(@Query("Name") String name,
                         @Query("Musician") String musician,
                         @Query("Style") String style);
 
-    @PUT("/music-shop-api/rest/disks/add")
+    @PUT("disks/add")
     Call<Void> addDisk(@Query("Name") String name,
                        @Query("Amount") int amount,
                        @Query("PresentDate") String presentDate,
                        @Query("Price") double price,
                        @Query("GroupID") int groupId);
 
-    @PUT("/music-shop-api/rest/compositions/add")
+    @PUT("compositions/add")
     Call<Void> addComposition(@Query("Name") String name,
                               @Query("Duration") String duration,
                               @Query("PresentDate") String presentDate,
                               @Query("DiskID") int diskId);
 
-    @DELETE("/music-shop-api/rest/groups/delete/{id}")
+    @DELETE("groups/delete/{id}")
     Call<Void> deleteGroup(@Path("id") int id);
 
-    @DELETE("/music-shop-api/rest/disks/delete/{id}")
+    @DELETE("disks/delete/{id}")
     Call<Void> deleteDisk(@Path("id") int id);
 
-    @DELETE("/music-shop-api/rest/compositions/delete/{id}")
+    @DELETE("compositions/delete/{id}")
     Call<Void> deleteComposition(@Path("id") int id);
 }

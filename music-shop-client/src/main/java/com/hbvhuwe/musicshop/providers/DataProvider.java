@@ -59,7 +59,7 @@ public interface DataProvider<T extends Model> {
         } else if (type == Providers.JPA) {
             provider = new JpaProvider<>(tClass);
         } else if (type == Providers.NET) {
-            provider = new NetProvider<>();
+            provider = new NetProvider<>(tClass);
         }
         return provider;
     }

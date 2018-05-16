@@ -75,9 +75,10 @@ public class JpaProvider<T extends Model> implements DataProvider<T> {
     public void delete(int id) throws Exception {
         Transaction transaction = getSession().beginTransaction();
         try {
-            Model object = (Model) tClass.getConstructors()[0].newInstance();
-            object.setId(id);
-            getSession().delete(object);
+            Object persistentInstance = session.load(tClass, id);
+            if (persistentInstance != null) {
+                session.delete(persistentInstance);
+            }
             transaction.commit();
         } catch (Exception e) {
             transaction.rollback();

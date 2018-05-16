@@ -37,7 +37,7 @@ public class GroupViewController extends Controller {
     @FXML
     private TableColumn<Group, String> styleColumn;
 
-    private DataProvider<Group> provider = DataProvider.of(Providers.JDBC, Group.class);
+    private DataProvider<Group> provider = DataProvider.of(Providers.NET, Group.class);
 
     @FXML
     private void initialize() {
