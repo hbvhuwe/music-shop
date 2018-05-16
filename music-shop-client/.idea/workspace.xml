@@ -2,14 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="bb23319f-53a8-4160-a499-8fa2b8ebba19" name="Default" comment="">
-      <change afterPath="$PROJECT_DIR$/src/test/java/com/hbvhuwe/musicshop/providers/TestNet.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/hbvhuwe/musicshop/controller/GroupViewController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/hbvhuwe/musicshop/controller/GroupViewController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/hbvhuwe/musicshop/network/MusicShopApi.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/hbvhuwe/musicshop/network/MusicShopApi.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/hbvhuwe/musicshop/network/MusicShopService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/hbvhuwe/musicshop/network/MusicShopService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/hbvhuwe/musicshop/providers/DataProvider.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/hbvhuwe/musicshop/providers/DataProvider.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/hbvhuwe/musicshop/providers/JpaProvider.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/hbvhuwe/musicshop/providers/JpaProvider.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/hbvhuwe/musicshop/providers/NetProvider.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/hbvhuwe/musicshop/providers/NetProvider.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/hbvhuwe/musicshop/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/hbvhuwe/musicshop/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/hbvhuwe/musicshop/controller/RootLayoutController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/hbvhuwe/musicshop/controller/RootLayoutController.java" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/.gradle/" />
@@ -56,6 +51,12 @@
                 <item name="Tasks" type="e4a08cd1:TasksNode" />
                 <item name="build" type="c8890929:TasksNode$1" />
               </path>
+              <path>
+                <item name="" type="6a2764b6:ExternalProjectsStructure$RootNode" />
+                <item name="music-shop-client" type="f1a62948:ProjectNode" />
+                <item name="Tasks" type="e4a08cd1:TasksNode" />
+                <item name="distribution" type="c8890929:TasksNode$1" />
+              </path>
             </expand>
             <select />
           </tree_state>
@@ -65,11 +66,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="Main.java" pinned="false" current-in-tab="false">
+      <file leaf-file-name="Main.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/java/com/hbvhuwe/musicshop/Main.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="18">
-              <caret line="17" selection-start-line="17" selection-end-line="17" />
+            <state relative-caret-position="197">
+              <caret line="22" column="31" selection-start-line="22" selection-start-column="31" selection-end-line="22" selection-end-column="31" />
             </state>
           </provider>
         </entry>
@@ -83,38 +84,10 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="NetProvider.java" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/hbvhuwe/musicshop/providers/NetProvider.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-1759">
-              <caret line="15" lean-forward="true" selection-start-line="15" selection-end-line="15" />
-              <folding>
-                <element signature="imports" expanded="true" />
-                <element signature="e#371#372#0" expanded="true" />
-                <element signature="e#390#391#0" expanded="true" />
-                <element signature="e#677#707#0" expanded="true" />
-                <element signature="e#1794#1824#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="MusicShopApi.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/hbvhuwe/musicshop/network/MusicShopApi.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="216">
-              <caret line="12" column="53" selection-start-line="12" selection-start-column="53" selection-end-line="12" selection-end-column="53" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file leaf-file-name="CompositionViewController.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/com/hbvhuwe/musicshop/controller/CompositionViewController.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="648">
+            <state relative-caret-position="18">
               <caret line="46" column="49" selection-start-line="46" selection-start-column="49" selection-end-line="46" selection-end-column="49" />
               <folding>
                 <element signature="imports" expanded="true" />
@@ -123,17 +96,14 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Composition.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/hbvhuwe/musicshop/model/Composition.java">
+      <file leaf-file-name="RootLayoutController.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/hbvhuwe/musicshop/controller/RootLayoutController.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="234">
-              <caret line="19" column="31" selection-start-line="19" selection-start-column="31" selection-end-line="19" selection-end-column="31" />
+            <state relative-caret-position="684">
+              <caret line="46" column="5" selection-start-line="46" selection-start-column="5" selection-end-line="46" selection-end-column="5" />
               <folding>
-                <element signature="imports" expanded="true" />
-                <element signature="e#876#877#0" expanded="true" />
-                <element signature="e#917#918#0" expanded="true" />
-                <element signature="e#1141#1142#0" expanded="true" />
-                <element signature="e#1181#1182#0" expanded="true" />
+                <element signature="e#247#248#0" expanded="true" />
+                <element signature="e#284#285#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -522,7 +492,6 @@
         <option value="$PROJECT_DIR$/src/test/java/com/hbvhuwe/musicshop/providers/TestJdbc.java" />
         <option value="$PROJECT_DIR$/src/test/java/com/hbvhuwe/musicshop/providers/TestJpa.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/hbvhuwe/musicshop/providers/Providers.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/hbvhuwe/musicshop/Main.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/hbvhuwe/musicshop/controller/CompositionViewController.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/hbvhuwe/musicshop/controller/DiskViewController.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/hbvhuwe/musicshop/model/Model.java" />
@@ -534,6 +503,8 @@
         <option value="$PROJECT_DIR$/src/main/java/com/hbvhuwe/musicshop/providers/NetProvider.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/hbvhuwe/musicshop/network/MusicShopService.java" />
         <option value="$PROJECT_DIR$/src/test/java/com/hbvhuwe/musicshop/providers/TestNet.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/hbvhuwe/musicshop/controller/RootLayoutController.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/hbvhuwe/musicshop/Main.java" />
       </list>
     </option>
   </component>
@@ -684,7 +655,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Gradle.music-shop-client [run]">
+  <component name="RunManager" selected="Gradle.music-shop-client [installDist]">
     <configuration default="true" type="Applet" factoryName="Applet">
       <option name="POLICY_FILE" value="$APPLICATION_HOME_DIR$/bin/appletviewer.policy" />
     </configuration>
@@ -702,7 +673,7 @@
     <configuration default="true" type="Application" factoryName="Application">
       <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
     </configuration>
-    <configuration name="music-shop-client [build]" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+    <configuration name="music-shop-client [installDist]" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
       <ExternalSystemSettings>
         <option name="executionName" />
         <option name="externalProjectPath" value="$PROJECT_DIR$" />
@@ -713,7 +684,7 @@
         </option>
         <option name="taskNames">
           <list>
-            <option value="build" />
+            <option value="installDist" />
           </list>
         </option>
         <option name="vmOptions" />
@@ -736,6 +707,23 @@
         <option name="vmOptions" />
       </ExternalSystemSettings>
     </configuration>
+    <configuration name="music-shop-client [javadoc]" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+      <ExternalSystemSettings>
+        <option name="executionName" />
+        <option name="externalProjectPath" value="$PROJECT_DIR$" />
+        <option name="externalSystemIdString" value="GRADLE" />
+        <option name="scriptParameters" />
+        <option name="taskDescriptions">
+          <list />
+        </option>
+        <option name="taskNames">
+          <list>
+            <option value="javadoc" />
+          </list>
+        </option>
+        <option name="vmOptions" />
+      </ExternalSystemSettings>
+    </configuration>
     <configuration name="music-shop-client [run]" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
       <ExternalSystemSettings>
         <option name="executionName" />
@@ -752,23 +740,6 @@
         </option>
         <option name="vmOptions" />
       </ExternalSystemSettings>
-    </configuration>
-    <configuration name="All in music-shop-client_test" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="music-shop-client_test" />
-      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
-      <option name="ALTERNATIVE_JRE_PATH" />
-      <option name="PACKAGE_NAME" value="" />
-      <option name="MAIN_CLASS_NAME" />
-      <option name="METHOD_NAME" />
-      <option name="TEST_OBJECT" value="package" />
-      <option name="VM_PARAMETERS" value="-ea" />
-      <option name="PARAMETERS" />
-      <option name="WORKING_DIRECTORY" value="%MODULE_WORKING_DIR%" />
-      <option name="PASS_PARENT_ENVS" value="true" />
-      <option name="TEST_SEARCH_SCOPE">
-        <value defaultName="singleModule" />
-      </option>
-      <patterns />
     </configuration>
     <configuration default="true" type="JUnit" factoryName="JUnit">
       <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
@@ -819,19 +790,19 @@
       <option name="VM_PARAMETERS" value="-Xmx512m -Xms256m -XX:MaxPermSize=250m -ea" />
     </configuration>
     <list>
-      <item itemvalue="Gradle.music-shop-client [build]" />
       <item itemvalue="Gradle.music-shop-client [run]" />
-      <item itemvalue="JUnit.All in music-shop-client_test" />
       <item itemvalue="Application.Main" />
       <item itemvalue="Gradle.music-shop-client [jar]" />
+      <item itemvalue="Gradle.music-shop-client [javadoc]" />
+      <item itemvalue="Gradle.music-shop-client [installDist]" />
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="Gradle.music-shop-client [installDist]" />
+        <item itemvalue="Gradle.music-shop-client [javadoc]" />
+        <item itemvalue="Gradle.music-shop-client [run]" />
         <item itemvalue="Gradle.music-shop-client [jar]" />
         <item itemvalue="Application.Main" />
-        <item itemvalue="JUnit.All in music-shop-client_test" />
-        <item itemvalue="Gradle.music-shop-client [run]" />
-        <item itemvalue="Gradle.music-shop-client [build]" />
       </list>
     </recent_temporary>
   </component>
@@ -891,7 +862,7 @@
       <window_info anchor="right" id="Capture Analysis" order="3" />
       <window_info anchor="bottom" id="Event Log" order="7" sideWeight="0.50037795" side_tool="true" weight="0.328594" />
       <window_info anchor="right" id="Maven Projects" order="3" />
-      <window_info active="true" anchor="bottom" id="Run" order="2" sideWeight="0.49962208" visible="true" weight="0.328594" />
+      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.49962208" weight="0.328594" />
       <window_info anchor="bottom" id="Version Control" order="7" />
       <window_info anchor="bottom" id="Terminal" order="7" />
       <window_info id="Capture Tool" order="2" />
@@ -1169,13 +1140,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/hbvhuwe/musicshop/controller/RootLayoutController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="72">
-          <caret line="5" column="13" selection-start-line="5" selection-start-column="13" selection-end-line="5" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/test/java/com/hbvhuwe/musicshop/providers/TestJdbc.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="401">
@@ -1214,30 +1178,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/hbvhuwe/musicshop/model/Composition.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="234">
-          <caret line="19" column="31" selection-start-line="19" selection-start-column="31" selection-end-line="19" selection-end-column="31" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#876#877#0" expanded="true" />
-            <element signature="e#917#918#0" expanded="true" />
-            <element signature="e#1141#1142#0" expanded="true" />
-            <element signature="e#1181#1182#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/hbvhuwe/musicshop/controller/CompositionViewController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="648">
-          <caret line="46" column="49" selection-start-line="46" selection-start-column="49" selection-end-line="46" selection-end-column="49" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/hbvhuwe/musicshop/model/Model.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="72">
@@ -1256,13 +1196,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="126">
           <caret line="79" column="49" selection-start-line="79" selection-start-column="49" selection-end-line="79" selection-end-column="49" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/hbvhuwe/musicshop/Main.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="18">
-          <caret line="17" selection-start-line="17" selection-end-line="17" />
         </state>
       </provider>
     </entry>
@@ -1300,13 +1233,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/hbvhuwe/musicshop/network/MusicShopService.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <caret column="38" lean-forward="true" selection-start-column="38" selection-end-column="38" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/test/java/com/hbvhuwe/musicshop/providers/TestNet.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="324">
@@ -1328,6 +1254,55 @@
             <element signature="e#677#707#0" expanded="true" />
             <element signature="e#1794#1824#0" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/hbvhuwe/musicshop/network/MusicShopService.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <caret column="38" lean-forward="true" selection-start-column="38" selection-end-column="38" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/hbvhuwe/musicshop/model/Composition.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="18">
+          <caret line="19" column="31" selection-start-line="19" selection-start-column="31" selection-end-line="19" selection-end-column="31" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#876#877#0" expanded="true" />
+            <element signature="e#917#918#0" expanded="true" />
+            <element signature="e#1141#1142#0" expanded="true" />
+            <element signature="e#1181#1182#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/hbvhuwe/musicshop/controller/CompositionViewController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="18">
+          <caret line="46" column="49" selection-start-line="46" selection-start-column="49" selection-end-line="46" selection-end-column="49" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/hbvhuwe/musicshop/controller/RootLayoutController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="684">
+          <caret line="46" column="5" selection-start-line="46" selection-start-column="5" selection-end-line="46" selection-end-column="5" />
+          <folding>
+            <element signature="e#247#248#0" expanded="true" />
+            <element signature="e#284#285#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/hbvhuwe/musicshop/Main.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="197">
+          <caret line="22" column="31" selection-start-line="22" selection-start-column="31" selection-end-line="22" selection-end-column="31" />
         </state>
       </provider>
     </entry>

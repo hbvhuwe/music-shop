@@ -1,5 +1,6 @@
 package com.hbvhuwe.musicshop;
 
+import com.hbvhuwe.musicshop.controller.RootLayoutController;
 import com.hbvhuwe.musicshop.providers.DataProvider;
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
@@ -96,7 +97,7 @@ public final class Main extends Application {
         Scene scene = new Scene(rootLayout);
         primaryStage.setScene(scene);
 
-        Controller controller = loader.getController();
+        RootLayoutController controller = loader.getController();
         controller.setMainApp(this);
         primaryStage.show();
     }

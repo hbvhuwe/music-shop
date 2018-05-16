@@ -1,9 +1,16 @@
 package com.hbvhuwe.musicshop.controller;
 
+import com.hbvhuwe.musicshop.Main;
 import javafx.fxml.FXML;
 import javafx.scene.control.Alert;
 
-public class RootLayoutController extends Controller {
+public class RootLayoutController {
+    private Main mainApp;
+
+    public void setMainApp(Main mainApp) {
+        this.mainApp = mainApp;
+    }
+
     @FXML
     private void onExit() {
         try {
@@ -37,25 +44,5 @@ public class RootLayoutController extends Controller {
                 "Version 1.0\n" +
                 "Author: Vladimir Chernonog");
         about.showAndWait();
-    }
-
-    @Override
-    void selectSingle() {
-
-    }
-
-    @Override
-    void selectAll() {
-
-    }
-
-    @Override
-    void add() {
-
-    }
-
-    @Override
-    void delete() {
-
     }
 }
