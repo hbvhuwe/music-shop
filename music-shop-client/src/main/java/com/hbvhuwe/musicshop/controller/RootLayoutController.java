@@ -4,9 +4,10 @@ import com.hbvhuwe.musicshop.Main;
 import javafx.fxml.FXML;
 import javafx.scene.control.Alert;
 
-public class RootLayoutController {
+public class RootLayoutController implements Controller {
     private Main mainApp;
 
+    @Override
     public void setMainApp(Main mainApp) {
         this.mainApp = mainApp;
     }

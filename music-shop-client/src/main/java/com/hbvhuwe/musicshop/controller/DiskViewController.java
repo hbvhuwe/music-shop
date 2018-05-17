@@ -1,5 +1,6 @@
 package com.hbvhuwe.musicshop.controller;
 
+import com.hbvhuwe.musicshop.model.Disk;
 import com.hbvhuwe.musicshop.providers.DataProvider;
 import com.hbvhuwe.musicshop.providers.Providers;
 import javafx.collections.FXCollections;
@@ -9,10 +10,9 @@ import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.TextArea;
 import javafx.scene.control.TextField;
-import com.hbvhuwe.musicshop.model.Disk;
 import javafx.scene.control.cell.PropertyValueFactory;
 
-public class DiskViewController extends Controller {
+public class DiskViewController extends BaseController<Disk> {
     @FXML
     private TextField groupIdField;
     @FXML
@@ -48,10 +48,11 @@ public class DiskViewController extends Controller {
     @FXML
     private TableColumn<Disk, Double> priceColumn;
 
-    private DataProvider<Disk> provider = DataProvider.of(Providers.JDBC, Disk.class);
 
     @FXML
     private void initialize() {
+        provider = DataProvider.of(Providers.JDBC, Disk.class);
+
         diskIdColumn.setCellValueFactory(new PropertyValueFactory<>("diskId"));
         groupIdColumn.setCellValueFactory(new PropertyValueFactory<>("groupId"));
         nameColumn.setCellValueFactory(new PropertyValueFactory<>("name"));
@@ -62,7 +63,7 @@ public class DiskViewController extends Controller {
 
     @FXML
     @Override
-    void selectAll() {
+    void onSelectAll() {
         try {
             ObservableList<Disk> disks = FXCollections.observableArrayList(provider.selectAll());
             populateDisks(disks);
@@ -77,7 +78,7 @@ public class DiskViewController extends Controller {
 
     @FXML
     @Override
-    void selectSingle() {
+    void onSelectSingle() {
         try {
             Disk disk = provider.select(Integer.parseInt(diskIdField.getText()));
             populateAndShowDisk(disk);
@@ -102,7 +103,7 @@ public class DiskViewController extends Controller {
 
     @FXML
     @Override
-    void add() {
+    void onAdd() {
         try {
             Disk disk = new Disk();
             disk.setName(nameField.getText());
@@ -111,7 +112,7 @@ public class DiskViewController extends Controller {
             disk.setPrice(Double.valueOf(priceField.getText()));
             disk.setGroupId(Integer.valueOf(groupIdField.getText()));
             provider.add(disk);
-            resultArea.setText("Successfully add a new disk");
+            resultArea.setText("Successfully onAdd a new disk");
         } catch (Exception e) {
             resultArea.setText("Error while adding: " + e.getMessage());
         }
@@ -132,10 +133,10 @@ public class DiskViewController extends Controller {
 
     @FXML
     @Override
-    void delete() {
+    void onDelete() {
         try {
             provider.delete(Integer.parseInt(diskIdField.getText()));
-            resultArea.setText("Successfully delete disk with disk id: " + diskIdField.getText());
+            resultArea.setText("Successfully onDelete disk with disk id: " + diskIdField.getText());
         } catch (Exception e) {
             resultArea.setText("Error while deleting disk: " + e.getMessage());
         }

@@ -1,5 +1,6 @@
 package com.hbvhuwe.musicshop.controller;
 
+import com.hbvhuwe.musicshop.model.Composition;
 import com.hbvhuwe.musicshop.providers.DataProvider;
 import com.hbvhuwe.musicshop.providers.Providers;
 import javafx.collections.FXCollections;
@@ -9,10 +10,9 @@ import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.TextArea;
 import javafx.scene.control.TextField;
-import com.hbvhuwe.musicshop.model.Composition;
 import javafx.scene.control.cell.PropertyValueFactory;
 
-public class CompositionViewController extends Controller {
+public class CompositionViewController extends BaseController<Composition> {
     @FXML
     private TextField diskIdField;
     @FXML
@@ -44,10 +44,10 @@ public class CompositionViewController extends Controller {
     @FXML
     private TableColumn<Composition, String> durationColumn;
 
-    private DataProvider<Composition> provider = DataProvider.of(Providers.JPA, Composition.class);
-
     @FXML
     private void initialize() {
+        provider = DataProvider.of(Providers.JPA, Composition.class);
+
         diskIdColumn.setCellValueFactory(new PropertyValueFactory<>("diskId"));
         compositionIdColumn.setCellValueFactory(new PropertyValueFactory<>("compositionId"));
         nameColumn.setCellValueFactory(new PropertyValueFactory<>("name"));
@@ -58,7 +58,7 @@ public class CompositionViewController extends Controller {
 
     @FXML
     @Override
-    void selectAll() {
+    void onSelectAll() {
         try {
             ObservableList<Composition> compositions = FXCollections.observableArrayList(provider.selectAll());
             populateCompositions(compositions);
@@ -73,7 +73,7 @@ public class CompositionViewController extends Controller {
 
     @FXML
     @Override
-    void selectSingle() {
+    void onSelectSingle() {
         try {
            Composition composition = provider.select(Integer.parseInt(compositionIdField.getText()));
            populateAndShowComposition(composition);
@@ -97,7 +97,7 @@ public class CompositionViewController extends Controller {
 
     @FXML
     @Override
-    void add() {
+    void onAdd() {
         try {
             Composition composition = new Composition();
             composition.setName(nameField.getText());
@@ -105,7 +105,7 @@ public class CompositionViewController extends Controller {
             composition.setPresentDate(presentDateField.getText());
             composition.setDiskId(Integer.valueOf(diskIdField.getText()));
             provider.add(composition);
-            resultArea.setText("Successfully add a new composition");
+            resultArea.setText("Successfully onAdd a new composition");
         } catch (Exception e) {
             resultArea.setText("Error while adding: " + e.getMessage());
         }
@@ -126,10 +126,10 @@ public class CompositionViewController extends Controller {
 
     @FXML
     @Override
-    void delete() {
+    void onDelete() {
         try {
            provider.delete(Integer.parseInt(compositionIdField.getText()));
-           resultArea.setText("Successfully delete composition with composition id: " + compositionIdField.getText());
+           resultArea.setText("Successfully onDelete composition with composition id: " + compositionIdField.getText());
         } catch (Exception e) {
             resultArea.setText("Error while deleting composition: " + e.getMessage());
         }

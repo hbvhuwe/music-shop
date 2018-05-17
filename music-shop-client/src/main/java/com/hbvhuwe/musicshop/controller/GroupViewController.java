@@ -11,7 +11,7 @@ import javafx.scene.control.TextArea;
 import javafx.scene.control.TextField;
 import javafx.scene.control.cell.PropertyValueFactory;
 
-public class GroupViewController extends Controller {
+public class GroupViewController extends BaseController<Group> {
     @FXML
     private TextField nameField;
     @FXML
@@ -37,10 +37,11 @@ public class GroupViewController extends Controller {
     @FXML
     private TableColumn<Group, String> styleColumn;
 
-    private DataProvider<Group> provider = DataProvider.of(Providers.NET, Group.class);
 
     @FXML
     private void initialize() {
+        provider = DataProvider.of(Providers.NET, Group.class);
+
         groupIdColumn.setCellValueFactory(new PropertyValueFactory<>("groupId"));
         nameColumn.setCellValueFactory(new PropertyValueFactory<>("name"));
         musicianColumn.setCellValueFactory(new PropertyValueFactory<>("musician"));
@@ -49,7 +50,7 @@ public class GroupViewController extends Controller {
 
     @FXML
     @Override
-    void selectAll() {
+    void onSelectAll() {
         try {
             ObservableList<Group> groups = FXCollections.observableArrayList(provider.selectAll());
             populateGroups(groups);
@@ -64,7 +65,7 @@ public class GroupViewController extends Controller {
 
     @FXML
     @Override
-    void selectSingle() {
+    void onSelectSingle() {
         try {
             Group group = provider.select(Integer.parseInt(groupIdField.getText()));
             populateAndShowGroup(group);
@@ -88,14 +89,14 @@ public class GroupViewController extends Controller {
 
     @FXML
     @Override
-    void add() {
+    void onAdd() {
         try {
             Group group = new Group();
             group.setName(nameField.getText());
             group.setMusician(musicianField.getText());
             group.setStyle(styleField.getText());
             provider.add(group);
-            resultArea.setText("Successfully add a new group");
+            resultArea.setText("Successfully onAdd a new group");
         } catch (Exception e) {
             resultArea.setText("Error while adding: " + e.getMessage());
         }
@@ -116,10 +117,10 @@ public class GroupViewController extends Controller {
 
     @FXML
     @Override
-    void delete() {
+    void onDelete() {
         try {
             provider.delete(Integer.parseInt(groupIdField.getText()));
-            resultArea.setText("Successfully delete group with group id: " + groupIdField.getText());
+            resultArea.setText("Successfully onDelete group with group id: " + groupIdField.getText());
         } catch (Exception e) {
             resultArea.setText("Error while deleting group: " + e.getMessage());
         }

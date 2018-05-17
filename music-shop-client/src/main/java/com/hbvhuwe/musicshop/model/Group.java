@@ -2,7 +2,10 @@ package com.hbvhuwe.musicshop.model;
 
 import com.google.gson.annotations.SerializedName;
 
-import javax.persistence.*;
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.Id;
+import javax.persistence.Table;
 import java.io.Serializable;
 
 @Entity

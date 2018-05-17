@@ -11,8 +11,8 @@ import retrofit2.Response;
 import java.util.List;
 
 public class NetProvider<T extends Model> implements DataProvider<T> {
-    private Class<T> tClass;
-    private MusicShopApi api = MusicShopService.getApi();
+    private final Class<T> tClass;
+    private final MusicShopApi api = MusicShopService.getApi();
 
     NetProvider(Class<T> tClass) {
         this.tClass = tClass;

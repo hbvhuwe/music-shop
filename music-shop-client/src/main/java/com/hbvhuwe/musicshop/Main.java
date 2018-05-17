@@ -1,6 +1,6 @@
 package com.hbvhuwe.musicshop;
 
-import com.hbvhuwe.musicshop.controller.RootLayoutController;
+import com.hbvhuwe.musicshop.controller.Controller;
 import com.hbvhuwe.musicshop.providers.DataProvider;
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
@@ -9,7 +9,6 @@ import javafx.scene.image.Image;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.BorderPane;
 import javafx.stage.Stage;
-import com.hbvhuwe.musicshop.controller.Controller;
 
 import java.io.IOException;
 
@@ -97,7 +96,7 @@ public final class Main extends Application {
         Scene scene = new Scene(rootLayout);
         primaryStage.setScene(scene);
 
-        RootLayoutController controller = loader.getController();
+        Controller controller = loader.getController();
         controller.setMainApp(this);
         primaryStage.show();
     }
