@@ -7,4 +7,7 @@
  * in the user guide at https://docs.gradle.org/4.5.1/userguide/multi_project_builds.html
  */
 
-rootProject.name = 'music-shop-client'
+rootProject.name = 'music-shop'
+
+include 'music-shop-client'
+include 'music-shop-server'
