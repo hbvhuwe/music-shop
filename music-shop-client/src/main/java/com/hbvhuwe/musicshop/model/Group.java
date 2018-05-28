@@ -14,19 +14,15 @@ public class Group implements Serializable, Model {
 
     @Id
     @Column(name="GroupID")
-    @SerializedName("GroupID")
     private int groupId;
 
     @Column(name="Musician")
-    @SerializedName("Musician")
     private String musician;
 
     @Column(name="Name")
-    @SerializedName("Name")
     private String name;
 
     @Column(name="Style")
-    @SerializedName("Style")
     private String style;
 
     public Group() {

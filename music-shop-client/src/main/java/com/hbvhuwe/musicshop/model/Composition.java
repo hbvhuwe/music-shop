@@ -13,23 +13,18 @@ import java.io.Serializable;
 public class Composition implements Serializable, Model {
     @Id
     @Column(name="CompositionID")
-    @SerializedName("CompositionID")
     private int compositionId;
 
     @Column(name="Duration")
-    @SerializedName("Duration")
     private String duration;
 
     @Column(name="Name")
-    @SerializedName("Name")
     private String name;
 
     @Column(name="PresentDate")
-    @SerializedName("PresentDate")
     private String presentDate;
 
     @Column(name = "DiskID")
-    @SerializedName("DiskID")
     private int diskId;
 
     public Composition() {

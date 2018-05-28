@@ -14,27 +14,21 @@ public class Disk implements Serializable, Model {
 
     @Id
     @Column(name="DiskID")
-    @SerializedName("DiskID")
     private int diskID;
 
     @Column(name="Amount")
-    @SerializedName("Amount")
     private int amount;
 
     @Column(name="Name")
-    @SerializedName("Name")
     private String name;
 
     @Column(name="PresentDate")
-    @SerializedName("PresentDate")
     private String presentDate;
 
     @Column(name="Price")
-    @SerializedName("Price")
     private double price;
 
     @Column(name = "GroupID")
-    @SerializedName("GroupID")
     private int groupId;
 
     public Disk() {
