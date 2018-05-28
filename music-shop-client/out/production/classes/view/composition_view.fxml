@@ -70,7 +70,7 @@
                     <Insets left="4.0" right="4.0" />
                 </GridPane.margin>
             </TextField>
-            <Button maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#add" text="Add composition" GridPane.columnSpan="2" GridPane.halignment="RIGHT" GridPane.rowIndex="4" GridPane.valignment="CENTER">
+            <Button maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#onAdd" text="Add composition" GridPane.columnSpan="2" GridPane.halignment="RIGHT" GridPane.rowIndex="4" GridPane.valignment="CENTER">
                 <GridPane.margin>
                     <Insets left="4.0" right="4.0" />
                 </GridPane.margin>
@@ -130,7 +130,7 @@
                 <GridPane.margin>
                     <Insets left="4.0" right="4.0" />
                 </GridPane.margin></TextField>
-            <Button maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#selectSingle" text="Search" GridPane.halignment="CENTER" GridPane.rowIndex="2">
+            <Button maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#onSelectSingle" text="Search" GridPane.halignment="CENTER" GridPane.rowIndex="2">
                 <GridPane.margin>
                     <Insets left="4.0" right="4.0" />
                 </GridPane.margin>
@@ -140,8 +140,8 @@
                     <Insets left="4.0" right="4.0" />
                 </GridPane.margin>
             </Button>
-         <Button layoutX="172.0" layoutY="72.0" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#delete" text="Delete" GridPane.columnIndex="2" GridPane.rowIndex="2" />
-            <Button maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#selectAll" text="All" GridPane.columnIndex="3" GridPane.halignment="CENTER" GridPane.rowIndex="2">
+         <Button layoutX="172.0" layoutY="72.0" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#onDelete" text="Delete" GridPane.columnIndex="2" GridPane.rowIndex="2" />
+            <Button maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#onSelectAll" text="All" GridPane.columnIndex="3" GridPane.halignment="CENTER" GridPane.rowIndex="2">
                 <GridPane.margin>
                     <Insets left="4.0" right="4.0" />
                 </GridPane.margin>
