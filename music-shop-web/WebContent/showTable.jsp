@@ -14,7 +14,7 @@
 		TableModel tableModel = (TableModel) (session.getAttribute("tableModel"));
 	%>
 	<b> Таблиця <%=tableName%></b>
-	<table border="1/home/vova/Projects/TPP/DBScripts/db_creation.sql">
+	<table border="1">
 		<tr>
 			<%
 					int nCol = tableModel.getColumnCount();
