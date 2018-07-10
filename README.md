@@ -1,4 +1,4 @@
-# music-shop
+# music-shop [![Build Status](https://travis-ci.org/hbvhuwe/music-shop.svg?branch=master)](https://travis-ci.org/hbvhuwe/music-shop)
 
 ## Project consist of several parts:
  - music-shop-client (client standalone application)
