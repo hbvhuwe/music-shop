@@ -1,0 +1,43 @@
+version: "3.3"
+services:
+  web:
+    image: ms-web
+    depends_on:
+      - database
+    ports:
+      - "80:80"
+    configs:
+      - source: web-app.conf
+        target: /usr/local/apache2/htdocs/.htaccess
+  
+  database:
+    image: mariadb:10.3.9
+    ports:
+      - "3306:3306"
+    environment:
+      MYSQL_ROOT_PASSWORD_FILE: /run/secrets/root_password
+      MYSQL_DATABASE: music_shop_db
+      MYSQL_USER: music_shop
+      MYSQL_PASSWORD_FILE: /run/secrets/user_password
+    secrets:
+      - root_password
+      - user_password
+    volumes:
+      - ./configs/sql/db_creation.sql:/docker-entrypoint-initdb.d/db_creation.sql
+      - database_volume:/var/lib/mysql
+  
+  api:
+    image: ms-api
+    command: ["java", "-jar", "/app/build/libs/music-shop-server-0.1.0.jar"]
+
+configs:
+  web-app.conf:
+    external: true
+secrets:
+  root_password:
+    external: true
+  user_password:
+    external: true
+volumes:
+  database_volume:
+    external: true
