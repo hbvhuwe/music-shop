@@ -23,50 +23,51 @@ import java.util.Properties;
 @EnableJpaRepositories("com.hbvhuwe.musicshop.repository")
 public class ServerConfiguration {
 
-    private static final String DB_DRIVER = "db.driver";
-    private static final String DB_PASSWORD = "db.password";
-    private static final String DB_URL = "db.url";
-    private static final String DB_USERNAME = "db.username";
+  private static final String DB_DRIVER = "db.driver";
+  private static final String DB_PASSWORD = "db.password";
+  private static final String DB_URL = "db.url";
+  private static final String DB_USERNAME = "db.username";
 
-    private static final String HIBERNATE_DIALECT = "hibernate.dialect";
-    private static final String HIBERNATE_SHOW_SQL = "hibernate.show_sql";
-    private static final String ENTITYMANAGER_PACKAGES_TO_SCAN = "entitymanager.packages.to.scan";
+  private static final String HIBERNATE_DIALECT = "hibernate.dialect";
+  private static final String HIBERNATE_SHOW_SQL = "hibernate.show_sql";
+  private static final String ENTITYMANAGER_PACKAGES_TO_SCAN = "entitymanager.packages.to.scan";
 
-    @Resource
-    private Environment env;
+  @Resource private Environment env;
 
-    @Bean
-    public DataSource dataSource() {
-        DriverManagerDataSource dataSource = new DriverManagerDataSource();
-        dataSource.setDriverClassName(env.getRequiredProperty(DB_DRIVER));
-        dataSource.setUrl(env.getRequiredProperty(DB_URL));
-        dataSource.setUsername(env.getRequiredProperty(DB_USERNAME));
-        dataSource.setPassword(env.getRequiredProperty(DB_PASSWORD));
-        return dataSource;
-    }
+  @Bean
+  public DataSource dataSource() {
+    DriverManagerDataSource dataSource = new DriverManagerDataSource();
+    dataSource.setDriverClassName(env.getRequiredProperty(DB_DRIVER));
+    dataSource.setUrl(env.getRequiredProperty(DB_URL));
+    dataSource.setUsername(env.getRequiredProperty(DB_USERNAME));
+    dataSource.setPassword(env.getRequiredProperty(DB_PASSWORD));
+    return dataSource;
+  }
 
-    @Bean
-    public LocalContainerEntityManagerFactoryBean entityManagerFactory() {
-        LocalContainerEntityManagerFactoryBean entityManagerFactoryBean = new LocalContainerEntityManagerFactoryBean();
-        entityManagerFactoryBean.setDataSource(dataSource());
-        entityManagerFactoryBean.setPersistenceProviderClass(HibernatePersistenceProvider.class);
-        entityManagerFactoryBean.setPackagesToScan(env.getRequiredProperty(ENTITYMANAGER_PACKAGES_TO_SCAN));
-        entityManagerFactoryBean.setJpaProperties(hibProperties());
-        return entityManagerFactoryBean;
-    }
+  @Bean
+  public LocalContainerEntityManagerFactoryBean entityManagerFactory() {
+    LocalContainerEntityManagerFactoryBean entityManagerFactoryBean =
+        new LocalContainerEntityManagerFactoryBean();
+    entityManagerFactoryBean.setDataSource(dataSource());
+    entityManagerFactoryBean.setPersistenceProviderClass(HibernatePersistenceProvider.class);
+    entityManagerFactoryBean.setPackagesToScan(
+        env.getRequiredProperty(ENTITYMANAGER_PACKAGES_TO_SCAN));
+    entityManagerFactoryBean.setJpaProperties(hibProperties());
+    return entityManagerFactoryBean;
+  }
 
-    @Bean
-    public Properties hibProperties() {
-        Properties properties = new Properties();
-        properties.put(HIBERNATE_DIALECT, env.getRequiredProperty(HIBERNATE_DIALECT));
-        properties.put(HIBERNATE_SHOW_SQL, env.getRequiredProperty(HIBERNATE_SHOW_SQL));
-        return properties;
-    }
+  @Bean
+  public Properties hibProperties() {
+    Properties properties = new Properties();
+    properties.put(HIBERNATE_DIALECT, env.getRequiredProperty(HIBERNATE_DIALECT));
+    properties.put(HIBERNATE_SHOW_SQL, env.getRequiredProperty(HIBERNATE_SHOW_SQL));
+    return properties;
+  }
 
-    @Bean
-    public JpaTransactionManager transactionManager() {
-        JpaTransactionManager transactionManager = new JpaTransactionManager();
-        transactionManager.setEntityManagerFactory(entityManagerFactory().getObject());
-        return transactionManager;
-    }
+  @Bean
+  public JpaTransactionManager transactionManager() {
+    JpaTransactionManager transactionManager = new JpaTransactionManager();
+    transactionManager.setEntityManagerFactory(entityManagerFactory().getObject());
+    return transactionManager;
+  }
 }
