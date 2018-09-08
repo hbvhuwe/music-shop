@@ -1,19 +1,19 @@
 /*create database*/
-CREATE DATABASE music_shop_db;
+CREATE DATABASE IF NOT EXISTS music_shop_db;
 
 /*create tables*/
 /*create table group*/
-CREATE TABLE Groups (
+CREATE TABLE IF NOT EXISTS Groups (
 	GroupID int NOT NULL AUTO_INCREMENT,
 	Name varchar(50) NOT NULL,
 	Musician varchar(50) NOT NULL,
 	Style varchar(50) DEFAULT NULL,
 	PRIMARY KEY (GroupID),
 	UNIQUE KEY Name_UNIQUE (Name)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT='Table, representing musical group';
+) DEFAULT CHARSET=utf8 COMMENT='Table, representing musical group';
 
 /*create table disk*/
-CREATE TABLE Disk (
+CREATE TABLE IF NOT EXISTS Disk (
 	DiskID int NOT NULL AUTO_INCREMENT,
 	GroupID int NOT NULL,
 	Name varchar(50) NOT NULL,
@@ -23,19 +23,19 @@ CREATE TABLE Disk (
 	PRIMARY KEY (DiskID),
 	FOREIGN KEY (GroupID) REFERENCES Groups(GroupID),
 	UNIQUE KEY Name_UNIQUE (Name)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT='Table, representing album of one`s group';
+) DEFAULT CHARSET=utf8 COMMENT='Table, representing album of one`s group';
 
 /*create table client*/
-CREATE TABLE Client (
+CREATE TABLE IF NOT EXISTS Client (
 	ClientID int NOT NULL AUTO_INCREMENT,
 	Name varchar(50) NOT NULL,
 	Discount double DEFAULT NULL,
 	PRIMARY KEY (ClientID),
 	UNIQUE KEY Name_UNIQUE (Name)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT='Table, representing regular customer';
+) DEFAULT CHARSET=utf8 COMMENT='Table, representing regular customer';
 
 /*create table composition*/
-CREATE TABLE Composition (
+CREATE TABLE IF NOT EXISTS Composition (
 	CompositionID int NOT NULL AUTO_INCREMENT,
 	DiskID int NOT NULL,
 	Name varchar(50) NOT NULL,
@@ -44,10 +44,10 @@ CREATE TABLE Composition (
 	PRIMARY KEY (CompositionID),
 	FOREIGN KEY (DiskID) REFERENCES Disk(DiskID),
 	UNIQUE KEY Name_UNIQUE (Name)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT='Table, representing composition in disk';
+) DEFAULT CHARSET=utf8 COMMENT='Table, representing composition in disk';
 
 /*create table check*/
-CREATE TABLE Checks (
+CREATE TABLE IF NOT EXISTS Checks (
 	CheckID int NOT NULL AUTO_INCREMENT,
 	DiskID int NOT NULL,
 	ClientID int NOT NULL,
@@ -58,4 +58,4 @@ CREATE TABLE Checks (
 	PRIMARY KEY (CheckID),
 	FOREIGN KEY (DiskID) REFERENCES Disk(DiskID),
 	FOREIGN KEY (ClientID) REFERENCES Client(ClientID)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT='Table, representing check';
+) DEFAULT CHARSET=utf8 COMMENT='Table, representing check';

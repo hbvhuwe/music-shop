@@ -10,4 +10,4 @@
 rootProject.name = 'music-shop'
 
 include 'music-shop-client'
-include 'music-shop-server'
+include 'music-shop-api'
