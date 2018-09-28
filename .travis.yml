@@ -1,1 +1,3 @@
-./install.sh
+sudo: true
+
+script: ./install.sh
