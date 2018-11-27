@@ -1,3 +1,3 @@
 sudo: true
 
-script: ./install.sh
+script: ./travis.sh
