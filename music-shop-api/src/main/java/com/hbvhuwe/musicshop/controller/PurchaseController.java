@@ -38,7 +38,7 @@ public class PurchaseController {
     String authEncoded = new String(Base64.getDecoder().decode(auth));
     String[] cred = authEncoded.split(":");
     int clientId = Integer.parseInt(cred[0]);
-    Optional<Client> cl = clientRepository.findClientByClientIdAndName(clientId, cred[1]);
+    Optional<Client> cl = clientRepository.findClientByClientIdAndPassword(clientId, cred[1]);
     if (cl.isPresent()) {
       List<Checks> ch = checksRepository.findAllByClientId(clientId);
       final boolean[] alreadyPurchased = {false};

@@ -29,7 +29,9 @@ CREATE TABLE IF NOT EXISTS Disk (
 CREATE TABLE IF NOT EXISTS Client (
 	ClientID int NOT NULL AUTO_INCREMENT,
 	Name varchar(50) NOT NULL,
-	Discount double DEFAULT NULL,
+	Surname varchar(50) NOT NULL,
+	Password varchar(64) NOT NULL,
+	Discount double DEFAULT 0,
 	PRIMARY KEY (ClientID),
 	UNIQUE KEY Name_UNIQUE (Name)
 ) DEFAULT CHARSET=utf8 COMMENT='Table, representing regular customer';

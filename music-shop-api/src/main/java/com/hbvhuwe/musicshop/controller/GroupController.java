@@ -12,23 +12,23 @@ import java.util.Optional;
 @Controller
 @RequestMapping(path = "/groups")
 public class GroupController {
-  private final GroupRepository repository;
+  private final GroupRepository groupRepository;
 
   @Autowired
   public GroupController(GroupRepository repository) {
-    this.repository = repository;
+    this.groupRepository = repository;
   }
 
   @GetMapping(path = "/")
   @ResponseBody
   public ResponseEntity findAll() {
-    return ResponseEntity.ok(repository.findAll());
+    return ResponseEntity.ok(groupRepository.findAll());
   }
 
   @GetMapping(path = "/{id}")
   @ResponseBody
   public ResponseEntity findById(@PathVariable(name = "id") int id) {
-    Optional<Group> group = repository.findById(id);
+    Optional<Group> group = groupRepository.findById(id);
     if (group.isPresent()) {
       return ResponseEntity.ok(group.get());
     } else {
@@ -46,14 +46,14 @@ public class GroupController {
     group.setName(name);
     group.setMusician(musician);
     group.setStyle(style);
-    repository.save(group);
+    groupRepository.save(group);
     return ResponseEntity.ok("{\"status\":\"success\"}");
   }
 
   @DeleteMapping(path = "/delete/{id}")
   @ResponseBody
   public ResponseEntity<String> delete(@PathVariable(name = "id") int id) {
-    repository.deleteById(id);
+    groupRepository.deleteById(id);
     return ResponseEntity.ok("{\"status\":\"success\"}");
   }
 }

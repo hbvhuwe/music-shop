@@ -20,7 +20,7 @@ import java.util.Optional;
 @Controller
 @RequestMapping(path = "/disks")
 public class DiskController {
-  private final DiskRepository repository;
+  private final DiskRepository diskRepository;
   private final ClientRepository clientRepository;
   private final ChecksRepository checksRepository;
 
@@ -29,7 +29,7 @@ public class DiskController {
       DiskRepository repository,
       ClientRepository clientRepository,
       ChecksRepository checksRepository) {
-    this.repository = repository;
+    this.diskRepository = repository;
     this.clientRepository = clientRepository;
     this.checksRepository = checksRepository;
   }
@@ -37,25 +37,20 @@ public class DiskController {
   @GetMapping(path = "/library/{id}")
   @ResponseBody
   public ResponseEntity getLibrary(
-      @RequestHeader(value = "Authorization", required = false) String auth,
-      @PathVariable(name = "id") int id) {
-    if (auth != null && !auth.isEmpty()) {
-      String authEncoded = new String(Base64.getDecoder().decode(auth.getBytes()));
-      String[] cred = authEncoded.split(":");
-      if (id != Integer.parseInt(cred[0])) {
-        return ResponseEntity.badRequest()
-            .body("{\"status\":\"error\"," + "\"message\":\"Bad request\"}");
-      }
-      Optional<Client> client =
-          clientRepository.findClientByClientIdAndName(Integer.parseInt(cred[0]), cred[1]);
-      if (client.isPresent()) {
-        Iterable<Checks> checks = checksRepository.findAllByClientId(id);
-        List<Integer> ids = new ArrayList<>();
-        checks.forEach(check -> ids.add(check.getId()));
-        return ResponseEntity.ok(repository.findAllById(ids));
-      } else {
-        return ResponseEntity.status(HttpStatus.UNAUTHORIZED).body(null);
-      }
+      @RequestHeader(value = "Authorization") String auth, @PathVariable(name = "id") int id) {
+    String authEncoded = new String(Base64.getDecoder().decode(auth.getBytes()));
+    String[] cred = authEncoded.split(":");
+    if (id != Integer.parseInt(cred[0])) {
+      return ResponseEntity.badRequest()
+          .body("{\"status\":\"error\"," + "\"message\":\"Bad request\"}");
+    }
+    Optional<Client> client =
+        clientRepository.findClientByClientIdAndPassword(Integer.parseInt(cred[0]), cred[1]);
+    if (client.isPresent()) {
+      Iterable<Checks> checks = checksRepository.findAllByClientId(id);
+      List<Integer> ids = new ArrayList<>();
+      checks.forEach(check -> ids.add(check.getId()));
+      return ResponseEntity.ok(diskRepository.findAllById(ids));
     } else {
       return ResponseEntity.status(HttpStatus.UNAUTHORIZED).body(null);
     }
@@ -64,13 +59,13 @@ public class DiskController {
   @GetMapping(path = "/")
   @ResponseBody
   public ResponseEntity findAll() {
-    return ResponseEntity.ok(repository.findAll());
+    return ResponseEntity.ok(diskRepository.findAll());
   }
 
   @GetMapping(path = "/{id}")
   @ResponseBody
   public ResponseEntity findById(@PathVariable(name = "id") int id) {
-    Optional<Disk> disk = repository.findById(id);
+    Optional<Disk> disk = diskRepository.findById(id);
     if (disk.isPresent()) {
       return ResponseEntity.ok(disk.get());
     } else {
@@ -92,14 +87,14 @@ public class DiskController {
     disk.setPresentDate(presentDate);
     disk.setPrice(price);
     disk.setGroupId(id);
-    repository.save(disk);
+    diskRepository.save(disk);
     return ResponseEntity.ok("{\"status\":\"success\"}");
   }
 
   @DeleteMapping(path = "/delete/{id}")
   @ResponseBody
   public ResponseEntity<String> delete(@PathVariable(name = "id") int id) {
-    repository.deleteById(id);
+    diskRepository.deleteById(id);
     return ResponseEntity.ok("{\"status\":\"success\"}");
   }
 }

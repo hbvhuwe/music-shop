@@ -17,6 +17,12 @@ public class Client implements Serializable, Model {
   @Column(name = "Name")
   private String name;
 
+  @Column(name = "Surname")
+  private String surname;
+
+  @Column(name = "Password")
+  private String password;
+
   @Column(name = "Discount")
   private double discount;
 
@@ -52,5 +58,21 @@ public class Client implements Serializable, Model {
   @Override
   public void setId(int id) {
     setClientId(id);
+  }
+
+  public String getSurname() {
+    return surname;
+  }
+
+  public void setSurname(String surname) {
+    this.surname = surname;
+  }
+
+  public String getPassword() {
+    return password;
+  }
+
+  public void setPassword(String password) {
+    this.password = password;
   }
 }
