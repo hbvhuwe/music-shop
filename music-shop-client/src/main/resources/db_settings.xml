@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <settings>
     <url>jdbc:mysql://localhost:3306/music_shop_db</url>
-    <user>vova</user>
-    <password>1029</password>
+    <user>music_shop</user>
+    <password>7Ts2V4NzxiHAr7FVgm7qYQFL9k0=</password>
 </settings>

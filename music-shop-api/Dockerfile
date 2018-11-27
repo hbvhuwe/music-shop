@@ -1,12 +1,9 @@
-FROM gradle:4.10.0
-
-COPY . /app
-WORKDIR /app
-
-EXPOSE 1234
+FROM gradle:4.10.2
 
 USER root
-RUN chown -R gradle /app
-USER gradle
 
-RUN ["gradle", "bootJar"]
+COPY . /app
+
+WORKDIR /app
+
+RUN gradle build

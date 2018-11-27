@@ -108,3 +108,7 @@ gradle-app.setting
 
 
 # End of https://www.gitignore.io/api/java,gradle,intellij
+
+# Sublime settings
+*.sublime-project
+*.sublime-workspace

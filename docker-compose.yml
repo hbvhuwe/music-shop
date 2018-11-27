@@ -11,7 +11,7 @@ services:
         target: /usr/local/apache2/htdocs/.htaccess
   
   database:
-    image: mariadb:10.3.9
+    image: mariadb:10.3.10
     environment:
       MYSQL_ROOT_PASSWORD_FILE: /run/secrets/root_password
       MYSQL_DATABASE: music_shop_db

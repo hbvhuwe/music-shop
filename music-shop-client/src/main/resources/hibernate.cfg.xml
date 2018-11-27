@@ -11,8 +11,8 @@
         <!-- Database Connection Settings -->
         <property name="hibernate.connection.driver_class">com.mysql.jdbc.Driver</property>
         <property name="hibernate.connection.url">jdbc:mysql://localhost:3306/music_shop_db</property>
-        <property name="hibernate.connection.username">vova</property>
-        <property name="hibernate.connection.password">1029</property>
+        <property name="hibernate.connection.username">music_shop</property>
+        <property name="hibernate.connection.password">7Ts2V4NzxiHAr7FVgm7qYQFL9k0=</property>
         <property name="show_sql">true</property>
 
         <!-- Specifying Session Context -->
