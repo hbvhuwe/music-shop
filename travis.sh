@@ -9,5 +9,4 @@
 ( cd music-shop-web; docker build -t ms-web . )
 
 # Building desktop application
-
-( cs music-shop-client; ./gradlew build )
+( cd music-shop-client; ./gradlew build )
