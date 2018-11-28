@@ -1,0 +1,26 @@
+<mat-toolbar color="primary">
+	<span>{{currentPageName}}</span>
+	<span class="toolbar-spacer"></span>
+    <button *ngIf="isLoggedIn"
+    mat-icon-button [matMenuTriggerFor]="accountMenu">
+        <mat-icon>account_circle</mat-icon>
+    </button>
+    <button *ngIf="!isLoggedIn"
+	class="toolbar-button"
+    type="button"
+    mat-stroked-button color="accent"
+    (click)="onSignIn()">
+        Sign In
+    </button>
+    <button *ngIf="!isLoggedIn"
+    class="toolbar-button" 
+    type="button" mat-stroked-button>
+        Sign Up
+    </button>
+</mat-toolbar>
+
+<mat-menu #accountMenu="matMenu">
+    <p class="menu-item">Signed in as <b>email</b></p>
+    <mat-divider></mat-divider>
+    <button mat-menu-item (click)="onSignOut()">Sign Out</button>
+</mat-menu>

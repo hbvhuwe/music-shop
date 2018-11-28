@@ -31,7 +31,7 @@ public class AuthController {
     if (client.isPresent()) {
       return ResponseEntity.ok("{\"status\":\"success\"}");
     } else {
-      return ResponseEntity.status(HttpStatus.UNAUTHORIZED).body(null);
+      return ResponseEntity.status(HttpStatus.UNAUTHORIZED).body("{\"status\":\"error\"}");
     }
   }
 
