@@ -5,7 +5,7 @@ import {HttpHeaders} from '@angular/common/http';
 
 import * as hash from 'hash.js';
 
-const API_HOST = 'http://api.musicshop.com:8080';
+import {API_HOST} from '../config';
 
 @Injectable({providedIn: 'root'})
 export class AuthService {
@@ -16,7 +16,7 @@ export class AuthService {
     const options = this.createOptions({
         'Authorization': btoa(`${clientId}:${password}`)
     });
-    return this.http.get(`${API_HOST}/check_credentials`)
+    return this.http.get(`${API_HOST}/check_credentials`, options)
   }
 
   private createOptions(headers) {
