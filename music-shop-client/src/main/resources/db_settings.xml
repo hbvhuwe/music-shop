@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <settings>
-    <url>jdbc:mysql://localhost:3306/music_shop_db</url>
+    <url>jdbc:mysql://127.0.0.1:3306/music_shop_db</url>
     <user>music_shop</user>
     <password>7Ts2V4NzxiHAr7FVgm7qYQFL9k0=</password>
 </settings>

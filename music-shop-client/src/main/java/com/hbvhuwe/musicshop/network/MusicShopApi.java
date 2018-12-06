@@ -13,19 +13,19 @@ import java.util.List;
  * used in NetProvider implementation of DataProvider
  */
 public interface MusicShopApi {
-    @GET("groups/all")
+    @GET("groups/")
     Call<List<Group>> getGroups();
 
     @GET("groups/{id}")
     Call<Group> getGroup(@Path("id") int id);
 
-    @GET("disks/all")
+    @GET("disks/")
     Call<List<Disk>> getDisks();
 
     @GET("disks/{id}")
     Call<Disk> getDisk(@Path("id") int id);
 
-    @GET("compositions/all")
+    @GET("compositions/")
     Call<List<Composition>> getCompositions();
 
     @GET("compositions/{id}")

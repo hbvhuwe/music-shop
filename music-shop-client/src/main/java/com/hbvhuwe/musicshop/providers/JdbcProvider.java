@@ -19,7 +19,7 @@ public class JdbcProvider<T extends Model> implements DataProvider<T> {
         this.tClass = tClass;
         if (!isConnected) {
             try {
-                connection = DriverManager.getConnection("jdbc:mysql://localhost:3306/music_shop_db", "vova", "1029");
+                connection = DriverManager.getConnection("jdbc:mysql://localhost:3306/music_shop_db", "music_shop", "7Ts2V4NzxiHAr7FVgm7qYQFL9k0=");
                 statement = connection.createStatement();
                 isConnected = true;
                 System.out.println("New connection to db using jdbc");

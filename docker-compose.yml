@@ -17,6 +17,8 @@ services:
       MYSQL_DATABASE: music_shop_db
       MYSQL_USER: music_shop
       MYSQL_PASSWORD_FILE: /run/secrets/user_password
+    ports:
+      - "3306:3306"
     secrets:
       - root_password
       - user_password

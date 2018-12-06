@@ -26,6 +26,7 @@ public class NetProvider<T extends Model> implements DataProvider<T> {
             if (response.isSuccessful()) {
                 return (List<T>) response.body();
             } else {
+                System.out.println(response.toString());
                 throw new Exception("Error while getting info");
             }
         } else if (tClass == Disk.class) {

@@ -11,7 +11,7 @@ public class MusicShopService {
 
     private static void createClient() {
         Retrofit retrofit = new Retrofit.Builder()
-                .baseUrl("http://localhost:8080/rest/")
+                .baseUrl("http://localhost:8080/")
                 .addConverterFactory(GsonConverterFactory.create())
                 .client(httpClientBuilder.build())
                 .build();
