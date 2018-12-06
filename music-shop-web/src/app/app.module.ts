@@ -11,22 +11,36 @@ import {
   MatIconModule,
   MatDividerModule,
   MatMenuModule,
-  MatTabsModule
+  MatTabsModule,
+  MatSnackBarModule,
+  MatCardModule,
+  MatProgressSpinnerModule,
+  MatTableModule
 } from '@angular/material';
 import {AppBarComponent} from './app-bar/app-bar.component';
 import {LoginComponent} from './login/login.component';
 import {MainComponent} from './main/main.component';
 import {PageNotFoundComponent} from './page-not-found/page-not-found.component';
+import {GroupListComponent} from './group-list/group-list.component';
+import {AlbumListComponent} from './album-list/album-list.component';
+import {
+  CompositionsListComponent
+} from './compositions-list/compositions-list.component';
 
 @NgModule({
-  declarations: [AppComponent, AppBarComponent, LoginComponent, MainComponent, PageNotFoundComponent],
-  imports: [
+  declarations : [
+    AppComponent, AppBarComponent, LoginComponent, MainComponent,
+    PageNotFoundComponent, GroupListComponent, AlbumListComponent,
+    CompositionsListComponent
+  ],
+  imports : [
     BrowserModule, HttpClientModule, AppRoutingModule, BrowserAnimationsModule,
     MatButtonModule, MatToolbarModule, MatIconModule, MatDividerModule,
-    MatMenuModule, MatTabsModule
+    MatMenuModule, MatTabsModule, MatSnackBarModule, MatCardModule,
+    MatProgressSpinnerModule, MatTableModule
   ],
-  providers: [],
-  bootstrap: [AppComponent]
+  providers : [],
+  bootstrap : [ AppComponent ]
 })
 export class AppModule {
 }

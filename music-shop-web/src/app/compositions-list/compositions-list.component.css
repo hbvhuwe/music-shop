@@ -1,0 +1,12 @@
+table {
+	width: 70%;
+	margin-top: 16px !important;
+	margin: auto;
+}
+
+@media(max-width: 480px) {
+	table {
+		width: 100%;
+		margin: 16px;
+	}
+}
