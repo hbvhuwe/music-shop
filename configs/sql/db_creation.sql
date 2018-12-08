@@ -28,6 +28,7 @@ CREATE TABLE IF NOT EXISTS Disk (
 /*create table client*/
 CREATE TABLE IF NOT EXISTS Client (
 	ClientID int NOT NULL AUTO_INCREMENT,
+	Login varchar(50) NOT NULL,
 	Name varchar(50) NOT NULL,
 	Surname varchar(50) NOT NULL,
 	Password varchar(64) NOT NULL,

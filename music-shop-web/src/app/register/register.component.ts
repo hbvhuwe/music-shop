@@ -4,23 +4,23 @@ import {Router} from '@angular/router';
 import {AuthService} from '../services/auth.service';
 import {ToolbarService} from '../services/toolbar.service';
 
-import * as hash from 'hash.js';
-
 const required = [ Validators.required ];
 const passwordValidators = [ Validators.required, Validators.minLength(6) ];
 
 @Component({
-  selector : 'app-login',
-  templateUrl : './login.component.html',
-  styleUrls : [ './login.component.css' ]
+  selector : 'app-register',
+  templateUrl : './register.component.html',
+  styleUrls : [ './register.component.css' ]
 })
-export class LoginComponent implements OnInit {
-  private readonly pageName = "Sign in";
+export class RegisterComponent implements OnInit {
+  private readonly pageName = "Sign up";
 
   hasError = false;
   errorText = '';
 
   usernameFormControl = new FormControl('', required);
+  nameFormControl = new FormControl('', required);
+  surnameFormControl = new FormControl('', required);
   passwordFormControl = new FormControl('', passwordValidators);
 
   constructor(private authService: AuthService,
@@ -30,31 +30,30 @@ export class LoginComponent implements OnInit {
 
   onSubmit() {
     this.authService
-        .login(this.usernameFormControl.value, this.passwordFormControl.value)
+        .register({
+          clientId : null,
+          login : this.usernameFormControl.value,
+          name : this.nameFormControl.value,
+          surname : this.surnameFormControl.value,
+          password : this.passwordFormControl.value
+        })
         .subscribe(
             result => {
-              if (result.status === 'success') {
-                let hashedPassword = this.hashOf(this.passwordFormControl.value);
-                localStorage.setItem('currentAuth', btoa(`${result.clientId}:${hashedPassword}`));
-                this.authService.isLoggedIn.next(true);
-                this.router.navigate([ '/main' ]);
+              if (result['status'] === 'success') {
+                this.router.navigate([ '/login' ]);
               } else {
                 this.hasError = true;
-                this.errorText = 'Login or password incorrect';
+                this.errorText = 'Error suring sign up, please try again later';
               }
             },
             error => {
               if (error.status) {
                 this.hasError = true;
-                this.errorText = 'Login or password incorrect';
+                this.errorText = 'Error suring sign up, please try again later';
               } else {
                 this.hasError = true;
                 this.errorText = 'Network error';
               }
             });
-  }
-
-  private hashOf(s: string): string {
-    return hash.sha256().update(s).digest('hex');
   }
 }

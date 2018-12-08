@@ -11,7 +11,7 @@ import {Composition} from '../model/composition.model';
 })
 export class CompositionsListComponent implements OnInit {
   @Input('show') show: string;
-  diskId: string;
+  @Input('albumId') albumId : string;
 
   compositionsList: Composition[];
   displayedColumns: string[] = [ 'diskId', 'name', 'presentDate', 'duration' ];
@@ -25,7 +25,6 @@ export class CompositionsListComponent implements OnInit {
   ngOnInit() { this.loadList(); }
 
   private loadList() {
-    this.diskId = this.route.snapshot.paramMap.get('diskId');
     if (this.show && this.show === 'all') {
       this.api.getAllCompositions().subscribe(
           result => {
@@ -56,8 +55,8 @@ export class CompositionsListComponent implements OnInit {
               this.loadList();
             });
           });
-    } else if (this.diskId) {
-      this.api.getCompositionsForAlbum(this.diskId)
+    } else if (this.albumId) {
+      this.api.getCompositionsForAlbum(this.albumId)
           .subscribe(
               result => {
                 this.listEmpty = result.length === 0;

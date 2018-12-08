@@ -7,4 +7,5 @@ import java.util.Optional;
 
 public interface ClientRepository extends CrudRepository<Client, Integer> {
   Optional<Client> findClientByClientIdAndPassword(int id, String password);
+  Optional<Client> findClientByLoginAndPassword(String login, String password);
 }

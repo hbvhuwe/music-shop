@@ -32,7 +32,8 @@ public class ServerConfiguration {
 
   private static final String HIBERNATE_DIALECT = "hibernate.dialect";
   private static final String HIBERNATE_SHOW_SQL = "hibernate.show_sql";
-  private static final String ENTITYMANAGER_PACKAGES_TO_SCAN = "entitymanager.packages.to.scan";
+  private static final String ENTITYMANAGER_PACKAGES_TO_SCAN =
+      "entitymanager.packages.to.scan";
 
   @Resource private Environment env;
 
@@ -51,7 +52,8 @@ public class ServerConfiguration {
     LocalContainerEntityManagerFactoryBean entityManagerFactoryBean =
         new LocalContainerEntityManagerFactoryBean();
     entityManagerFactoryBean.setDataSource(dataSource());
-    entityManagerFactoryBean.setPersistenceProviderClass(HibernatePersistenceProvider.class);
+    entityManagerFactoryBean.setPersistenceProviderClass(
+        HibernatePersistenceProvider.class);
     entityManagerFactoryBean.setPackagesToScan(
         env.getRequiredProperty(ENTITYMANAGER_PACKAGES_TO_SCAN));
     entityManagerFactoryBean.setJpaProperties(hibProperties());
@@ -61,15 +63,18 @@ public class ServerConfiguration {
   @Bean
   public Properties hibProperties() {
     Properties properties = new Properties();
-    properties.put(HIBERNATE_DIALECT, env.getRequiredProperty(HIBERNATE_DIALECT));
-    properties.put(HIBERNATE_SHOW_SQL, env.getRequiredProperty(HIBERNATE_SHOW_SQL));
+    properties.put(HIBERNATE_DIALECT,
+                   env.getRequiredProperty(HIBERNATE_DIALECT));
+    properties.put(HIBERNATE_SHOW_SQL,
+                   env.getRequiredProperty(HIBERNATE_SHOW_SQL));
     return properties;
   }
 
   @Bean
   public JpaTransactionManager transactionManager() {
     JpaTransactionManager transactionManager = new JpaTransactionManager();
-    transactionManager.setEntityManagerFactory(entityManagerFactory().getObject());
+    transactionManager.setEntityManagerFactory(
+        entityManagerFactory().getObject());
     return transactionManager;
   }
 
@@ -78,7 +83,8 @@ public class ServerConfiguration {
     return new WebMvcConfigurer() {
       @Override
       public void addCorsMappings(CorsRegistry registry) {
-        registry.addMapping("/**");
+        registry.addMapping("/**").allowedMethods("GET", "POST", "PUT",
+                                                  "DELETE", "HEAD");
       }
     };
   }

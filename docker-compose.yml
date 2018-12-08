@@ -8,7 +8,7 @@ services:
       - "80:80"
     configs:
       - source: web-app.conf
-        target: /usr/local/apache2/htdocs/.htaccess
+        target: /etc/nginx/nginx.conf
   
   database:
     image: mariadb:10.3.10

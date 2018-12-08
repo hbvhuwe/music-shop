@@ -12,7 +12,7 @@ import {Group} from '../model/group.model';
 })
 export class AlbumListComponent implements OnInit {
   @Input('show') show: string;
-  groupId: string;
+  @Input('groupId') groupId: string;
 
   listEmpty: boolean = false;
   loading: boolean = true;
@@ -24,9 +24,8 @@ export class AlbumListComponent implements OnInit {
   ngOnInit() { this.loadList(); }
 
   private loadList() {
-    this.groupId = this.route.snapshot.paramMap.get('groupId');
     if (this.show && this.show === 'all') {
-      this.api.getAllDisks().subscribe(
+      this.api.getAllAlbums().subscribe(
           result => {
             this.listEmpty = result.length === 0;
             this.albumList = result;
@@ -83,6 +82,6 @@ export class AlbumListComponent implements OnInit {
   onBuy(album: Album) {}
 
   onAlbumClick(album: Album) {
-    this.router.navigate([ `/albums/${album.diskId}/compositions` ]);
+    this.router.navigate([ `/albums/${album.diskId}` ]);
   }
 }

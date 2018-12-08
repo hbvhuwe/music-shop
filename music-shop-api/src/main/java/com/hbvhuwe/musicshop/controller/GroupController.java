@@ -1,22 +1,27 @@
 package com.hbvhuwe.musicshop.controller;
 
+import com.hbvhuwe.musicshop.model.Disk;
 import com.hbvhuwe.musicshop.model.Group;
+import com.hbvhuwe.musicshop.repository.DiskRepository;
 import com.hbvhuwe.musicshop.repository.GroupRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.List;
 import java.util.Optional;
 
 @Controller
 @RequestMapping(path = "/groups")
 public class GroupController {
   private final GroupRepository groupRepository;
+  private final DiskRepository diskRepository;
 
   @Autowired
-  public GroupController(GroupRepository repository) {
+  public GroupController(GroupRepository repository, DiskRepository diskRepository) {
     this.groupRepository = repository;
+    this.diskRepository = diskRepository;
   }
 
   @GetMapping(path = "/")
@@ -34,6 +39,13 @@ public class GroupController {
     } else {
       return ResponseEntity.notFound().build();
     }
+  }
+
+  @GetMapping(path = "/{id}/disks")
+  @ResponseBody
+  public ResponseEntity getDisksById(@PathVariable(name = "id") int id) {
+    List<Disk> disks = diskRepository.getAllByGroupId(id);
+    return ResponseEntity.ok(disks);
   }
 
   @PutMapping(path = "/add")

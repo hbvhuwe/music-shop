@@ -43,6 +43,6 @@ export class GroupListComponent implements OnInit {
   }
 
   onGroupClick(group: Group) {
-    this.router.navigate([ `/groups/${group.groupId}/albums` ]);
+    this.router.navigate([ `/groups/${group.groupId}` ]);
   }
 }

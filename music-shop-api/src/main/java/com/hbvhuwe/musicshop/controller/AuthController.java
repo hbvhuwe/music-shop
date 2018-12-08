@@ -23,7 +23,7 @@ public class AuthController {
   }
 
   @GetMapping(path = "/check_credentials")
-  public ResponseEntity login(@RequestHeader(value = "Authorization") String auth) {
+  public ResponseEntity checkCredentials(@RequestHeader(value = "Authorization") String auth) {
     String authEncoded = new String(Base64.getDecoder().decode(auth.getBytes()));
     String[] cred = authEncoded.split(":");
     Optional<Client> client =
@@ -35,15 +35,30 @@ public class AuthController {
     }
   }
 
+  @GetMapping(path = "/login")
+  public ResponseEntity logIn(
+    @RequestParam(name = "login") String login,
+    @RequestParam(name = "password") String password) {
+    Optional<Client> client = clientRepository.findClientByLoginAndPassword(login, password);
+    if (client.isPresent()) {
+      return ResponseEntity.ok("{\"status\":\"success\",\"clientId\":\"" + client.get().getClientId() + "\"}");
+    } else {
+      return ResponseEntity.status(HttpStatus.UNAUTHORIZED).body("{\"status\":\"error\"}");
+    }
+  }
+
   @PutMapping(path = "/sign_up")
   public ResponseEntity signUp(
       @RequestParam(name = "Name") String name,
+      @RequestParam(name = "Login") String login,
       @RequestParam(name = "Surname") String surname,
       @RequestParam(name = "Password") String password) {
     Client cl = new Client();
+    cl.setLogin(login);
     cl.setName(name);
     cl.setSurname(surname);
     cl.setPassword(password);
+    cl.setDiscount(0.0);
     clientRepository.save(cl);
     return ResponseEntity.ok("{\"status\":\"success\"}");
   }

@@ -1,0 +1,15 @@
+<p align="center" *ngIf="loading">
+    <mat-spinner></mat-spinner>
+    Loading album
+</p>
+<div class="container" *ngIf="!loading && !error">
+    <h3>Album: {{album.name}}</h3>
+    <p>Presented at: {{album.presentDate}}</p>
+    <p class="price">
+        Price: {{album.price}}
+        <span>
+            <mat-icon>attach_money</mat-icon>
+        </span>
+    </p>
+</div>
+<app-compositions-list albumId="{{albumId}}"></app-compositions-list>

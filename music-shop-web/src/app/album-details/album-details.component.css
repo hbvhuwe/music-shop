@@ -1,0 +1,12 @@
+.container {
+    width: 80%;
+    margin-top: 16px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.price {
+    display: inline-flex;
+    align-items: center;
+    justify-content: flex-start;
+}

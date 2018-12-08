@@ -16,8 +16,16 @@ export class ApiService {
     return this.http.get<Group[]>(`${API_HOST}/groups/`);
   }
 
-  getAllDisks(): Observable<Album[]> {
+  getGroup(groupId: string): Observable<Group> {
+    return this.http.get<Group>(`${API_HOST}/groups/${groupId}`);
+  }
+
+  getAllAlbums(): Observable<Album[]> {
     return this.http.get<Album[]>(`${API_HOST}/disks/`);
+  }
+
+  getAlbum(albumId: string): Observable<Album> {
+    return this.http.get<Album>(`${API_HOST}/disks/${albumId}`);
   }
 
   getAlbumsForGroup(groupId: string): Observable<Album[]> {
@@ -25,7 +33,7 @@ export class ApiService {
   }
 
   getAlbumsForUser(userId: string): Observable<Album[]> {
-    return this.http.get<Album[]>(`${API_HOST}/library/${userId}`);
+    return this.http.get<Album[]>(`${API_HOST}/disks/library/${userId}`);
   }
 
   getAllCompositions(): Observable<Composition[]> {
@@ -33,7 +41,7 @@ export class ApiService {
   }
 
   getCompositionsForUser(userId: string): Observable<Composition[]> {
-    return this.http.get<Composition[]>(`${API_HOST}/library/${userId}/compositions`);
+    return this.http.get<Composition[]>(`${API_HOST}/compositions/library/${userId}`);
   }
 
   getCompositionsForAlbum(albumId: string): Observable<Composition[]> {

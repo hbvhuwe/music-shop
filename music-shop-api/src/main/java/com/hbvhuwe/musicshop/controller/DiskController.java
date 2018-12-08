@@ -2,9 +2,11 @@ package com.hbvhuwe.musicshop.controller;
 
 import com.hbvhuwe.musicshop.model.Checks;
 import com.hbvhuwe.musicshop.model.Client;
+import com.hbvhuwe.musicshop.model.Composition;
 import com.hbvhuwe.musicshop.model.Disk;
 import com.hbvhuwe.musicshop.repository.ChecksRepository;
 import com.hbvhuwe.musicshop.repository.ClientRepository;
+import com.hbvhuwe.musicshop.repository.CompositionRepository;
 import com.hbvhuwe.musicshop.repository.DiskRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
@@ -23,15 +25,18 @@ public class DiskController {
   private final DiskRepository diskRepository;
   private final ClientRepository clientRepository;
   private final ChecksRepository checksRepository;
+  private final CompositionRepository compositionRepository;
 
   @Autowired
   public DiskController(
       DiskRepository repository,
       ClientRepository clientRepository,
-      ChecksRepository checksRepository) {
+      ChecksRepository checksRepository,
+      CompositionRepository compositionRepository) {
     this.diskRepository = repository;
     this.clientRepository = clientRepository;
     this.checksRepository = checksRepository;
+    this.compositionRepository = compositionRepository;
   }
 
   @GetMapping(path = "/library/{id}")
@@ -71,6 +76,13 @@ public class DiskController {
     } else {
       return ResponseEntity.notFound().build();
     }
+  }
+
+  @GetMapping(path = "/{id}/compositions")
+  @ResponseBody
+  public ResponseEntity getCompositions(@PathVariable(name = "id") int id) {
+    List<Composition> c = compositionRepository.getAllByDiskId(id);
+    return ResponseEntity.ok(c);
   }
 
   @PutMapping(path = "/add")

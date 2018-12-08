@@ -15,7 +15,7 @@
 </mat-toolbar>
 
 <mat-menu #accountMenu="matMenu">
-    <p class="menu-item">Signed in as <b>Name</b></p>
+    <p class="menu-item">Signed in as <b>{{username}}</b></p>
     <button mat-menu-item (click)="onMyLibrary()">My library</button>
     <mat-divider></mat-divider>
     <button mat-menu-item (click)="onSignOut()">Sign out</button>

@@ -6,5 +6,5 @@ RUN npm install
 COPY ./src/ /app/src/
 RUN npm run build -- --output-path=./dist/out
 
-FROM httpd:2.4.37
-COPY --from=build-stage /app/dist/out/ /usr/local/apache2/htdocs/
+FROM nginx:1.15.7
+COPY --from=build-stage /app/dist/out/ /usr/share/nginx/html

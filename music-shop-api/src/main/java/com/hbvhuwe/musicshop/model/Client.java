@@ -14,6 +14,9 @@ public class Client implements Serializable, Model {
   @Column(name = "ClientID")
   private int clientId;
 
+  @Column(name = "Login")
+  private String login;
+
   @Column(name = "Name")
   private String name;
 
@@ -32,6 +35,14 @@ public class Client implements Serializable, Model {
 
   public void setClientId(int clientId) {
     this.clientId = clientId;
+  }
+
+  public String getLogin() {
+    return login;
+  }
+
+  public void setLogin(String login) {
+    this.login = login;
   }
 
   public String getName() {

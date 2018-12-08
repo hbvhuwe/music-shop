@@ -1,0 +1,10 @@
+<p align="center" *ngIf="loading">
+    <mat-spinner></mat-spinner>
+    Loading group
+</p>
+<div class="container" *ngIf="!loading && !error">
+    <h3>Group: {{group.name}}</h3>
+    <p>Lead musician: {{group.musician}}</p>
+    <p>Style(s): {{group.style}}</p>
+</div>
+<app-album-list groupId="{{groupId}}"></app-album-list>
