@@ -26,9 +26,8 @@ docker volume create database_volume
 ( cd music-shop-web; docker build -t ms-web . )
 
 # init swarm
-is_swarm=$(docker info | grep 'Swarm: active')
-if [[ $is_swarm == '' ]]; then
-    docker swarm init
+if ! docker info 2> /dev/null | grep -qw 'Swarm: active'; then
+    docker swarm init > /dev/null
 fi
 
 # init configs and secrets
