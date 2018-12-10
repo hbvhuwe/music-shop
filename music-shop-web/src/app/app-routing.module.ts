@@ -9,6 +9,7 @@ import {GroupDetailsComponent} from './group-details/group-details.component';
 import {AlbumDetailsComponent} from './album-details/album-details.component';
 import {PageNotFoundComponent} from './page-not-found/page-not-found.component';
 import {RegisterComponent} from './register/register.component';
+import {LibraryComponent} from './library/library.component';
 
 const routes: Routes = [
   {path: 'main', component: MainComponent},
@@ -17,6 +18,7 @@ const routes: Routes = [
   {path: '', redirectTo: '/main', pathMatch: 'full'},
   {path: 'groups/:groupId', component: GroupDetailsComponent},
   {path: 'albums/:albumId', component: AlbumDetailsComponent},
+  {path: 'library/:userId', component: LibraryComponent},
   {path: '**', component: PageNotFoundComponent}
 ];
 

@@ -12,6 +12,7 @@ import {ToolbarService} from '../services/toolbar.service';
 export class AppBarComponent implements OnInit {
   isLoggedIn = false;
   currentPageName: string;
+  userId: number;
   username: string;
 
   constructor(
@@ -28,9 +29,15 @@ export class AppBarComponent implements OnInit {
       if (next) {
         this.authService.getUserInfo().subscribe(result => {
           this.username = result.login;
+          this.userId = result.clientId;
+          localStorage.setItem('currentUserId', result.clientId.toString());
         });
       }
     });
+
+    if (localStorage.getItem('currentAuth')) {
+      this.authService.isLoggedIn.next(true);
+    }
   }
 
   onSignIn() {
@@ -41,7 +48,9 @@ export class AppBarComponent implements OnInit {
     this.router.navigate(['/register']);
   }
 
-  onMyLibrary() { console.log('going to my library'); }
+  onMyLibrary() {
+    this.router.navigate([`/library/${this.userId}`]);
+  }
 
   onSignOut() {
     localStorage.removeItem('currentAuth');

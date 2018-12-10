@@ -32,12 +32,13 @@ import {
 import {GroupDetailsComponent} from './group-details/group-details.component';
 import {AlbumDetailsComponent} from './album-details/album-details.component';
 import { RegisterComponent } from './register/register.component';
+import { LibraryComponent } from './library/library.component';
 
 @NgModule({
   declarations : [
     AppComponent, AppBarComponent, LoginComponent, MainComponent,
     PageNotFoundComponent, GroupListComponent, AlbumListComponent,
-    CompositionsListComponent, GroupDetailsComponent, AlbumDetailsComponent, RegisterComponent
+    CompositionsListComponent, GroupDetailsComponent, AlbumDetailsComponent, RegisterComponent, LibraryComponent
   ],
   imports : [
     BrowserModule, HttpClientModule, FormsModule, ReactiveFormsModule,

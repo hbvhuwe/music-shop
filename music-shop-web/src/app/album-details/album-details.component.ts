@@ -16,6 +16,7 @@ export class AlbumDetailsComponent implements OnInit {
   album: Album;
   loading = true;
   error = false;
+  alreadyPurchased = false;
 
   constructor(private snackbar: MatSnackBar, private api: ApiService,
               private route: ActivatedRoute, private router: Router,
@@ -45,6 +46,31 @@ export class AlbumDetailsComponent implements OnInit {
                 this.loadAlbum();
               });
             });
+    this.api.getAlbumsForUser(localStorage.getItem('currentUserId'))
+        .subscribe(
+            result => {
+              let r = result.find((e) => e.diskId.toString() === this.albumId);
+              if (r) {
+                this.alreadyPurchased = true;
+              } else {
+                this.alreadyPurchased = false;
+              }
+            },
+            error => {
+              // make sure that user cannot purchase in case of error
+              this.alreadyPurchased = true;
+            });
+  }
+
+  onBuy() {
+    this.api.purchaseAlbum(this.album.diskId, this.album.price).subscribe(result => {
+      if (result.status === 'success') {
+        this.openSnackBar('Successfully purchased', 'Ok');
+        this.alreadyPurchased = true;
+      } else {
+        this.openSnackBar('Failed purchase: ' + result.message, 'Ok');
+      }
+    });
   }
 
   openSnackBar(message: string, action: string): MatSnackBarRef<any> {

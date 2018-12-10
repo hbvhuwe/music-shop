@@ -1,5 +1,5 @@
 import {Injectable} from '@angular/core';
-import {HttpClient} from '@angular/common/http';
+import {HttpClient, HttpHeaders} from '@angular/common/http';
 import {Observable} from 'rxjs';
 import {Group} from '../model/group.model';
 import {Album} from '../model/album.model';
@@ -33,7 +33,9 @@ export class ApiService {
   }
 
   getAlbumsForUser(userId: string): Observable<Album[]> {
-    return this.http.get<Album[]>(`${API_HOST}/disks/library/${userId}`);
+    const options = this.createOptions(
+        {'Authorization' : localStorage.getItem('currentAuth')});
+    return this.http.get<Album[]>(`${API_HOST}/disks/library/${userId}`, options);
   }
 
   getAllCompositions(): Observable<Composition[]> {
@@ -41,10 +43,26 @@ export class ApiService {
   }
 
   getCompositionsForUser(userId: string): Observable<Composition[]> {
-    return this.http.get<Composition[]>(`${API_HOST}/compositions/library/${userId}`);
+    const options = this.createOptions(
+        {'Authorization' : localStorage.getItem('currentAuth')});
+    return this.http.get<Composition[]>(`${API_HOST}/compositions/library/${userId}`,
+                                        options);
+  }
+
+  purchaseAlbum(albumId: number, purchaseValue: number): Observable<any> {
+    const options = this.createOptions(
+        {'Authorization' : localStorage.getItem('currentAuth')});
+    return this.http.put<any>(`${API_HOST}/purchase/${albumId}`, null, {
+      headers : {'Authorization' : localStorage.getItem('currentAuth')},
+      params : {PurchaseValue : purchaseValue.toString()}
+    });
   }
 
   getCompositionsForAlbum(albumId: string): Observable<Composition[]> {
     return this.http.get<Composition[]>(`${API_HOST}/disks/${albumId}/compositions`);
+  }
+
+  private createOptions(headers) {
+    return {headers : new HttpHeaders(headers)};
   }
 }

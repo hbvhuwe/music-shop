@@ -10,6 +10,8 @@
         <span>
             <mat-icon>attach_money</mat-icon>
         </span>
+
+        <button *ngIf="!alreadyPurchased" mat-stroked-button (click)="onBuy()">Buy</button>
     </p>
 </div>
 <app-compositions-list albumId="{{albumId}}"></app-compositions-list>

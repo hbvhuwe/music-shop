@@ -18,13 +18,12 @@ init() {
 # create volume
 docker volume create database_volume
 
-# build images
-cd music-shop-api
-docker build -t ms-api .
-cd ..
-cd music-shop-web
-docker build -t ms-web .
-cd ..
+# Build images
+# Building api image
+( cd music-shop-api; docker build -t ms-api . )
+
+# Building web application image
+( cd music-shop-web; docker build -t ms-web . )
 
 # init swarm
 is_swarm=$(docker info | grep 'Swarm: active')

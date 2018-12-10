@@ -79,8 +79,6 @@ export class AlbumListComponent implements OnInit {
     });
   }
 
-  onBuy(album: Album) {}
-
   onAlbumClick(album: Album) {
     this.router.navigate([ `/albums/${album.diskId}` ]);
   }
