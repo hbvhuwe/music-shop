@@ -7,9 +7,9 @@ import {Group} from '../model/group.model';
 import {ToolbarService} from '../services/toolbar.service';
 
 @Component({
-  selector : 'app-group-details',
-  templateUrl : './group-details.component.html',
-  styleUrls : [ './group-details.component.css' ]
+  selector: 'app-group-details',
+  templateUrl: './group-details.component.html',
+  styleUrls: ['./group-details.component.css']
 })
 export class GroupDetailsComponent implements OnInit {
   groupId: string = null;
@@ -17,9 +17,10 @@ export class GroupDetailsComponent implements OnInit {
   loading = true;
   error = false;
 
-  constructor(private snackbar: MatSnackBar, private api: ApiService,
-              private route: ActivatedRoute, private router: Router,
-              private toolbarService: ToolbarService) {}
+  constructor(
+      private snackbar: MatSnackBar, private api: ApiService,
+      private route: ActivatedRoute, private router: Router,
+      private toolbarService: ToolbarService) {}
 
   ngOnInit() {
     this.groupId = this.route.snapshot.paramMap.get('groupId');
@@ -49,7 +50,7 @@ export class GroupDetailsComponent implements OnInit {
 
   openSnackBar(message: string, action: string): MatSnackBarRef<any> {
     return this.snackbar.open(message, action, {
-      duration : 2000,
+      duration: 2000,
     });
   }
 }

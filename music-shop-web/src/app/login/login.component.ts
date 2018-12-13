@@ -6,13 +6,13 @@ import {ToolbarService} from '../services/toolbar.service';
 
 import * as hash from 'hash.js';
 
-const required = [ Validators.required ];
-const passwordValidators = [ Validators.required, Validators.minLength(6) ];
+const required = [Validators.required];
+const passwordValidators = [Validators.required, Validators.minLength(6)];
 
 @Component({
-  selector : 'app-login',
-  templateUrl : './login.component.html',
-  styleUrls : [ './login.component.css' ]
+  selector: 'app-login',
+  templateUrl: './login.component.html',
+  styleUrls: ['./login.component.css']
 })
 export class LoginComponent implements OnInit {
   private readonly pageName = "Sign in";
@@ -23,8 +23,9 @@ export class LoginComponent implements OnInit {
   usernameFormControl = new FormControl('', required);
   passwordFormControl = new FormControl('', passwordValidators);
 
-  constructor(private authService: AuthService,
-              private toolbarService: ToolbarService, private router: Router) {}
+  constructor(
+      private authService: AuthService, private toolbarService: ToolbarService,
+      private router: Router) {}
 
   ngOnInit() { this.toolbarService.setTitle(this.pageName); }
 
@@ -34,10 +35,13 @@ export class LoginComponent implements OnInit {
         .subscribe(
             result => {
               if (result.status === 'success') {
-                let hashedPassword = this.hashOf(this.passwordFormControl.value);
-                localStorage.setItem('currentAuth', btoa(`${result.clientId}:${hashedPassword}`));
+                let hashedPassword =
+                    this.hashOf(this.passwordFormControl.value);
+                localStorage.setItem(
+                    'currentAuth',
+                    btoa(`${result.clientId}:${hashedPassword}`));
                 this.authService.isLoggedIn.next(true);
-                this.router.navigate([ '/main' ]);
+                this.router.navigate(['/main']);
               } else {
                 this.hasError = true;
                 this.errorText = 'Login or password incorrect';

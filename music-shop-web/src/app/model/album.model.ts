@@ -1,5 +1,5 @@
 export interface Album {
-	diskId: number;
+  diskId: number;
   amount: number;
   name: string;
   presentDate: string;

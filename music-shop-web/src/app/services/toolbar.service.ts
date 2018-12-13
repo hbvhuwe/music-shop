@@ -6,15 +6,9 @@ import {Subject} from 'rxjs';
 export class ToolbarService implements OnDestroy {
   toolbarTitle = new Subject<string>();
 
-  constructor() {
-    this.toolbarTitle.next("Default");
-  }
+  constructor() { this.toolbarTitle.next("Default"); }
 
-  setTitle(title: string) {
-    this.toolbarTitle.next(title);
-  }
+  setTitle(title: string) { this.toolbarTitle.next(title); }
 
-  ngOnDestroy() {
-    this.toolbarTitle.complete();
-  }
+  ngOnDestroy() { this.toolbarTitle.complete(); }
 }

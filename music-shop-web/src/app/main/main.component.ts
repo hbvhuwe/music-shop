@@ -12,7 +12,5 @@ export class MainComponent implements OnInit {
 
   constructor(private toolbarService: ToolbarService) {}
 
-  ngOnInit() {
-    this.toolbarService.setTitle(this.pageName);
-  }
+  ngOnInit() { this.toolbarService.setTitle(this.pageName); }
 }

@@ -5,22 +5,23 @@ import {ApiService} from '../services/api.service';
 import {Composition} from '../model/composition.model';
 
 @Component({
-  selector : 'app-compositions-list',
-  templateUrl : './compositions-list.component.html',
-  styleUrls : [ './compositions-list.component.css' ]
+  selector: 'app-compositions-list',
+  templateUrl: './compositions-list.component.html',
+  styleUrls: ['./compositions-list.component.css']
 })
 export class CompositionsListComponent implements OnInit {
   @Input('show') show: string;
-  @Input('albumId') albumId : string;
+  @Input('albumId') albumId: string;
 
   compositionsList: Composition[];
-  displayedColumns: string[] = [ 'diskId', 'name', 'presentDate', 'duration' ];
+  displayedColumns: string[] = ['diskId', 'name', 'presentDate', 'duration'];
 
   listEmpty: boolean = false;
   loading: boolean = true;
 
-  constructor(private snackbar: MatSnackBar, private api: ApiService,
-              private route: ActivatedRoute, private router: Router) {}
+  constructor(
+      private snackbar: MatSnackBar, private api: ApiService,
+      private route: ActivatedRoute, private router: Router) {}
 
   ngOnInit() { this.loadList(); }
 
@@ -76,7 +77,7 @@ export class CompositionsListComponent implements OnInit {
 
   openSnackBar(message: string, action: string): MatSnackBarRef<any> {
     return this.snackbar.open(message, action, {
-      duration : 2000,
+      duration: 2000,
     });
   }
 }

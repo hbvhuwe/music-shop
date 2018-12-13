@@ -4,7 +4,9 @@ import {Routes, RouterModule} from '@angular/router';
 import {MainComponent} from './main/main.component';
 import {LoginComponent} from './login/login.component';
 import {AlbumListComponent} from './album-list/album-list.component';
-import {CompositionsListComponent} from './compositions-list/compositions-list.component';
+import {
+  CompositionsListComponent
+} from './compositions-list/compositions-list.component';
 import {GroupDetailsComponent} from './group-details/group-details.component';
 import {AlbumDetailsComponent} from './album-details/album-details.component';
 import {PageNotFoundComponent} from './page-not-found/page-not-found.component';

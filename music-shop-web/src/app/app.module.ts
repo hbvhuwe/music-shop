@@ -31,24 +31,25 @@ import {
 } from './compositions-list/compositions-list.component';
 import {GroupDetailsComponent} from './group-details/group-details.component';
 import {AlbumDetailsComponent} from './album-details/album-details.component';
-import { RegisterComponent } from './register/register.component';
-import { LibraryComponent } from './library/library.component';
+import {RegisterComponent} from './register/register.component';
+import {LibraryComponent} from './library/library.component';
 
 @NgModule({
-  declarations : [
+  declarations: [
     AppComponent, AppBarComponent, LoginComponent, MainComponent,
     PageNotFoundComponent, GroupListComponent, AlbumListComponent,
-    CompositionsListComponent, GroupDetailsComponent, AlbumDetailsComponent, RegisterComponent, LibraryComponent
+    CompositionsListComponent, GroupDetailsComponent, AlbumDetailsComponent,
+    RegisterComponent, LibraryComponent
   ],
-  imports : [
+  imports: [
     BrowserModule, HttpClientModule, FormsModule, ReactiveFormsModule,
     AppRoutingModule, BrowserAnimationsModule, MatButtonModule,
     MatToolbarModule, MatIconModule, MatDividerModule, MatMenuModule,
     MatTabsModule, MatSnackBarModule, MatCardModule, MatProgressSpinnerModule,
     MatTableModule, MatFormFieldModule, MatInputModule
   ],
-  providers : [],
-  bootstrap : [ AppComponent ]
+  providers: [],
+  bootstrap: [AppComponent]
 })
 export class AppModule {
 }

@@ -7,9 +7,9 @@ import {Album} from '../model/album.model';
 import {ToolbarService} from '../services/toolbar.service';
 
 @Component({
-  selector : 'app-album-details',
-  templateUrl : './album-details.component.html',
-  styleUrls : [ './album-details.component.css' ]
+  selector: 'app-album-details',
+  templateUrl: './album-details.component.html',
+  styleUrls: ['./album-details.component.css']
 })
 export class AlbumDetailsComponent implements OnInit {
   albumId: string = null;
@@ -18,9 +18,10 @@ export class AlbumDetailsComponent implements OnInit {
   error = false;
   alreadyPurchased = false;
 
-  constructor(private snackbar: MatSnackBar, private api: ApiService,
-              private route: ActivatedRoute, private router: Router,
-              private toolbarService: ToolbarService) {}
+  constructor(
+      private snackbar: MatSnackBar, private api: ApiService,
+      private route: ActivatedRoute, private router: Router,
+      private toolbarService: ToolbarService) {}
 
   ngOnInit() {
     this.albumId = this.route.snapshot.paramMap.get('albumId');
@@ -63,19 +64,20 @@ export class AlbumDetailsComponent implements OnInit {
   }
 
   onBuy() {
-    this.api.purchaseAlbum(this.album.diskId, this.album.price).subscribe(result => {
-      if (result.status === 'success') {
-        this.openSnackBar('Successfully purchased', 'Ok');
-        this.alreadyPurchased = true;
-      } else {
-        this.openSnackBar('Failed purchase: ' + result.message, 'Ok');
-      }
-    });
+    this.api.purchaseAlbum(this.album.diskId, this.album.price)
+        .subscribe(result => {
+          if (result.status === 'success') {
+            this.openSnackBar('Successfully purchased', 'Ok');
+            this.alreadyPurchased = true;
+          } else {
+            this.openSnackBar('Failed purchase: ' + result.message, 'Ok');
+          }
+        });
   }
 
   openSnackBar(message: string, action: string): MatSnackBarRef<any> {
     return this.snackbar.open(message, action, {
-      duration : 2000,
+      duration: 2000,
     });
   }
 }

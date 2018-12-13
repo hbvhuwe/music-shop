@@ -7,12 +7,12 @@ import {
 } from '@angular/router';
 import {Observable} from 'rxjs';
 
-@Injectable({providedIn : 'root'})
+@Injectable({providedIn: 'root'})
 export class AuthGuard implements CanActivate {
-  constructor(private router: Router) { }
+  constructor(private router: Router) {}
   canActivate(next: ActivatedRouteSnapshot, state: RouterStateSnapshot):
-      Observable<boolean> |
-      Promise<boolean> | boolean {
+          Observable<boolean>|
+      Promise<boolean>| boolean {
     if (localStorage.getItem('currentAuth')) {
       return true;
     } else {

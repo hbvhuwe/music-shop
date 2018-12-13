@@ -5,4 +5,3 @@ export interface Client {
   surname: string;
   password: string;
 }
-

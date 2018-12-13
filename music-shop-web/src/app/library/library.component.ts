@@ -15,13 +15,13 @@ export class LibraryComponent implements OnInit {
   loading = true;
   error = false;
 
-  constructor(private snackbar: MatSnackBar, private api: ApiService,
-              private route: ActivatedRoute, private router: Router,
-              private toolbarService: ToolbarService) {}
+  constructor(
+      private snackbar: MatSnackBar, private api: ApiService,
+      private route: ActivatedRoute, private router: Router,
+      private toolbarService: ToolbarService) {}
 
   ngOnInit() {
     this.userId = this.route.snapshot.paramMap.get('userId');
     this.toolbarService.setTitle(this.pageTitle);
   }
-
 }

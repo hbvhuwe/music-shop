@@ -16,14 +16,12 @@ export class AppBarComponent implements OnInit {
   username: string;
 
   constructor(
-    private toolbarService: ToolbarService,
-    private authService: AuthService,
-    private router: Router) {}
+      private toolbarService: ToolbarService, private authService: AuthService,
+      private router: Router) {}
 
   ngOnInit() {
-    this.toolbarService.toolbarTitle.subscribe(title => {
-      this.currentPageName = title;
-    });
+    this.toolbarService.toolbarTitle.subscribe(
+        title => { this.currentPageName = title; });
     this.authService.isLoggedIn.subscribe(next => {
       this.isLoggedIn = next;
       if (next) {
@@ -40,17 +38,11 @@ export class AppBarComponent implements OnInit {
     }
   }
 
-  onSignIn() {
-    this.router.navigate(['/login']);
-  }
+  onSignIn() { this.router.navigate(['/login']); }
 
-  onSignUp() {
-    this.router.navigate(['/register']);
-  }
+  onSignUp() { this.router.navigate(['/register']); }
 
-  onMyLibrary() {
-    this.router.navigate([`/library/${this.userId}`]);
-  }
+  onMyLibrary() { this.router.navigate([`/library/${this.userId}`]); }
 
   onSignOut() {
     localStorage.removeItem('currentAuth');

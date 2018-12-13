@@ -7,9 +7,8 @@ import {Composition} from '../model/composition.model';
 
 import {API_HOST} from '../config';
 
-@Injectable({providedIn : 'root'})
+@Injectable({providedIn: 'root'})
 export class ApiService {
-
   constructor(private http: HttpClient) {}
 
   getAllGroups(): Observable<Group[]> {
@@ -34,7 +33,7 @@ export class ApiService {
 
   getAlbumsForUser(userId: string): Observable<Album[]> {
     const options = this.createOptions(
-        {'Authorization' : localStorage.getItem('currentAuth')});
+        {'Authorization': localStorage.getItem('currentAuth')});
     return this.http.get<Album[]>(`${API_HOST}/disks/library/${userId}`, options);
   }
 
@@ -44,17 +43,17 @@ export class ApiService {
 
   getCompositionsForUser(userId: string): Observable<Composition[]> {
     const options = this.createOptions(
-        {'Authorization' : localStorage.getItem('currentAuth')});
-    return this.http.get<Composition[]>(`${API_HOST}/compositions/library/${userId}`,
-                                        options);
+        {'Authorization': localStorage.getItem('currentAuth')});
+    return this.http.get<Composition[]>(
+        `${API_HOST}/compositions/library/${userId}`, options);
   }
 
   purchaseAlbum(albumId: number, purchaseValue: number): Observable<any> {
     const options = this.createOptions(
-        {'Authorization' : localStorage.getItem('currentAuth')});
+        {'Authorization': localStorage.getItem('currentAuth')});
     return this.http.put<any>(`${API_HOST}/purchase/${albumId}`, null, {
-      headers : {'Authorization' : localStorage.getItem('currentAuth')},
-      params : {PurchaseValue : purchaseValue.toString()}
+      headers: {'Authorization': localStorage.getItem('currentAuth')},
+      params: {PurchaseValue: purchaseValue.toString()}
     });
   }
 
@@ -62,7 +61,5 @@ export class ApiService {
     return this.http.get<Composition[]>(`${API_HOST}/disks/${albumId}/compositions`);
   }
 
-  private createOptions(headers) {
-    return {headers : new HttpHeaders(headers)};
-  }
+  private createOptions(headers) { return {headers: new HttpHeaders(headers)}; }
 }

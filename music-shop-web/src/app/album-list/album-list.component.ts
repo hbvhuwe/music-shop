@@ -6,9 +6,9 @@ import {Album} from '../model/album.model';
 import {Group} from '../model/group.model';
 
 @Component({
-  selector : 'app-album-list',
-  templateUrl : './album-list.component.html',
-  styleUrls : [ './album-list.component.css' ]
+  selector: 'app-album-list',
+  templateUrl: './album-list.component.html',
+  styleUrls: ['./album-list.component.css']
 })
 export class AlbumListComponent implements OnInit {
   @Input('show') show: string;
@@ -18,8 +18,9 @@ export class AlbumListComponent implements OnInit {
   loading: boolean = true;
   albumList: Album[];
 
-  constructor(private snackbar: MatSnackBar, private api: ApiService,
-              private route: ActivatedRoute, private router: Router) {}
+  constructor(
+      private snackbar: MatSnackBar, private api: ApiService,
+      private route: ActivatedRoute, private router: Router) {}
 
   ngOnInit() { this.loadList(); }
 
@@ -75,11 +76,11 @@ export class AlbumListComponent implements OnInit {
 
   openSnackBar(message: string, action: string): MatSnackBarRef<any> {
     return this.snackbar.open(message, action, {
-      duration : 2000,
+      duration: 2000,
     });
   }
 
   onAlbumClick(album: Album) {
-    this.router.navigate([ `/albums/${album.diskId}` ]);
+    this.router.navigate([`/albums/${album.diskId}`]);
   }
 }

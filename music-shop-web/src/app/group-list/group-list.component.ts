@@ -5,17 +5,18 @@ import {ApiService} from '../services/api.service';
 import {Group} from '../model/group.model';
 
 @Component({
-  selector : 'app-group-list',
-  templateUrl : './group-list.component.html',
-  styleUrls : [ './group-list.component.css' ]
+  selector: 'app-group-list',
+  templateUrl: './group-list.component.html',
+  styleUrls: ['./group-list.component.css']
 })
 export class GroupListComponent implements OnInit {
   listEmpty: boolean = false;
   loading: boolean = true;
   groupsList: Group[];
 
-  constructor(private snackbar: MatSnackBar, private api: ApiService,
-              private router: Router) {}
+  constructor(
+      private snackbar: MatSnackBar, private api: ApiService,
+      private router: Router) {}
 
   ngOnInit() { this.loadList(); }
 
@@ -38,11 +39,11 @@ export class GroupListComponent implements OnInit {
 
   openSnackBar(message: string, action: string): MatSnackBarRef<any> {
     return this.snackbar.open(message, action, {
-      duration : 2000,
+      duration: 2000,
     });
   }
 
   onGroupClick(group: Group) {
-    this.router.navigate([ `/groups/${group.groupId}` ]);
+    this.router.navigate([`/groups/${group.groupId}`]);
   }
 }
