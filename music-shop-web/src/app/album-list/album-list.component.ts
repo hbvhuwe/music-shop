@@ -1,6 +1,6 @@
 import {Component, OnInit, Input} from '@angular/core';
 import {ActivatedRoute, Router} from '@angular/router';
-import {MatSnackBar, MatSnackBarRef} from '@angular/material';
+import { MatSnackBar, MatSnackBarRef } from '@angular/material/snack-bar';
 import {ApiService} from '../services/api.service';
 import {Album} from '../model/album.model';
 import {Group} from '../model/group.model';
