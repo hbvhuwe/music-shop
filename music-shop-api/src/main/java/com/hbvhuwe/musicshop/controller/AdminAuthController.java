@@ -21,7 +21,7 @@ public class AdminAuthController {
   private final AdminRepository adminRepository;
 
   @Autowired
-  public AuthController(AdminRepository adminRepository) {
+  public AdminAuthController(AdminRepository adminRepository) {
     this.adminRepository = adminRepository;
   }
 
