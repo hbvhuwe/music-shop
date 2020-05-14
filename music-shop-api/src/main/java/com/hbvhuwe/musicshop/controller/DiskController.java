@@ -1,13 +1,7 @@
 package com.hbvhuwe.musicshop.controller;
 
-import com.hbvhuwe.musicshop.model.Checks;
-import com.hbvhuwe.musicshop.model.Client;
-import com.hbvhuwe.musicshop.model.Composition;
-import com.hbvhuwe.musicshop.model.Disk;
-import com.hbvhuwe.musicshop.repository.ChecksRepository;
-import com.hbvhuwe.musicshop.repository.ClientRepository;
-import com.hbvhuwe.musicshop.repository.CompositionRepository;
-import com.hbvhuwe.musicshop.repository.DiskRepository;
+import com.hbvhuwe.musicshop.model.*;
+import com.hbvhuwe.musicshop.repository.*;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -26,17 +20,20 @@ public class DiskController {
   private final ClientRepository clientRepository;
   private final ChecksRepository checksRepository;
   private final CompositionRepository compositionRepository;
+  private final AdminRepository adminRepository;
 
   @Autowired
   public DiskController(
       DiskRepository repository,
       ClientRepository clientRepository,
       ChecksRepository checksRepository,
-      CompositionRepository compositionRepository) {
+      CompositionRepository compositionRepository,
+      AdminRepository adminRepository) {
     this.diskRepository = repository;
     this.clientRepository = clientRepository;
     this.checksRepository = checksRepository;
     this.compositionRepository = compositionRepository;
+    this.adminRepository = adminRepository;
   }
 
   @GetMapping(path = "/library/{id}")
@@ -94,20 +91,37 @@ public class DiskController {
       @RequestParam(name = "PresentDate") String presentDate,
       @RequestParam(name = "Price") double price,
       @RequestParam(name = "GroupID") int id) {
-    Disk disk = new Disk();
-    disk.setName(name);
-    disk.setAmount(amount);
-    disk.setPresentDate(presentDate);
-    disk.setPrice(price);
-    disk.setGroupId(id);
-    diskRepository.save(disk);
-    return ResponseEntity.ok("{\"status\":\"success\"}");
+    String authEncoded = new String(Base64.getDecoder().decode(auth.getBytes()));
+    String[] cred = authEncoded.split(":");
+    Optional<Admin> admin =
+        adminRepository.findAdminByAdminIdAndPassword(Integer.parseInt(cred[0]), cred[1]);
+    if (admin.isPresent()) {
+      Disk disk = new Disk();
+      disk.setName(name);
+      disk.setAmount(amount);
+      disk.setPresentDate(presentDate);
+      disk.setPrice(price);
+      disk.setGroupId(id);
+      diskRepository.save(disk);
+      return ResponseEntity.ok("{\"status\":\"success\"}");
+    } else {
+      return ResponseEntity.status(HttpStatus.UNAUTHORIZED).body(null);
+    }
   }
 
   @DeleteMapping(path = "/delete/{id}")
   @ResponseBody
-  public ResponseEntity<String> delete(@RequestHeader(value = "Authorization") String auth, @PathVariable(name = "id") int id) {
-    diskRepository.deleteById(id);
-    return ResponseEntity.ok("{\"status\":\"success\"}");
+  public ResponseEntity<String> delete(
+      @RequestHeader(value = "Authorization") String auth, @PathVariable(name = "id") int id) {
+    String authEncoded = new String(Base64.getDecoder().decode(auth.getBytes()));
+    String[] cred = authEncoded.split(":");
+    Optional<Admin> admin =
+        adminRepository.findAdminByAdminIdAndPassword(Integer.parseInt(cred[0]), cred[1]);
+    if (admin.isPresent()) {
+      diskRepository.deleteById(id);
+      return ResponseEntity.ok("{\"status\":\"success\"}");
+    } else {
+      return ResponseEntity.status(HttpStatus.UNAUTHORIZED).body(null);
+    }
   }
 }
