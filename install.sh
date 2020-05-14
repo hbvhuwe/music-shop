@@ -25,6 +25,9 @@ docker volume create database_volume
 # Building web application image
 ( cd music-shop-web; docker build -t ms-web . )
 
+# Building admin application image
+( cd music-shop-admin; docker build -t ms-admin . )
+
 # init swarm
 if ! docker info 2> /dev/null | grep -qw 'Swarm: active'; then
     docker swarm init > /dev/null

@@ -8,5 +8,8 @@
 # Building web application image
 ( cd music-shop-web; docker build -t ms-web . )
 
+# Building admin application image
+( cd music-shop-admin; docker build -t ms-admin . )
+
 # Building desktop application
 ( cd music-shop-client; ./gradlew build )

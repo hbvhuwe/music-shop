@@ -86,6 +86,7 @@ public class CompositionController {
   @PutMapping(path = "/add")
   @ResponseBody
   public ResponseEntity<String> add(
+      @RequestHeader(value = "Authorization") String auth,
       @RequestParam(name = "Name") String name,
       @RequestParam(name = "Duration") String duration,
       @RequestParam(name = "PresentDate") String presentDate,
@@ -101,7 +102,7 @@ public class CompositionController {
 
   @DeleteMapping(path = "/delete/{id}")
   @ResponseBody
-  public ResponseEntity<String> delete(@PathVariable(name = "id") int id) {
+  public ResponseEntity<String> delete(@RequestHeader(value = "Authorization") String auth, @PathVariable(name = "id") int id) {
     repository.deleteById(id);
     return ResponseEntity.ok("{\"status\":\"success\"}");
   }

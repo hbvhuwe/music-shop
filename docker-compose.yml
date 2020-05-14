@@ -5,7 +5,17 @@ services:
     depends_on:
       - database
     ports:
-      - "80:80"
+      - "8000:80"
+    configs:
+      - source: web-app.conf
+        target: /etc/nginx/nginx.conf
+  
+  admin:
+    image: ms-admin
+    depends_on:
+      - database
+    ports:
+      - "8001:80"
     configs:
       - source: web-app.conf
         target: /etc/nginx/nginx.conf
