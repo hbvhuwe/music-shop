@@ -2,6 +2,17 @@
 CREATE DATABASE IF NOT EXISTS music_shop_db;
 
 /*create tables*/
+/*create table admin*/
+CREATE TABLE IF NOT EXISTS Admin (
+	AdminID int NOT NULL AUTO_INCREMENT,
+	Login varchar(50) NOT NULL,
+	Name varchar(50) NOT NULL,
+	Surname varchar(50) NOT NULL,
+	Password varchar(64) NOT NULL,
+	PRIMARY KEY (AdminID),
+	UNIQUE KEY Name_UNIQUE (Name)
+) DEFAULT CHARSET=utf8 COMMENT='Table, representing admin';
+
 /*create table group*/
 CREATE TABLE IF NOT EXISTS Groups (
 	GroupID int NOT NULL AUTO_INCREMENT,
@@ -62,3 +73,5 @@ CREATE TABLE IF NOT EXISTS Checks (
 	FOREIGN KEY (DiskID) REFERENCES Disk(DiskID),
 	FOREIGN KEY (ClientID) REFERENCES Client(ClientID)
 ) DEFAULT CHARSET=utf8 COMMENT='Table, representing check';
+
+INSERT INTO Admin set Login='admin', Name='Admin', Surname='Admin', Password='8d969eef6ecad3c29a3a629280e686cf0c3f5d5a86aff3ca12020c923adc6c92';

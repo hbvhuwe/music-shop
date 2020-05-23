@@ -1,0 +1,40 @@
+<mat-card>
+    <div class="error-box mat-elevation-z2" *ngIf="hasError">
+        <p>{{errorText}}</p>
+    </div>
+    <form (ngSubmit)="onSubmit()">
+        <div class="fields-container">
+            <mat-form-field>
+                <input #login matInput type="text" placeholder="Username"
+                    [formControl]="usernameFormControl">
+                <mat-error *ngIf="usernameFormControl.hasError('required')">
+                    Username is <strong>required</strong>
+                </mat-error>
+                <button mat-button *ngIf="login.value" matSuffix mat-icon-button
+                    aria-label="Clear"
+                    (click)="usernameFormControl.setValue('')">
+                    <mat-icon>close</mat-icon>
+                </button>
+            </mat-form-field>
+            <mat-form-field>
+                <input #password matInput type="password" placeholder="Password"
+                    [formControl]="passwordFormControl">
+                <mat-error *ngIf="passwordFormControl.hasError('required')">
+                    Password is <strong>required</strong>
+                </mat-error>
+                <mat-error *ngIf="passwordFormControl.hasError('minlength')">
+                    Password <strong>must</strong> be at least 6 symbols long
+                </mat-error>
+                <button mat-button *ngIf="password.value" matSuffix
+                    mat-icon-button aria-label="Clear"
+                    (click)="passwordFormControl.setValue('')">
+                    <mat-icon>close</mat-icon>
+                </button>
+            </mat-form-field>
+        </div>
+        <div class="buttons-container">
+            <button mat-stroked-button color="primary"
+                [disabled]="usernameFormControl.errors || passwordFormControl.errors">Login</button>
+        </div>
+    </form>
+</mat-card>
