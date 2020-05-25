@@ -1,4 +1,5 @@
 import {Component, Input, OnInit, ViewChild} from '@angular/core';
+import {FormBuilder, FormControl, FormGroup, Validators} from '@angular/forms';
 import {MatSnackBar, MatSnackBarRef} from '@angular/material/snack-bar';
 import {MatSort} from '@angular/material/sort';
 import {MatTableDataSource} from '@angular/material/table';
@@ -21,13 +22,34 @@ export class CompositionsListComponent implements OnInit {
 
   @ViewChild(MatSort, {static: true}) sort: MatSort;
 
+  form: FormGroup;
+
+  durationFormControl = new FormControl('', [
+    Validators.required,
+  ]);
+  nameFormControl = new FormControl('', [
+    Validators.required,
+  ]);
+  presentDateFormControl = new FormControl('', [
+    Validators.required,
+  ]);
+  diskIdFormControl = new FormControl('', [
+    Validators.required,
+  ]);
+
   constructor(
       private snackbar: MatSnackBar, private api: ApiService,
-      private router: Router) {}
+      private fb: FormBuilder, private router: Router) {}
 
   ngOnInit() {
     this.loadList();
     this.dataSource.sort = this.sort;
+    this.form = this.fb.group({
+      duration: this.durationFormControl,
+      name: this.nameFormControl,
+      presentDate: this.presentDateFormControl,
+      diskId: this.diskIdFormControl,
+    });
   }
 
   private loadList() {
@@ -40,6 +62,18 @@ export class CompositionsListComponent implements OnInit {
           s.onAction().subscribe(() => {
             this.loadList();
           });
+        });
+  }
+
+  onSubmit() {
+    this.api
+        .addComposition(
+            this.durationFormControl.value.toString(),
+            this.nameFormControl.value.toString(),
+            this.presentDateFormControl.value.toString(),
+            this.diskIdFormControl.value.toString())
+        .subscribe(_ => {
+          this.loadList();
         });
   }
 

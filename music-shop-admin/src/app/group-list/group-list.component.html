@@ -1,3 +1,25 @@
+<form (ngSubmit)="onSubmit()" [formGroup]="form">
+  <div class="fields-container">
+    <mat-form-field>
+      <input #musician matInput type="text" placeholder="Musician"
+        [formControl]="musicianFormControl">
+    </mat-form-field>
+    <mat-form-field>
+      <input #name matInput type="text" placeholder="Name"
+        [formControl]="nameFormControl">
+    </mat-form-field>
+    <mat-form-field>
+      <input #style matInput type="text" placeholder="Style"
+        [formControl]="presentDateFormControl">
+    </mat-form-field>
+  </div>
+
+  <div class="buttons-container">
+    <button mat-stroked-button color="primary"
+      [disabled]="form.invalid">Create</button>
+  </div>
+</form>
+
 <table mat-table [dataSource]="dataSource" matSort class="mat-elevation-z8">
 
   <!-- Id Column -->

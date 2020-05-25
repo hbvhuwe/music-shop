@@ -1,11 +1,11 @@
-import {Injectable} from '@angular/core';
 import {HttpClient, HttpHeaders} from '@angular/common/http';
+import {Injectable} from '@angular/core';
 import {Observable} from 'rxjs';
-import {Group} from '../model/group.model';
-import {Album} from '../model/album.model';
-import {Composition} from '../model/composition.model';
 
 import {API_HOST} from '../config';
+import {Album} from '../model/album.model';
+import {Composition} from '../model/composition.model';
+import {Group} from '../model/group.model';
 
 @Injectable({providedIn: 'root'})
 export class ApiService {
@@ -34,7 +34,8 @@ export class ApiService {
   getAlbumsForUser(userId: string): Observable<Album[]> {
     const options = this.createOptions(
         {'Authorization': localStorage.getItem('currentAuth')});
-    return this.http.get<Album[]>(`${API_HOST}/disks/library/${userId}`, options);
+    return this.http.get<Album[]>(
+        `${API_HOST}/disks/library/${userId}`, options);
   }
 
   getAllCompositions(): Observable<Composition[]> {
@@ -58,8 +59,11 @@ export class ApiService {
   }
 
   getCompositionsForAlbum(albumId: string): Observable<Composition[]> {
-    return this.http.get<Composition[]>(`${API_HOST}/disks/${albumId}/compositions`);
+    return this.http.get<Composition[]>(
+        `${API_HOST}/disks/${albumId}/compositions`);
   }
 
-  private createOptions(headers) { return {headers: new HttpHeaders(headers)}; }
+  private createOptions(headers) {
+    return {headers: new HttpHeaders(headers)};
+  }
 }

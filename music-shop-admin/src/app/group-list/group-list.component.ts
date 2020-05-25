@@ -1,4 +1,5 @@
 import {Component, Input, OnInit, ViewChild} from '@angular/core';
+import {FormBuilder, FormControl, FormGroup, Validators} from '@angular/forms';
 import {MatSnackBar, MatSnackBarRef} from '@angular/material/snack-bar';
 import {MatSort} from '@angular/material/sort';
 import {MatTableDataSource} from '@angular/material/table';
@@ -20,13 +21,30 @@ export class GroupListComponent implements OnInit {
 
   @ViewChild(MatSort, {static: true}) sort: MatSort;
 
+  form: FormGroup;
+
+  musicianFormControl = new FormControl('', [
+    Validators.required,
+  ]);
+  nameFormControl = new FormControl('', [
+    Validators.required,
+  ]);
+  presentDateFormControl = new FormControl('', [
+    Validators.required,
+  ]);
+
   constructor(
       private snackbar: MatSnackBar, private api: ApiService,
-      private router: Router) {}
+      private fb: FormBuilder, private router: Router) {}
 
   ngOnInit() {
     this.loadList();
     this.dataSource.sort = this.sort;
+    this.form = this.fb.group({
+      musician: this.musicianFormControl,
+      name: this.nameFormControl,
+      presentDate: this.presentDateFormControl,
+    });
   }
 
   private loadList() {
@@ -39,6 +57,17 @@ export class GroupListComponent implements OnInit {
           s.onAction().subscribe(() => {
             this.loadList();
           });
+        });
+  }
+
+  onSubmit() {
+    this.api
+        .addGroup(
+            this.nameFormControl.value.toString(),
+            this.musicianFormControl.value.toString(),
+            this.presentDateFormControl.value.toString())
+        .subscribe(_ => {
+          this.loadList();
         });
   }
 

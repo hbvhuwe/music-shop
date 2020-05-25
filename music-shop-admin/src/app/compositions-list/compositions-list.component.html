@@ -1,3 +1,29 @@
+<form (ngSubmit)="onSubmit()" [formGroup]="form">
+  <div class="fields-container">
+    <mat-form-field>
+      <input #duration matInput type="text" placeholder="Duration"
+        [formControl]="durationFormControl">
+    </mat-form-field>
+    <mat-form-field>
+      <input #name matInput type="text" placeholder="Name"
+        [formControl]="nameFormControl">
+    </mat-form-field>
+    <mat-form-field>
+      <input #presentDate matInput type="text" placeholder="Present Date"
+        [formControl]="presentDateFormControl">
+    </mat-form-field>
+    <mat-form-field>
+      <input #diskId matInput type="text" placeholder="DiskID"
+        [formControl]="diskIdFormControl">
+    </mat-form-field>
+  </div>
+
+  <div class="buttons-container">
+    <button mat-stroked-button color="primary"
+      [disabled]="form.invalid">Create</button>
+  </div>
+</form>
+
 <table mat-table [dataSource]="dataSource" matSort class="mat-elevation-z8">
 
   <!-- Id Column -->

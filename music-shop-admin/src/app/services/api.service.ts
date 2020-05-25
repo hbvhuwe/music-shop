@@ -40,6 +40,44 @@ export class ApiService {
         `${API_HOST}/disks/${albumId}/compositions`);
   }
 
+  addGroup(name: string, musician: string, style: string): Observable<Group> {
+    return this.http.put<Group>(`${API_HOST}/groups/add`, {}, {
+      params: {
+        Name: name,
+        Musician: musician,
+        Style: style,
+      },
+    });
+  }
+
+  addDisk(
+      amount: number, name: string, image: string, presentDate: string,
+      price: string, groupId: string): Observable<Album> {
+    return this.http.put<Album>(`${API_HOST}/disks/add`, {}, {
+      params: {
+        Amount: amount.toString(),
+        Name: name,
+        Image: image,
+        PresentDate: presentDate,
+        Price: price,
+        GroupID: groupId,
+      },
+    });
+  }
+
+  addComposition(
+      duration: string, name: string, presentDate: string,
+      diskId: string): Observable<Composition> {
+    return this.http.put<Composition>(`${API_HOST}/compositions/add`, {}, {
+      params: {
+        Name: name,
+        Duration: duration,
+        PresentDate: presentDate,
+        DiskID: diskId,
+      },
+    });
+  }
+
   private createOptions(headers) {
     return {headers: new HttpHeaders(headers)};
   }

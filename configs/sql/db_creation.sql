@@ -28,6 +28,7 @@ CREATE TABLE IF NOT EXISTS Disk (
 	DiskID int NOT NULL AUTO_INCREMENT,
 	GroupID int NOT NULL,
 	Name varchar(50) NOT NULL,
+	Image varchar(255) NOT NULL,
 	PresentDate date DEFAULT NULL,
 	Amount int DEFAULT NULL,
 	Price double NOT NULL,

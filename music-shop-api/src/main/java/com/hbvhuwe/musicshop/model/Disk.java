@@ -20,6 +20,9 @@ public class Disk implements Serializable, Model {
   @Column(name = "Name")
   private String name;
 
+  @Column(name = "Image")
+  private String image;
+
   @Column(name = "PresentDate")
   private String presentDate;
 
@@ -53,6 +56,14 @@ public class Disk implements Serializable, Model {
 
   public void setName(String name) {
     this.name = name;
+  }
+
+  public String getImage() {
+    return this.image;
+  }
+
+  public void setImage(String image) {
+    this.image = image;
   }
 
   public String getPresentDate() {

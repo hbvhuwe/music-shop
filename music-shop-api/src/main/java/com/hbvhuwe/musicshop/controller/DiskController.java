@@ -87,6 +87,7 @@ public class DiskController {
   public ResponseEntity<String> add(
       @RequestHeader(value = "Authorization") String auth,
       @RequestParam(name = "Name") String name,
+      @RequestParam(name = "Image") String image,
       @RequestParam(name = "Amount") int amount,
       @RequestParam(name = "PresentDate") String presentDate,
       @RequestParam(name = "Price") double price,
@@ -98,6 +99,7 @@ public class DiskController {
     if (admin.isPresent()) {
       Disk disk = new Disk();
       disk.setName(name);
+      disk.setImage(image);
       disk.setAmount(amount);
       disk.setPresentDate(presentDate);
       disk.setPrice(price);
