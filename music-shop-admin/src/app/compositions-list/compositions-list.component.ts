@@ -18,7 +18,7 @@ export class CompositionsListComponent implements OnInit {
   displayedColumns: string[] =
       ['compositionId', 'duration', 'name', 'presentDate', 'diskId'];
 
-  dataSource = new MatTableDataSource(this.compositions);
+  dataSource: MatTableDataSource<Composition>;
 
   @ViewChild(MatSort, {static: true}) sort: MatSort;
 
@@ -43,7 +43,6 @@ export class CompositionsListComponent implements OnInit {
 
   ngOnInit() {
     this.loadList();
-    this.dataSource.sort = this.sort;
     this.form = this.fb.group({
       duration: this.durationFormControl,
       name: this.nameFormControl,
@@ -56,6 +55,9 @@ export class CompositionsListComponent implements OnInit {
     this.api.getAllCompositions().subscribe(
         result => {
           this.compositions = result;
+          this.dataSource = new MatTableDataSource(this.compositions);
+          this.dataSource.sort = this.sort;
+          this.form.reset();
         },
         error => {
           const s = this.openSnackBar('Network error', 'Try again');

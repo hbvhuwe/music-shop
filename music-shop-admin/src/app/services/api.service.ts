@@ -42,6 +42,9 @@ export class ApiService {
 
   addGroup(name: string, musician: string, style: string): Observable<Group> {
     return this.http.put<Group>(`${API_HOST}/groups/add`, {}, {
+      headers: {
+        Authorization: localStorage.getItem('currentAuth'),
+      },
       params: {
         Name: name,
         Musician: musician,
@@ -54,6 +57,9 @@ export class ApiService {
       amount: number, name: string, image: string, presentDate: string,
       price: string, groupId: string): Observable<Album> {
     return this.http.put<Album>(`${API_HOST}/disks/add`, {}, {
+      headers: {
+        Authorization: localStorage.getItem('currentAuth'),
+      },
       params: {
         Amount: amount.toString(),
         Name: name,
@@ -69,6 +75,9 @@ export class ApiService {
       duration: string, name: string, presentDate: string,
       diskId: string): Observable<Composition> {
     return this.http.put<Composition>(`${API_HOST}/compositions/add`, {}, {
+      headers: {
+        Authorization: localStorage.getItem('currentAuth'),
+      },
       params: {
         Name: name,
         Duration: duration,

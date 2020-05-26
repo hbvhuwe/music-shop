@@ -18,7 +18,7 @@ export class AlbumListComponent implements OnInit {
   displayedColumns: string[] =
       ['diskId', 'amount', 'name', 'presentDate', 'price', 'groupId'];
 
-  dataSource = new MatTableDataSource(this.disks);
+  dataSource: MatTableDataSource<Album>;
 
   @ViewChild(MatSort, {static: true}) sort: MatSort;
 
@@ -49,7 +49,6 @@ export class AlbumListComponent implements OnInit {
 
   ngOnInit() {
     this.loadList();
-    this.dataSource.sort = this.sort;
     this.form = this.fb.group({
       amount: this.amountFormControl,
       name: this.nameFormControl,
@@ -64,6 +63,9 @@ export class AlbumListComponent implements OnInit {
     this.api.getAllAlbums().subscribe(
         result => {
           this.disks = result;
+          this.dataSource = new MatTableDataSource(this.disks);
+          this.dataSource.sort = this.sort;
+          this.form.reset();
         },
         error => {
           const s = this.openSnackBar('Network error', 'Try again');

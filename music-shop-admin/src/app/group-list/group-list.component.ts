@@ -17,7 +17,7 @@ export class GroupListComponent implements OnInit {
   groups: Group[];
   displayedColumns: string[] = ['groupId', 'musician', 'name', 'style'];
 
-  dataSource = new MatTableDataSource(this.groups);
+  dataSource: MatTableDataSource<Group>;
 
   @ViewChild(MatSort, {static: true}) sort: MatSort;
 
@@ -39,7 +39,6 @@ export class GroupListComponent implements OnInit {
 
   ngOnInit() {
     this.loadList();
-    this.dataSource.sort = this.sort;
     this.form = this.fb.group({
       musician: this.musicianFormControl,
       name: this.nameFormControl,
@@ -51,6 +50,9 @@ export class GroupListComponent implements OnInit {
     this.api.getAllGroups().subscribe(
         result => {
           this.groups = result;
+          this.dataSource = new MatTableDataSource(this.groups);
+          this.dataSource.sort = this.sort;
+          this.form.reset();
         },
         error => {
           const s = this.openSnackBar('Network error', 'Try again');
